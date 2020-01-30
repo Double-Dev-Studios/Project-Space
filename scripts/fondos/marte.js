@@ -1,17 +1,17 @@
 //fondo
 					
 // fondos
-	var bgTierra = new Image()
-	bgTierra.src = "bg/tierra.png"
+	var bgMarte = new Image()
+	bgMarte.src = "bg/marte.png"
 
 // variables de fondo
-	var actualBG = bgTierra
+	var actualBG = bgMarte
 		
-		var actualBGString = "bgTierra"
+		var actualBGString = "bgMarte"
 	
 	var bg = {
-		offset: 0,
-		speed: 0.05
+		offset: 200,
+		speed: 0.1
 	}
 				
 // funciones de fondo
@@ -23,7 +23,12 @@
 		if (ship.speed == 1.5) {
 			bg.offset -= bg.speed
 		}
+		
 		if (ship.speed == 3) {
 			bg.offset -= (bg.speed * 2)
+		}
+		
+		if (ship.speed >= 4.5) {
+			bg.offset -= (bg.speed * 3)
 		}
 	}

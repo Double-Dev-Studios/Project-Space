@@ -38,6 +38,20 @@
 					}
 					
 					
+					// fire asteroid al tocar borde
+					if (fireAsteroid.use == true){
+						
+						if (fireAsteroid.x <= -72 || fireAsteroid.show == false){
+							fireAsteroid.x = canvas.width + 72
+							fireAsteroid.y = getRandomInt(40, canvas.height - 40)
+							sprFireAsteroid = sprFireAsteroidNormal
+							sprFireAsteroidString = "sprFireAsteroidNormal"
+							fireAsteroid.show = true
+						}
+						
+					}
+					
+					
 					
 					
 					// satelite al tocar borde
@@ -151,6 +165,35 @@
 							
 						}
 					}
+					
+					
+					// fireAsteroid al tocar ship
+					
+					if (ship.show == true){
+						if (fireAsteroid.use == true) {
+							
+							if (fireAsteroid.show == true) {
+								if (fireAsteroidDamaged == false) {
+									
+									if (fireAsteroid.x2 >= shipHitbox.x) {
+										if (fireAsteroid.x <= shipHitbox.x2) {
+											if (fireAsteroid.y2 >= shipHitbox.y) {
+												if (fireAsteroid.y <= shipHitbox.y2) {
+													
+													fireAsteroidDamage()
+													shipDamage()
+													ship.speed = 4.5
+												}
+											}
+										}
+									}
+									
+								}
+							}
+							
+						}
+					}
+					
 					
 					
 					// satelite al tocar ship
@@ -434,6 +477,80 @@
 							
 							
 						}
+						
+						
+						
+						
+						
+						// fireAsteroid al tocar disparos
+							
+						//disparo 1
+						if (fireAsteroid.show == true) {
+							if (disparo.disparado == true) {
+									
+								if (fireAsteroid.x2 >= disparo.x) {
+									if (fireAsteroid.x <= disparo.x2) {
+										if (fireAsteroid.y2 >= disparo.y) {
+											if (fireAsteroid.y <= disparo.y2) {
+												
+												disparo.disparado = false
+												
+												if (fireAsteroidDamaged == false) {
+													fireAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 2
+						if (fireAsteroid.show == true) {
+							if (disparo2.disparado == true) {
+								
+								if (fireAsteroid.x2 >= disparo2.x) {
+									if (fireAsteroid.x <= disparo2.x2) {
+										if (fireAsteroid.y2 >= disparo2.y) {
+											if (fireAsteroid.y <= disparo2.y2) {
+												
+												disparo2.disparado = false
+												
+												if (fireAsteroidDamaged == false) {
+													fireAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 3
+						if (fireAsteroid.show == true) {
+							if (disparo3.disparado == true) {
+								
+								if (fireAsteroid.x2 >= disparo3.x) {
+									if (fireAsteroid.x <= disparo3.x2) {
+										if (fireAsteroid.y2 >= disparo3.y) {
+											if (fireAsteroid.y <= disparo3.y2) {
+												
+												disparo3.disparado = false
+												
+												if (fireAsteroidDamaged == false) {
+													fireAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+						
+						
 						
 						
 						

@@ -31,6 +31,7 @@ fullboton.addEventListener("click", fullscreen);
 				dibujarSateliteSpecial()
 				dibujarAsteroid()
 				dibujarAsteroid2()
+				dibujarFireAsteroid()
 				dibujarMiniAsteroid()
 			}
 			
@@ -52,6 +53,7 @@ fullboton.addEventListener("click", fullscreen);
 			function actualizarEnemigos() {
 				actualizarAsteroid()
 				actualizarAsteroid2()
+				actualizarFireAsteroid()
 				actualizarMiniAsteroid()
 				actualizarSatelite()
 				actualizarSateliteSpecial()
@@ -67,14 +69,19 @@ fullboton.addEventListener("click", fullscreen);
 					musicEarth.play();
 				}
 				
-				if (musicLuna.currentTime > 51){
-					musicLuna.currentTime = 0;
-					musicLuna.play();
+				if (musicMoon.currentTime > 51){
+					musicMoon.currentTime = 0;
+					musicMoon.play();
 				}
 				
 				if (musicVenus.currentTime > 76){
 					musicVenus.currentTime = 0;
 					musicVenus.play();
+				}
+				
+				if (musicMars.currentTime > 89){
+					musicMars.currentTime = 0;
+					musicMars.play();
 				}
 			}
 			
@@ -86,13 +93,18 @@ fullboton.addEventListener("click", fullscreen);
 				}
 				
 				if (actualBGString == "bgLuna") {
-					musicLuna.currentTime = 0;
-					musicLuna.play();
+					musicMoon.currentTime = 0;
+					musicMoon.play();
 				}
 				
 				if (actualBGString == "bgVenus") {
 					musicVenus.currentTime = 0;
 					musicVenus.play();
+				}
+				
+				if (actualBGString == "bgMarte") {
+					musicMars.currentTime = 0;
+					musicMars.play();
 				}
 			}
 			
@@ -116,6 +128,16 @@ fullboton.addEventListener("click", fullscreen);
 						
 						sprParticlesString = "sprParticles1"
 						sprParticles = sprParticles1
+					}
+					
+					if (sprParticlesString == "sprParticlesBlue1") {
+						
+						sprParticlesString = "sprParticlesBlue2"
+						sprParticles = sprParticlesBlue2
+					} else {
+						
+						sprParticlesString = "sprParticlesBlue1"
+						sprParticles = sprParticlesBlue1
 					}
 					
 					
@@ -183,6 +205,21 @@ fullboton.addEventListener("click", fullscreen);
 						miniAsteroidDamaged = false
 					}
 				}
+				
+				
+				
+				//miniAsteroid
+				
+				if (fireAsteroid.use == true) {
+					if (contadorFireAsteroid > 0){
+						contadorFireAsteroid -= 1 
+					}
+					
+					if (contadorFireAsteroid <= 0){
+						fireAsteroidDamaged = false
+					}
+				}
+				
 				
 				
 				//satelite
@@ -262,8 +299,9 @@ fullboton.addEventListener("click", fullscreen);
 			
 			function musicPause(){
 				musicEarth.pause()
-				musicLuna.pause()
+				musicMoon.pause()
 				musicVenus.pause()
+				musicMars.pause()
 			}
 			
 			
@@ -310,21 +348,21 @@ fullboton.addEventListener("click", fullscreen);
 			
 			
 			function cambiarBG(){
-				if (actualBG == bgTierra){
+				if (actualBGString == "bgTierra"){
 					satelite.use = true
 					asteroid.use = true
 					asteroid2.use = true
 					miniAsteroid.use = false
 				}
 						
-				if (actualBG == bgLuna){
+				if (actualBGString == "bgLuna"){
 					satelite.use = true
 					asteroid.use = true
 					asteroid2.use = true
 					miniAsteroid.use = true
 				}
 				
-				if (actualBG == bgVenus){
+				if (actualBGString == "bgVenus"){
 					satelite.use = true
 					sateliteSpecial.use = true
 					asteroid.use = true
@@ -332,6 +370,14 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroid.use = true
 					lava.use = true
 				}
+				
+				if (actualBGString == "bgMarte"){
+					satelite.use = true
+					asteroid.use = true
+					asteroid2.use = true
+					miniAsteroid.use = true
+				}
+				
 			}
 			
 			

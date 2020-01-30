@@ -1,11 +1,7 @@
 //fondo
 					
 // fondos
-	var bgTierra = new Image()
-	var bgLuna = new Image()
 	var bgVenus = new Image()
-	bgTierra.src = "bg/tierra.png"
-	bgLuna.src = "bg/luna.png"
 	bgVenus.src = "bg/venus.png"
 
 // variables de fondo

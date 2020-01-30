@@ -31,11 +31,13 @@
 	//setup de musica
 	
 	var musicEarth = document.createElement('audio');
-	var musicLuna = document.createElement('audio');
+	var musicMoon = document.createElement('audio');
 	var musicVenus = document.createElement('audio');
+	var musicMars = document.createElement('audio');
 	musicEarth.setAttribute('src', 'music/earth.mp3');
-	musicLuna.setAttribute('src', 'music/moon.mp3');
+	musicMoon.setAttribute('src', 'music/moon.mp3');
 	musicVenus.setAttribute('src', 'music/venus.mp3');
+	musicMars.setAttribute('src', 'music/mars.mp3');
 
 // getRandomInt, si necesitas un numero entero random entre tal y tal numero usa esta funcion
 	function getRandomInt(min, max) {

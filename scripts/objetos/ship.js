@@ -190,8 +190,13 @@
 	
 	var sprParticles1 = new Image()
 	var sprParticles2 = new Image()
+	var sprParticlesBlue1 = new Image()
+	var sprParticlesBlue2 = new Image()
 	sprParticles1.src = "sprites/ship/particles.png"
 	sprParticles2.src = "sprites/ship/particles2.png"
+	sprParticlesBlue1.src = "sprites/ship/particlesBlue.png"
+	sprParticlesBlue2.src = "sprites/ship/particlesBlue2.png"
+	
 	
 	var sprParticles = sprParticles1
 	var sprParticlesString = "sprParticles1"
@@ -204,6 +209,7 @@
 	var particles = {
 		x: ship.x -64,
 		y: ship.y,
+		blue: false,
 		show: true,
 		use: true
 	}
@@ -229,6 +235,18 @@
 			
 			if (particles.use == false) {
 				particles.show = false
+			}
+			
+			
+			
+			if (ship.speed >= 4.5){
+				particles.blue = true
+				sprParticles = sprParticlesBlue1
+				sprParticlesString = "sprParticlesBlue1"
+			} else {
+				particles.blue = false
+				sprParticles = sprParticles1
+				sprParticlesString = "sprParticles1"
 			}
 		}
 	}

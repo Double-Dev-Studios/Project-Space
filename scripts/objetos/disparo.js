@@ -27,7 +27,9 @@
 		//funciones de disparo 1
 		function dibujarDisparo(){
 			if (ship.show == true){
-				ctx.drawImage(sprBullet, disparo.x, disparo.y, disparo.width, disparo.height)
+				if (disparo.disparado == true){
+					ctx.drawImage(sprBullet, disparo.x, disparo.y, disparo.width, disparo.height)
+				}
 			}
 		}
 		
@@ -74,7 +76,9 @@
 		//funciones de disparo 2
 		function dibujarDisparo2(){
 			if (ship.show == true){
-				ctx.drawImage(sprBullet, disparo2.x, disparo2.y, disparo2.width, disparo2.height)
+				if (disparo2.disparado == true){
+					ctx.drawImage(sprBullet, disparo2.x, disparo2.y, disparo2.width, disparo2.height)
+				}
 			}
 		}
 		
@@ -121,7 +125,9 @@
 		//funciones de disparo 3
 		function dibujarDisparo3(){
 			if (ship.show == true){
-				ctx.drawImage(sprBullet, disparo3.x, disparo3.y, disparo3.width, disparo3.height)
+				if (disparo3.disparado == true){
+					ctx.drawImage(sprBullet, disparo3.x, disparo3.y, disparo3.width, disparo3.height)
+				}
 			}
 		}
 		
