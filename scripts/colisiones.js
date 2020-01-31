@@ -53,6 +53,20 @@
 					
 					
 					
+					// ice asteroid al tocar borde
+					if (iceAsteroid.use == true){
+						
+						if (iceAsteroid.x <= -72 || iceAsteroid.show == false){
+							iceAsteroid.x = canvas.width + 72
+							iceAsteroid.y = getRandomInt(40, canvas.height - 40)
+							sprIceAsteroid = sprIceAsteroidNormal
+							sprIceAsteroidString = "sprIceAsteroidNormal"
+							iceAsteroid.show = true
+						}
+						
+					}
+					
+					
 					
 					// satelite al tocar borde
 					if (satelite.x <= -40 * gameScale || satelite.show == false){
@@ -193,6 +207,58 @@
 							
 						}
 					}
+					
+					
+					// iceAsteroid al tocar ship
+					
+					if (ship.show == true){
+						if (iceAsteroid.use == true) {
+							
+							if (iceAsteroid.show == true) {
+								if (iceAsteroidDamaged == false) {
+									
+									if (iceAsteroid.x2 >= shipHitbox.x) {
+										if (iceAsteroid.x <= shipHitbox.x2) {
+											if (iceAsteroid.y2 >= shipHitbox.y) {
+												if (iceAsteroid.y <= shipHitbox.y2) {
+													
+													iceAsteroidDamage()
+													shipDamage()
+													ship.speed = 0
+												}
+											}
+										}
+									}
+									
+								}
+							}
+							
+						}
+					}
+					
+					
+					// Twister al tocar ship
+					
+					if (ship.show == true){
+						
+						if (twister.use == true) {
+							if (twister.show == true) {
+									
+								if (twister.x2 >= shipHitbox.x) {
+									if (twister.x <= shipHitbox.x2) {
+										if (twister.y2 >= shipHitbox.y) {
+											if (twister.y <= shipHitbox.y2) {
+												shipDamage()
+												ship.speedY = -5
+												
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					
 					
 					
 					
@@ -553,6 +619,77 @@
 						
 						
 						
+						// iceAsteroid al tocar disparos
+							
+						//disparo 1
+						if (iceAsteroid.show == true) {
+							if (disparo.disparado == true) {
+									
+								if (iceAsteroid.x2 >= disparo.x) {
+									if (iceAsteroid.x <= disparo.x2) {
+										if (iceAsteroid.y2 >= disparo.y) {
+											if (iceAsteroid.y <= disparo.y2) {
+												
+												disparo.disparado = false
+												
+												if (iceAsteroidDamaged == false) {
+													iceAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 2
+						if (iceAsteroid.show == true) {
+							if (disparo2.disparado == true) {
+								
+								if (iceAsteroid.x2 >= disparo2.x) {
+									if (iceAsteroid.x <= disparo2.x2) {
+										if (iceAsteroid.y2 >= disparo2.y) {
+											if (iceAsteroid.y <= disparo2.y2) {
+												
+												disparo2.disparado = false
+												
+												if (iceAsteroidDamaged == false) {
+													iceAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 3
+						if (iceAsteroid.show == true) {
+							if (disparo3.disparado == true) {
+								
+								if (iceAsteroid.x2 >= disparo3.x) {
+									if (iceAsteroid.x <= disparo3.x2) {
+										if (iceAsteroid.y2 >= disparo3.y) {
+											if (iceAsteroid.y <= disparo3.y2) {
+												
+												disparo3.disparado = false
+												
+												if (fireAsteroidDamaged == false) {
+													fireAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+						
+						
+						
+						
 						
 					
 					// satelite al tocar disparos
@@ -735,6 +872,67 @@
 									if (lavaHitbox.x <= disparo3.x2) {
 										if (lavaHitbox.y2 >= disparo3.y) {
 											if (lavaHitbox.y <= disparo3.y2) {
+												
+												disparo3.disparado = false
+											}
+										}
+									}
+								}
+								
+							}
+						}
+						
+						
+						
+						
+						
+						
+						// twister al tocar disparos
+							
+						//disparo 1
+						if (twister.show == true) {
+							if (disparo.disparado == true) {
+									
+								if (twister.x2 >= disparo.x) {
+									if (twister.x <= disparo.x2) {
+										if (twister.y2 >= disparo.y) {
+											if (twister.y <= disparo.y2) {
+												
+												disparo.disparado = false
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 2
+						if (twister.show == true) {
+							if (disparo2.disparado == true) {
+								
+								if (twister.x2 >= disparo2.x) {
+									if (twister.x <= disparo2.x2) {
+										if (twister.y2 >= disparo2.y) {
+											if (twister.y <= disparo2.y2) {
+												
+												disparo2.disparado = false
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 3
+						if (twister.show == true) {
+							if (disparo2.disparado == true) {
+								
+								if (twister.x2 >= disparo3.x) {
+									if (twister.x <= disparo3.x2) {
+										if (twister.y2 >= disparo3.y) {
+											if (twister.y <= disparo3.y2) {
 												
 												disparo3.disparado = false
 											}

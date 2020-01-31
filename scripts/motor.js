@@ -32,6 +32,7 @@ fullboton.addEventListener("click", fullscreen);
 				dibujarAsteroid()
 				dibujarAsteroid2()
 				dibujarFireAsteroid()
+				dibujarIceAsteroid()
 				dibujarMiniAsteroid()
 				dibujarTwister()
 			}
@@ -55,6 +56,7 @@ fullboton.addEventListener("click", fullscreen);
 				actualizarAsteroid()
 				actualizarAsteroid2()
 				actualizarFireAsteroid()
+				actualizarIceAsteroid()
 				actualizarMiniAsteroid()
 				actualizarSatelite()
 				actualizarSateliteSpecial()
@@ -211,7 +213,23 @@ fullboton.addEventListener("click", fullscreen);
 
 
 
-				//miniAsteroid
+				//fireAsteroid
+
+				if (fireAsteroid.use == true) {
+					if (contadorFireAsteroid > 0){
+						contadorFireAsteroid -= 1
+					}
+
+					if (contadorFireAsteroid <= 0){
+						fireAsteroidDamaged = false
+					}
+				}
+				
+				
+				
+				
+				
+				//iceAsteroid
 
 				if (fireAsteroid.use == true) {
 					if (contadorFireAsteroid > 0){
@@ -355,7 +373,6 @@ fullboton.addEventListener("click", fullscreen);
 					satelite.use = true
 					asteroid.use = true
 					asteroid2.use = true
-					miniAsteroid.use = false
 				}
 
 				if (actualBGString == "bgLuna"){
@@ -380,6 +397,16 @@ fullboton.addEventListener("click", fullscreen);
 					asteroid2.use = true
 					miniAsteroid.use = true
 					fireAsteroid.use = true
+				}
+				
+				if (actualBGString == "bgAsteroides"){
+					satelite.use = true
+					sateliteSpecial.use = true
+					asteroid.use = true
+					asteroid2.use = true
+					miniAsteroid.use = true
+					fireAsteroid.use = true
+					iceAsteroid.use = true
 				}
 
 			}
