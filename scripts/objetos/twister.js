@@ -79,7 +79,7 @@ function actualizarTwister(){
                 if(contadorT2 <= 0){
                     twister.alert = false
                     contadorT2 = 48
-                    timer = getRandomInt(800, 1200)
+                    timer = getRandomInt(100, 200)
                 }
             }
             else{
