@@ -378,6 +378,7 @@ fullboton.addEventListener("click", fullscreen);
 					asteroid.use = true
 					asteroid2.use = true
 					miniAsteroid.use = true
+					fireAsteroid.use = true
 				}
 
 			}
