@@ -66,7 +66,7 @@ fullboton.addEventListener("click", fullscreen);
 
 			function musicBucle(){
 				// currentTime guarda el tiempo en segundos
-				if (musicEarth.currentTime > 62){
+				if (musicEarth.currentTime > 108){
 					musicEarth.currentTime = 0;
 					musicEarth.play();
 				}
