@@ -53,21 +53,6 @@
 					
 					
 					
-					// ice asteroid al tocar borde
-					if (iceAsteroid.use == true){
-						
-						if (iceAsteroid.x <= -72 || iceAsteroid.show == false){
-							iceAsteroid.x = canvas.width + 72
-							iceAsteroid.y = getRandomInt(40, canvas.height - 40)
-							sprIceAsteroid = sprIceAsteroidNormal
-							sprIceAsteroidString = "sprIceAsteroidNormal"
-							iceAsteroid.show = true
-						}
-						
-					}
-					
-					
-					
 					
 					// satelite al tocar borde
 					if (satelite.x <= -40 * gameScale || satelite.show == false){
@@ -198,34 +183,6 @@
 													fireAsteroidDamage()
 													shipDamage()
 													ship.speed = 4.5
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						}
-					}
-					
-					
-					// iceAsteroid al tocar ship
-					
-					if (ship.show == true){
-						if (iceAsteroid.use == true) {
-							
-							if (iceAsteroid.show == true) {
-								if (iceAsteroidDamaged == false) {
-									
-									if (iceAsteroid.x2 >= shipHitbox.x) {
-										if (iceAsteroid.x <= shipHitbox.x2) {
-											if (iceAsteroid.y2 >= shipHitbox.y) {
-												if (iceAsteroid.y <= shipHitbox.y2) {
-													
-													iceAsteroidDamage()
-													shipDamage()
-													ship.speed = 0
 												}
 											}
 										}
@@ -579,77 +536,6 @@
 									if (fireAsteroid.x <= disparo3.x2) {
 										if (fireAsteroid.y2 >= disparo3.y) {
 											if (fireAsteroid.y <= disparo3.y2) {
-												
-												disparo3.disparado = false
-												
-												if (fireAsteroidDamaged == false) {
-													fireAsteroidDamage()
-												}
-											}
-										}
-									}
-								}
-								
-							}
-						}
-						
-						
-						
-						
-						// iceAsteroid al tocar disparos
-							
-						//disparo 1
-						if (iceAsteroid.show == true) {
-							if (disparo.disparado == true) {
-									
-								if (iceAsteroid.x2 >= disparo.x) {
-									if (iceAsteroid.x <= disparo.x2) {
-										if (iceAsteroid.y2 >= disparo.y) {
-											if (iceAsteroid.y <= disparo.y2) {
-												
-												disparo.disparado = false
-												
-												if (iceAsteroidDamaged == false) {
-													iceAsteroidDamage()
-												}
-											}
-										}
-									}
-								}
-								
-							}
-						}
-							
-						//disparo 2
-						if (iceAsteroid.show == true) {
-							if (disparo2.disparado == true) {
-								
-								if (iceAsteroid.x2 >= disparo2.x) {
-									if (iceAsteroid.x <= disparo2.x2) {
-										if (iceAsteroid.y2 >= disparo2.y) {
-											if (iceAsteroid.y <= disparo2.y2) {
-												
-												disparo2.disparado = false
-												
-												if (iceAsteroidDamaged == false) {
-													iceAsteroidDamage()
-												}
-											}
-										}
-									}
-								}
-								
-							}
-						}
-							
-						//disparo 3
-						if (iceAsteroid.show == true) {
-							if (disparo3.disparado == true) {
-								
-								if (iceAsteroid.x2 >= disparo3.x) {
-									if (iceAsteroid.x <= disparo3.x2) {
-										if (iceAsteroid.y2 >= disparo3.y) {
-											if (iceAsteroid.y <= disparo3.y2) {
 												
 												disparo3.disparado = false
 												
