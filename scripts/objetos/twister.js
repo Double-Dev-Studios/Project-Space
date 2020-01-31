@@ -11,7 +11,7 @@ var sprTwisterN = sprTwister
 //variables
 
 var contadorT = 40
-var contadorT2 = 48
+var contadorT2 = 16
 
 var twister = {
     x: getRandomInt(64, canvas.width - 64),
@@ -66,15 +66,6 @@ function actualizarTwister(){
             sprTwisterN = sprAlert
 
             contadorT2 = contadorT2 - 1
-            if(contadorT2 % 8 == 0){
-                if(twister.show){
-                    twister.show = false
-                }
-                else{
-                    twister.show = true
-                }
-            }
-
             if(contadorT2 <= 0){
                 twister.alert = false
             }
