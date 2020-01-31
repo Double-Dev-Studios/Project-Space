@@ -10,19 +10,19 @@ var sprTwisterN = sprTwister
 
 //variables
 
-var contadorT = 50
-var contadorT2 = true
+var contadorT = 40
+contadorT2 = 48
 
 var twister = {
     x: getRandomInt(64, canvas.width - 64),
     y: canvas.height - 20 * gameScale,
-    speedX: 1.5,
-    speedY: 0.75,
+    speedX: 5,
+    speedY: 4,
     width: 20 * gameScale,
     height: 20 * gameScale,
     show: true,
     use: true,
-    alert: true,
+    alert: false,
     direction: "left"
 }
 
@@ -36,9 +36,10 @@ function dibujarTwister(){
 
 function actualizarTwister(){
     if(twister.use){
-        if(alert){
+        if(alert != true){
+            sprTwisterN = sprTwister
             if(twister.y <= 0){
-                twister.y = canvas.height
+                twister.alert = true
             }
             twister.y = twister.y - twister.speedY
 
@@ -52,14 +53,24 @@ function actualizarTwister(){
             contadorT = contadorT - getRandomInt(1, 2)
             if(contadorT <= 0){
                 contadorT = 50
-                if(contadorT2){
+                if(twister.direction == "left"){
                     twister.direction = "right"
-                    contadorT2 = false
                 }
                 else{
                     twister.direction = "left"
-                    contadorT2 = true
                 }
+            }
+        }
+        else{
+            twister.x = getRandomInt(64, canvas.width - 64)
+            sprTwisterN = sprAlert
+
+            contadorT2 = contadorT2 - 1
+            if(contadorT2 % 8 == 0){
+                twister.show = false
+            }
+            else if (contadorT2 <= 0) {
+                twister.alert = false
             }
         }
     }
