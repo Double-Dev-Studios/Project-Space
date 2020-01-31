@@ -231,13 +231,13 @@ fullboton.addEventListener("click", fullscreen);
 				
 				//iceAsteroid
 
-				if (fireAsteroid.use == true) {
-					if (contadorFireAsteroid > 0){
-						contadorFireAsteroid -= 1
+				if (iceAsteroid.use == true) {
+					if (contadorIceAsteroid > 0){
+						contadorIceAsteroid -= 1
 					}
 
-					if (contadorFireAsteroid <= 0){
-						fireAsteroidDamaged = false
+					if (contadorIceAsteroid <= 0){
+						iceAsteroidDamaged = false
 					}
 				}
 
