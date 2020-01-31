@@ -225,6 +225,7 @@
 	
 	function actualizarParticles() {
 		if (particles.show == true) {
+			
 			particles.x = ship.x -64
 			particles.y = ship.y
 			
@@ -237,17 +238,12 @@
 				particles.show = false
 			}
 			
-			
-			
 			if (ship.speed >= 4.5){
 				particles.blue = true
-				sprParticles = sprParticlesBlue1
-				sprParticlesString = "sprParticlesBlue1"
 			} else {
 				particles.blue = false
-				sprParticles = sprParticles1
-				sprParticlesString = "sprParticles1"
 			}
+			
 		}
 	}
 	
