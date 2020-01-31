@@ -121,25 +121,26 @@ fullboton.addEventListener("click", fullscreen);
 				contadorParticles -= 1
 
 				if (contadorParticles <= 0) {
+					if (particles.blue == false){
+						if (sprParticlesString == "sprParticles1") {
 
-					if (sprParticlesString == "sprParticles1") {
+							sprParticlesString = "sprParticles2"
+							sprParticles = sprParticles2
+						} else {
 
-						sprParticlesString = "sprParticles2"
-						sprParticles = sprParticles2
+							sprParticlesString = "sprParticles1"
+							sprParticles = sprParticles1
+						}
 					} else {
+						if (sprParticlesString == "sprParticlesBlue1") {
 
-						sprParticlesString = "sprParticles1"
-						sprParticles = sprParticles1
-					}
+							sprParticlesString = "sprParticlesBlue2"
+							sprParticles = sprParticlesBlue2
+						} else {
 
-					if (sprParticlesString == "sprParticlesBlue1") {
-
-						sprParticlesString = "sprParticlesBlue2"
-						sprParticles = sprParticlesBlue2
-					} else {
-
-						sprParticlesString = "sprParticlesBlue1"
-						sprParticles = sprParticlesBlue1
+							sprParticlesString = "sprParticlesBlue1"
+							sprParticles = sprParticlesBlue1
+						}
 					}
 
 
