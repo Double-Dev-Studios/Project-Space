@@ -3,4 +3,10 @@ Space Machines Remake
 
 for now is just a beta-demo of the final game
 
-MARS, THE NEW LEVEL, IS OUT!
+Levels:
+
+Earth
+Moon
+Venus
+Mars
+Asteroid Belt (WIP)
