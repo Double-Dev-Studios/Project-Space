@@ -4,8 +4,8 @@
 
 var sprTwister = new Image()
 var sprAlert = new Image()
-sprTwister.src = "sprites/twister.png"
-sprAlert.src = "sprites/lava/lava0.png"
+sprTwister.src = "sprites/twister/twister.png"
+sprAlert.src = "sprites/twister/alert.png"
 var sprTwisterN = sprTwister
 
 //variables
@@ -21,8 +21,10 @@ var twister = {
     speedY: 3.5,
     width: 20 * gameScale,
     height: 20 * gameScale,
+    x2: this.width + this.x,
+    y2: this.height + this.y,
     show: true,
-    use: true,
+    use: false,
     alert: true,
     direction: "left"
 }
@@ -30,16 +32,22 @@ var twister = {
 //funciones
 
 function dibujarTwister(){
-    if(twister.show == true){
-        ctx.drawImage(sprTwisterN, twister.x, twister.y, twister.width, twister.height)
-    }
+	if(twister.use == true){
+		if(twister.show == true){
+			ctx.drawImage(sprTwisterN, twister.x, twister.y, twister.width, twister.height)
+		}
+	}
 }
 
 function actualizarTwister(){
     if(twister.use){
+		
+		twister.x2 = twister.width + twister.x,
+		twister.y2 = twister.height + twister.y,
+		
+		twister.x -= ship.speed
+		
         if(twister.alert != true){
-            twister.width = 20 * gameScale
-            twister.height = 20 * gameScale
             sprTwisterN = sprTwister
             if(twister.y <= 0){
                 twister.alert = true
@@ -70,16 +78,16 @@ function actualizarTwister(){
                 twister.show = true
                 if(contadorT2 == 48){
                     twister.x = getRandomInt(64, canvas.width - 64)
-                    twister.height = 60 * gameScale
+                    twister.y = canvas.height - twister.height
                 }
-                twister.y = canvas.height - 60 * gameScale
+                twister.y = canvas.height - twister.height
                 sprTwisterN = sprAlert
 
                 contadorT2 = contadorT2 - 1
                 if(contadorT2 <= 0){
                     twister.alert = false
                     contadorT2 = 48
-                    timer = getRandomInt(100, 200)
+                    timer = getRandomInt(200, 700)
                 }
             }
             else{
