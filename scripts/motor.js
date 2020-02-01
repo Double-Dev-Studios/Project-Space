@@ -23,6 +23,7 @@ fullboton.addEventListener("click", fullscreen);
 
 
 				dibujarScore()
+				dibujarTemp()
 			}
 
 			function dibujarEnemigos(){
@@ -224,11 +225,11 @@ fullboton.addEventListener("click", fullscreen);
 						fireAsteroidDamaged = false
 					}
 				}
-				
-				
-				
-				
-				
+
+
+
+
+
 				//iceAsteroid
 
 				if (iceAsteroid.use == true) {
@@ -398,7 +399,7 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroid.use = true
 					fireAsteroid.use = true
 				}
-				
+
 				if (actualBGString == "bgAsteroides"){
 					satelite.use = true
 					sateliteSpecial.use = true
