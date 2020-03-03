@@ -9,4 +9,4 @@ Earth,
 Moon,
 Venus,
 Mars,
-Asteroid Belt (WIP)
+Asteroid Belt
