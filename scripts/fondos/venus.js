@@ -11,9 +11,11 @@
 	
 	var bg = {
 		offset: 200,
-		speed: 0.1
+		speed: 0.1,
+		minTemp: -5,
+		tempAdd: 0.03
 	}
-				
+	
 // funciones de fondo
 	function dibujarFondo(){
 		ctx.drawImage(actualBG, bg.offset, 0,)

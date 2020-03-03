@@ -21,9 +21,8 @@ fullboton.addEventListener("click", fullscreen);
 
 
 
-
-				dibujarScore()
 				dibujarTemp()
+				dibujarScore()
 			}
 
 			function dibujarEnemigos(){
@@ -36,6 +35,7 @@ fullboton.addEventListener("click", fullscreen);
 				dibujarIceAsteroid()
 				dibujarMiniAsteroid()
 				dibujarTwister()
+				dibujarBigAsteroid()
 			}
 
 
@@ -63,6 +63,9 @@ fullboton.addEventListener("click", fullscreen);
 				actualizarSateliteSpecial()
 				actualizarLava()
 				actualizarTwister()
+				actualizarTemp()
+				actualizarBigAsteroid()
+				
 			}
 
 
@@ -88,6 +91,11 @@ fullboton.addEventListener("click", fullscreen);
 					musicMars.currentTime = 0;
 					musicMars.play();
 				}
+				
+				if (musicAsteroidBelt.currentTime > 76){
+					musicAsteroidBelt.currentTime = 0;
+					musicAsteroidBelt.play();
+				}
 			}
 
 
@@ -110,6 +118,11 @@ fullboton.addEventListener("click", fullscreen);
 				if (actualBGString == "bgMarte") {
 					musicMars.currentTime = 0;
 					musicMars.play();
+				}
+				
+				if (actualBGString == "bgAsteroides") {
+					musicAsteroidBelt.currentTime = 0;
+					musicAsteroidBelt.play();
 				}
 			}
 
@@ -225,11 +238,11 @@ fullboton.addEventListener("click", fullscreen);
 						fireAsteroidDamaged = false
 					}
 				}
-
-
-
-
-
+				
+				
+				
+				
+				
 				//iceAsteroid
 
 				if (iceAsteroid.use == true) {
@@ -241,7 +254,17 @@ fullboton.addEventListener("click", fullscreen);
 						iceAsteroidDamaged = false
 					}
 				}
+				
+				
+				//bigAsteroid
+				if (contadorBigAsteroid > 0){
+					contadorBigAsteroid -= 1
+				}
 
+				if (contadorBigAsteroid <= 0){
+					bigAsteroidDamaged = false
+				}
+				
 
 
 				//satelite
@@ -324,6 +347,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicMoon.pause()
 				musicVenus.pause()
 				musicMars.pause()
+				musicAsteroidBelt.pause()
 			}
 
 
@@ -399,7 +423,7 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroid.use = true
 					fireAsteroid.use = true
 				}
-
+				
 				if (actualBGString == "bgAsteroides"){
 					satelite.use = true
 					sateliteSpecial.use = true
@@ -408,6 +432,7 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroid.use = true
 					fireAsteroid.use = true
 					iceAsteroid.use = true
+					bigAsteroid.use = true
 				}
 
 			}

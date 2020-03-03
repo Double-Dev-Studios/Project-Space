@@ -26,7 +26,7 @@
 			y2: this.height * gameScale + this.y,
 			speedX: 0.2,
 			show: true,
-			use: true
+			use: false
 		}
 		
 		var sateliteHitbox = { 
@@ -98,6 +98,10 @@
 							sprSatelite = sprAsteroidNormal
 							sprSateliteString = "sprSateliteNormal"
 							satelite.show = false
+							
+							
+							randomSatelite()
+							oneActualizarShield()
 							
 						}
 					}
@@ -174,6 +178,9 @@
 			
 			score.number += 2
 			sateliteSpecial.show = false
+			
+			randomSatelite()
+			oneActualizarShield()
 		}
 	
 

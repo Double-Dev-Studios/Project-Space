@@ -11,7 +11,9 @@
 	
 	var bg = {
 		offset: 200,
-		speed: 0.2
+		speed: 0.2,
+		minTemp: -40,
+		tempAdd: 0
 	}
 				
 // funciones de fondo

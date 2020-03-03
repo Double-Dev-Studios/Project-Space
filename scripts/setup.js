@@ -15,6 +15,7 @@
 	var kZ = 90
 	var kX = 88
 	var kC = 67
+	var kV = 86
 	
 	var k1 = 49
 	var k2 = 50
@@ -34,13 +35,28 @@
 	var musicMoon = document.createElement('audio');
 	var musicVenus = document.createElement('audio');
 	var musicMars = document.createElement('audio');
+	var musicAsteroidBelt = document.createElement('audio');
 	musicEarth.setAttribute('src', 'music/earth.mp3');
 	musicMoon.setAttribute('src', 'music/moon.mp3');
 	musicVenus.setAttribute('src', 'music/venus.mp3');
 	musicMars.setAttribute('src', 'music/mars.mp3');
+	musicAsteroidBelt.setAttribute('src', 'music/asteroids.mp3');
 
 // getRandomInt, si necesitas un numero entero random entre tal y tal numero usa esta funcion
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) ) + min;
+	}
+	
+	function randomSatelite(){
+		random = Math.floor(Math.random() * 2)
+		if (random == 1){
+			sprShieldString += 1
+			contadorShield = 30
+			sprShip = sprShipHP
+			sprShipString = "sprShipHP"
+			oneActualizarShield()
+			} else {
+			//si el bool es 0
+		}
 	}
 

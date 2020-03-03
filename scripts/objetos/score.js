@@ -14,6 +14,9 @@
 		function dibujarScore() {
 			if (score.show == true) {
 				ctx.font = "50px Arial"
+				ctx.fillStyle = "black";
+				ctx.fillText("Score: " + score.number + "0", score.x + 4, score.y + 4)
+				
 				ctx.fillStyle = "white";
 				ctx.fillText("Score: " + score.number + "0", score.x, score.y)
 			}

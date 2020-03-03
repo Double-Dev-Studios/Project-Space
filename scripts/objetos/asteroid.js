@@ -27,7 +27,7 @@
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
 			show: true,
-			use: true
+			use: false
 		}
 		
 		

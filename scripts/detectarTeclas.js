@@ -66,11 +66,16 @@
 				
 				// k == X
 				if (k == kX) {
-					ship.speed = 1.5
+					ship.speed = 0.5
 				}
 				
 				// k == C
 				if (k == kC) {
+					ship.speed = 1.5
+				}
+				
+				// k == V
+				if (k == kV) {
 					ship.speed = 3
 				}
 			}

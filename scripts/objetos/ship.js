@@ -5,10 +5,11 @@
 		var sprShipNormal = new Image()
 		var sprShipDmg = new Image()
 		var sprShipExplosion = new Image()
+		var sprShipHP = new Image()
 		sprShipNormal.src = "sprites/ship/ship.png"
 		sprShipDmg.src = "sprites/ship/shipDmg.png"
 		sprShipExplosion.src = "sprites/ship/explosion.png"
-		
+		sprShipHP.src = "sprites/ship/shipHP.png"
 		
 		sprShip = sprShipNormal
 		sprShipString = "sprShipNormal"
@@ -50,8 +51,21 @@
 			ship.x += ship.speedX
 			ship.y += ship.speedY
 			ship.x -= ship.speed
-							
-							
+			
+			if (bg.tempAdd > 0){
+				temp.value += bg.tempAdd
+			}
+			
+			if (ship.speed < 1.5){
+				if (bg.minTemp < temp.realValue){
+					temp.value -= 0.05
+				} else {
+					
+					temp.value -= 0.01
+					
+				}
+			}
+			
 			//hitbox
 			shipHitbox.x = ship.x + 8,
 			shipHitbox.y = ship.y + 20,
@@ -66,35 +80,35 @@
 					sprShip = sprShipDmg
 					
 					sprShield = sprShield4
-					sprShieldString = "sprShield4"
+					sprShieldString = 4
 				}
 								
 				else if (sprShield == sprShield4) {
 					sprShip = sprShipDmg
 					
 					sprShield = sprShield3
-					sprShieldString = "sprShield3"
+					sprShieldString = 3
 				}
 				
 				else if (sprShield == sprShield3) {
 					sprShip = sprShipDmg
 					
 					sprShield = sprShield2
-					sprShieldString = "sprShield2"
+					sprShieldString = 2
 				}
 				
 				else if (sprShield == sprShield2) {
 					sprShip = sprShipDmg
 					
 					sprShield = sprShield1
-					sprShieldString = "sprShield1"
+					sprShieldString = 1
 				}
 								
 				else if (sprShield == sprShield1) {
 					sprShip = sprShipExplosion
 					
 					sprShield = sprShield0
-					sprShieldString = "sprShield0"
+					sprShieldString = 0
 					ship.speed = 0
 					particles.use = false
 					particles.show = false
@@ -157,7 +171,7 @@
 	sprShield5.src = "sprites/shield/5.png"
 		
 	var sprShield = sprShield5
-	var sprShieldString = "sprShield5"
+	var sprShieldString = 5
 	
 	//variables de shield
 	
@@ -175,6 +189,15 @@
 		if (shield.show == true){
 			ctx.drawImage(sprShield, shield.x, shield.y,)
 		}
+	}
+	
+	function oneActualizarShield() {
+		if (sprShieldString == 5){ sprShield = sprShield5 }
+		if (sprShieldString == 4){ sprShield = sprShield4 }
+		if (sprShieldString == 3){ sprShield = sprShield3 }
+		if (sprShieldString == 2){ sprShield = sprShield2 }
+		if (sprShieldString == 1){ sprShield = sprShield1 }
+		if (sprShieldString == 0){ sprShield = sprShield0 }
 	}
 	
 	
@@ -240,6 +263,7 @@
 			
 			if (ship.speed >= 4.5){
 				particles.blue = true
+				temp.value += 0.1
 			} else {
 				particles.blue = false
 			}

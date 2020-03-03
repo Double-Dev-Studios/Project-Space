@@ -66,6 +66,15 @@
 						
 					}
 					
+					// bigAsteroid al tocar borde
+					if (bigAsteroid.x <= -128 || bigAsteroid.show == false){
+						bigAsteroid.x = canvas.width + 528
+						bigAsteroid.y = getRandomInt(40, canvas.height - 40)
+						sprBigAsteroid = sprBigAsteroidNormal
+						sprBigAsteroidString = "sprBigAsteroidNormal"
+						bigAsteroid.show = true
+					}
+					
 					
 					
 					// satelite al tocar borde
@@ -235,6 +244,36 @@
 							
 						}
 					}
+					
+					
+					
+					// bigAsteroid al tocar ship
+					
+					if (ship.show == true){
+						if (bigAsteroid.use == true) {
+							
+							if (bigAsteroid.show == true) {
+								if (bigAsteroidDamaged == false) {
+									
+									if (bigAsteroid.x2 >= shipHitbox.x) {
+										if (bigAsteroid.x <= shipHitbox.x2) {
+											if (bigAsteroid.y2 >= shipHitbox.y) {
+												if (bigAsteroid.y <= shipHitbox.y2) {
+													
+													bigAsteroidDamage()
+													shipDamage()
+												}
+											}
+										}
+									}
+									
+								}
+							}
+							
+						}
+					}
+					
+					
 					
 					
 					// Twister al tocar ship
@@ -676,8 +715,82 @@
 												
 												disparo3.disparado = false
 												
-												if (fireAsteroidDamaged == false) {
-													fireAsteroidDamage()
+												if (iceAsteroidDamaged == false) {
+													iceAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+						
+						
+						
+						
+						
+						
+						
+						// bigAsteroid al tocar disparos
+							
+						//disparo 1
+						if (bigAsteroid.show == true) {
+							if (disparo.disparado == true) {
+									
+								if (bigAsteroid.x2 >= disparo.x) {
+									if (bigAsteroid.x <= disparo.x2) {
+										if (bigAsteroid.y2 >= disparo.y) {
+											if (bigAsteroid.y <= disparo.y2) {
+												
+												disparo.disparado = false
+												
+												if (bigAsteroidDamaged == false) {
+													bigAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 2
+						if (bigAsteroid.show == true) {
+							if (disparo2.disparado == true) {
+								
+								if (bigAsteroid.x2 >= disparo2.x) {
+									if (bigAsteroid.x <= disparo2.x2) {
+										if (bigAsteroid.y2 >= disparo2.y) {
+											if (bigAsteroid.y <= disparo2.y2) {
+												
+												disparo2.disparado = false
+												
+												if (bigAsteroidDamaged == false) {
+													bigAsteroidDamage()
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 3
+						if (bigAsteroid.show == true) {
+							if (disparo3.disparado == true) {
+								
+								if (bigAsteroid.x2 >= disparo3.x) {
+									if (bigAsteroid.x <= disparo3.x2) {
+										if (bigAsteroid.y2 >= disparo3.y) {
+											if (bigAsteroid.y <= disparo3.y2) {
+												
+												disparo3.disparado = false
+												
+												if (bigAsteroidDamaged == false) {
+													bigAsteroidDamage()
 												}
 											}
 										}
@@ -794,7 +907,7 @@
 											if (sateliteSpecialHitbox.y <= disparo2.y2) {
 												
 												disparo2.disparado = false
-													sateliteDamage()
+												sateliteSpecialDamage()
 											}
 										}
 									}
@@ -813,7 +926,7 @@
 											if (sateliteSpecialHitbox.y <= disparo3.y2) {
 												
 												disparo3.disparado = false
-												sateliteDamage()
+												sateliteSpecialDamage()
 											}
 										}
 									}

@@ -49,12 +49,13 @@ function actualizarTwister(){
 		
         if(twister.alert != true){
             sprTwisterN = sprTwister
-            if(twister.y <= 0){
-                twister.alert = true
-            }
-            twister.y = twister.y - twister.speedY
+			if(twister.y <= 0){
+				twister.alert = true
+			}
+            
+			twister.y = twister.y - twister.speedY
 
-            if(twister.direction == "left"){
+			if(twister.direction == "left"){
                 twister.x = twister.x - twister.speedX
             }
             else{
