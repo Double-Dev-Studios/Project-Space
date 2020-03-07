@@ -9,11 +9,10 @@ fullboton.addEventListener("click", fullscreen);
 				ctx.clearRect(0, 0, canvas.width, canvas.height);
 				//todo lo que dibujes
 				dibujarFondo()
-
-				dibujarDisparos()
-
+				
 				dibujarEnemigos()
-
+				
+				dibujarDisparos()
 				dibujarShip()
 				dibujarParticles()
 
@@ -96,6 +95,11 @@ fullboton.addEventListener("click", fullscreen);
 					musicAsteroidBelt.currentTime = 0;
 					musicAsteroidBelt.play();
 				}
+				
+				if (musicJupiter.currentTime > 118){
+					musicJupiter.currentTime = 0;
+					musicJupiter.play();
+				}
 			}
 
 
@@ -123,6 +127,11 @@ fullboton.addEventListener("click", fullscreen);
 				if (actualBGString == "bgAsteroides") {
 					musicAsteroidBelt.currentTime = 0;
 					musicAsteroidBelt.play();
+				}
+				
+				if (actualBGString == "bgJupiter") {
+					musicJupiter.currentTime = 0;
+					musicJupiter.play();
 				}
 			}
 
@@ -348,6 +357,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicVenus.pause()
 				musicMars.pause()
 				musicAsteroidBelt.pause()
+				musicJupiter.pause()
 			}
 
 
@@ -430,6 +440,17 @@ fullboton.addEventListener("click", fullscreen);
 					asteroid.use = true
 					asteroid2.use = true
 					miniAsteroid.use = true
+					fireAsteroid.use = true
+					iceAsteroid.use = true
+					bigAsteroid.use = true
+				}
+				
+				if (actualBGString == "bgJupiter"){
+					satelite.use = true
+					sateliteSpecial.use = true
+					asteroid.use = true
+					asteroid2.use = true
+					twister.use = true
 					fireAsteroid.use = true
 					iceAsteroid.use = true
 					bigAsteroid.use = true

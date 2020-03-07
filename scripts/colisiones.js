@@ -67,12 +67,13 @@
 					}
 					
 					// bigAsteroid al tocar borde
-					if (bigAsteroid.x <= -128 || bigAsteroid.show == false){
+					if (bigAsteroid.x <= -192 || bigAsteroid.show == false){
 						bigAsteroid.x = canvas.width + 528
 						bigAsteroid.y = getRandomInt(40, canvas.height - 40)
 						sprBigAsteroid = sprBigAsteroidNormal
 						sprBigAsteroidString = "sprBigAsteroidNormal"
 						bigAsteroid.show = true
+						randomBigAsteroid()
 					}
 					
 					

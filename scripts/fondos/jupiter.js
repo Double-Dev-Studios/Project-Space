@@ -1,19 +1,19 @@
 //fondo
 					
 // fondos
-	var bgVenus = new Image()
-	bgVenus.src = "bg/venus.png"
+	var bgJupiter = new Image()
+	bgJupiter.src = "bg/jupiter.png"
 
 // variables de fondo
-	var actualBG = bgVenus
+	var actualBG = bgJupiter
 		
-		var actualBGString = "bgVenus"
+		var actualBGString = "bgJupiter"
 	
 	var bg = {
 		offset: 200,
 		speed: 0.1,
-		minTemp: -10,
-		tempAdd: 0.03
+		minTemp: -50,
+		tempAdd: -0.03
 	}
 	
 // funciones de fondo

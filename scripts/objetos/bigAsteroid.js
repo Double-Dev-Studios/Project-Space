@@ -84,6 +84,7 @@
 							sprBigAsteroidString = "sprBigAsteroidNormal"
 							bigAsteroid.show = false
 							
+							
 						}
 					}
 				}

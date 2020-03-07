@@ -52,17 +52,21 @@
 			ship.y += ship.speedY
 			ship.x -= ship.speed
 			
-			if (bg.tempAdd > 0){
-				temp.value += bg.tempAdd
+			if (ship.show == true){
+				if (ship.speed >= 1.5){
+					temp.value += bg.tempAdd
+				}
 			}
 			
-			if (ship.speed < 1.5){
-				if (bg.minTemp < temp.realValue){
-					temp.value -= 0.05
-				} else {
-					
-					temp.value -= 0.01
-					
+			if (ship.show == true){
+				if (ship.speed < 1.5){
+					if (bg.minTemp < temp.realValue){
+						temp.value -= 0.05
+					} else {
+						
+						temp.value -= 0.01
+						
+					}
 				}
 			}
 			
@@ -112,6 +116,7 @@
 					ship.speed = 0
 					particles.use = false
 					particles.show = false
+					ship.show = false
 					
 					contadorExplosion = 10
 				}

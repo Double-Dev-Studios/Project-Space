@@ -76,7 +76,7 @@ function generarLava(){
 			lavaHitbox.height = 0
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (16 * gameScale)
+			lavaHitbox.y = canvas.height - (0 * gameScale)
 			
 			sprLava = sprLava1
 			sprLavaString = "sprLava1"
@@ -86,7 +86,7 @@ function generarLava(){
 			lavaHitbox.height = 16 * gameScale
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (32 * gameScale)
+			lavaHitbox.y = canvas.height - (16 * gameScale)
 			
 			sprLava = sprLava2
 			sprLavaString = "sprLava2"
@@ -96,7 +96,7 @@ function generarLava(){
 			lavaHitbox.height = 32 * gameScale
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (48 * gameScale)
+			lavaHitbox.y = canvas.height - (32 * gameScale)
 			
 			sprLava = sprLava3
 			sprLavaString = "sprLava3"
@@ -106,7 +106,7 @@ function generarLava(){
 			lavaHitbox.height = 48 * gameScale
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (64 * gameScale)
+			lavaHitbox.y = canvas.height - (48 * gameScale)
 			
 			sprLava = sprLava4
 			sprLavaString = "sprLava4"

@@ -31,7 +31,7 @@ function dibujarTemp(){
 			
 			temp.color = "white"
             
-			if(temp.value >= 60 && temp.value <80){
+			if(temp.value >= 60 && temp.value < 80){
 				
 				temp.color = "red"
 				
