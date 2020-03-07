@@ -9,4 +9,5 @@ Earth,
 Moon,
 Venus,
 Mars,
-Asteroid Belt
+Asteroid Belt,
+Jupiter
