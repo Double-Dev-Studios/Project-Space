@@ -73,40 +73,40 @@ function actualizarLava(){
 
 function generarLava(){
 		if (sprLavaString == "sprLava0"){
-			lavaHitbox.height = 0
+			lavaHitbox.height = 16
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (0 * gameScale)
+			lavaHitbox.y = canvas.height - (16 * gameScale)
 			
 			sprLava = sprLava1
 			sprLavaString = "sprLava1"
 		}
 		
 		else if (sprLavaString == "sprLava1"){
-			lavaHitbox.height = 16 * gameScale
+			lavaHitbox.height = 32 * gameScale
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (16 * gameScale)
+			lavaHitbox.y = canvas.height - (32 * gameScale)
 			
 			sprLava = sprLava2
 			sprLavaString = "sprLava2"
 		}
 		
 		else if (sprLavaString == "sprLava2"){
-			lavaHitbox.height = 32 * gameScale
+			lavaHitbox.height = 48 * gameScale
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (32 * gameScale)
+			lavaHitbox.y = canvas.height - (48 * gameScale)
 			
 			sprLava = sprLava3
 			sprLavaString = "sprLava3"
 		}
 		
 		else if (sprLavaString == "sprLava3"){
-			lavaHitbox.height = 48 * gameScale
+			lavaHitbox.height = 64 * gameScale
 			lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 			lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
-			lavaHitbox.y = canvas.height - (48 * gameScale)
+			lavaHitbox.y = canvas.height - (64 * gameScale)
 			
 			sprLava = sprLava4
 			sprLavaString = "sprLava4"

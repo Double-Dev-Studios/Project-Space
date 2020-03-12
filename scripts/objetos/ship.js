@@ -142,15 +142,30 @@
 		}
 		
 		
+		//Game Over
+		
+		var gameoverShow = false
+		var sprGameover = new Image()
+		sprGameover.src = "menu/gameover.png"
+		
+		function dibujarGameover(){
+			if (gameoverShow == true){
+				ctx.drawImage(sprGameover, 0, 0, canvas.width, canvas.height)
+			}
+		}
+		
+		
+		
 		function shipGAMEOVER(){
-			alert("G A M E  O V E R")
+			//alert("G A M E  O V E R")
 			ship.show = false
 			ship.use = false
-			
-			
+			ship.speed = 0
+			gameoverShow = true
 			
 			contadorExplosion = "NULL"
 		}
+		
 		
 		
 //fin de SHIP
