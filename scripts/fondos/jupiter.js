@@ -11,7 +11,7 @@
 	
 	var bg = {
 		offset: 200,
-		speed: 0.1,
+		speed: 0.07,
 		minTemp: -50,
 		tempAdd: -0.03
 	}
@@ -22,10 +22,5 @@
 	}
 						
 	function actualizarFondo(){
-		if (ship.speed == 1.5) {
-			bg.offset -= bg.speed
-		}
-		if (ship.speed == 3) {
-			bg.offset -= (bg.speed * 2)
-		}
+		bg.offset -= (ship.speed / 2 * bg.speed)
 	}

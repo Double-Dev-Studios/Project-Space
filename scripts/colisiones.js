@@ -113,7 +113,7 @@
 								
 								sprShield = sprShield0
 								sprShieldString = "sprShield0"
-								alert("G A M E   O V E R .")
+								shipGAMEOVER()
 							}
 					}
 					

@@ -22,11 +22,6 @@
 	}
 						
 	function actualizarFondo(){
-		if (ship.speed == 1.5) {
-			bg.offset -= bg.speed
-		}
-		if (ship.speed == 3) {
-			bg.offset -= (bg.speed * 2)
-		}
+		bg.offset -= (ship.speed / 2 * bg.speed)
 		
 	}
