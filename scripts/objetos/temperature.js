@@ -2,7 +2,10 @@
 
 //Sprites de TEMPERATURE
 
-//En proceso
+var sprHot = new Image()
+var sprCold = new Image()
+sprHot.src = "menu/hot.png"
+sprCold.src = "menu/cold.png"
 
 //variables de temperature
 
@@ -22,6 +25,14 @@ function actualizarTemp(){
 	temp.realValue = Math.round(temp.value)
 }
 
+function dibujarCold(){
+	ctx.drawImage(sprCold, 0, 0, canvas.width, canvas.height)
+}
+
+function dibujarHot(){
+	ctx.drawImage(sprHot, 0, 0, canvas.width, canvas.height)
+}
+
 function dibujarTemp(){
 	if (temp.show){
 		
@@ -34,10 +45,12 @@ function dibujarTemp(){
 			if(temp.value >= 60 && temp.value < 80){
 				
 				temp.color = "red"
+				dibujarHot()
 				
 			} else if (temp.value >= 80) {
 				
 				temp.color = "red"
+				dibujarHot()
 				temp.use = false
 				shipKill()
 			}
@@ -45,10 +58,12 @@ function dibujarTemp(){
 			if(temp.value <= -60 && temp.value > -80){
 				
 				temp.color = "blue"
+				dibujarCold()
 				
 			} else if (temp.value <= -80) {
 				
 				temp.color = "blue"
+				dibujarCold()
 				temp.use = false
 				shipKill()
 				

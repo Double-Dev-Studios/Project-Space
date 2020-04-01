@@ -66,6 +66,17 @@
 						
 					}
 					
+					// ice asteroid aura al tocar borde
+					if (iceAsteroidAura.use == true){
+						
+						if (iceAsteroidAura.x <= -256 || iceAsteroidAura.show == false){
+							iceAsteroidAura.x = canvas.width + 256
+							iceAsteroidAura.y = getRandomInt(128, canvas.height - 128)
+							iceAsteroidAura.show = true
+						}
+						
+					}
+					
 					// bigAsteroid al tocar borde
 					if (bigAsteroid.x <= -192 || bigAsteroid.show == false){
 						bigAsteroid.x = canvas.width + 528
@@ -240,6 +251,31 @@
 										}
 									}
 									
+								}
+							}
+							
+						}
+					}
+					
+					
+					
+					// iceAsteroidAura al tocar ship
+					
+					if (ship.show == true){
+						if (iceAsteroidAura.use == true) {
+							
+							if (iceAsteroidAura.show == true) {
+								
+								if (iceAsteroidAura.x2 >= shipHitbox.x) {
+									if (iceAsteroidAura.x <= shipHitbox.x2) {
+										if (iceAsteroidAura.y2 >= shipHitbox.y) {
+											if (iceAsteroidAura.y <= shipHitbox.y2) {
+												
+												ship.speed = 0.5
+												
+											}
+										}
+									}
 								}
 							}
 							

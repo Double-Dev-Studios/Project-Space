@@ -38,6 +38,7 @@
 	var musicAsteroidBelt = document.createElement('audio');
 	var musicJupiter = document.createElement('audio');
 	var musicSaturn = document.createElement('audio');
+	var musicUranus = document.createElement('audio');
 	
 	musicEarth.setAttribute('src', 'music/earth.mp3');
 	musicMoon.setAttribute('src', 'music/moon.mp3');
@@ -46,6 +47,7 @@
 	musicAsteroidBelt.setAttribute('src', 'music/asteroids.mp3');
 	musicJupiter.setAttribute('src', 'music/jupiter.mp3');
 	musicSaturn.setAttribute('src', 'music/saturn.mp3');
+	musicUranus.setAttribute('src', 'music/uranus.mp3');
 
 // getRandomInt, si necesitas un numero entero random entre tal y tal numero usa esta funcion
 	function getRandomInt(min, max) {
@@ -73,6 +75,15 @@
 			} else {
 			bigAsteroid.width = 48 * gameScale
 			bigAsteroid.height = 48 * gameScale
+		}
+	}
+	
+	function randomIceAsteroid(){
+		random = Math.floor(Math.random() * 2)
+		if (random == 1){
+			iceAsteroid.aura = true
+		} else {
+			iceAsteroid.aura = false
 		}
 	}
 

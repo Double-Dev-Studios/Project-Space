@@ -22,20 +22,19 @@
 			y: getRandomInt(40, canvas.height - 40),
 			width: 18 * gameScale,
 			height: 18 * gameScale,
-			x2: this.width * gameScale + this.x,
-			y2: this.height * gameScale + this.y,
+			x2: this.width + this.x,
+			y2: this.height + this.y,
 			speedX: 0.7,
 			show: false,
 			use: false
 		}
 		
 		
-		
 	//funciones de ice asteroid
 		function dibujarIceAsteroid(){
 			
 			if (iceAsteroid.show == true) {
-				ctx.drawImage(sprIceAsteroid, iceAsteroid.x, iceAsteroid.y, iceAsteroid.width, iceAsteroid.height)
+					ctx.drawImage(sprIceAsteroid, iceAsteroid.x, iceAsteroid.y, iceAsteroid.width, iceAsteroid.height)
 			}
 		}
 		
@@ -49,7 +48,7 @@
 				
 				iceAsteroid.x2 = iceAsteroid.width + iceAsteroid.x
 				iceAsteroid.y2 = iceAsteroid.height + iceAsteroid.y
-				
+					
 			} else {
 				iceAsteroid.show = false
 			}

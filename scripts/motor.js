@@ -25,6 +25,7 @@ fullboton.addEventListener("click", fullscreen);
 			}
 
 			function dibujarEnemigos(){
+				dibujarIceAsteroidAura()
 				dibujarLava()
 				dibujarSatelite()
 				dibujarSateliteSpecial()
@@ -57,6 +58,7 @@ fullboton.addEventListener("click", fullscreen);
 				actualizarAsteroid2()
 				actualizarFireAsteroid()
 				actualizarIceAsteroid()
+				actualizarIceAsteroidAura()
 				actualizarMiniAsteroid()
 				actualizarSatelite()
 				actualizarSateliteSpecial()
@@ -105,6 +107,11 @@ fullboton.addEventListener("click", fullscreen);
 					musicSaturn.currentTime = 0;
 					musicSaturn.play();
 				}
+				
+				if (musicUranus.currentTime > 89){
+					musicUranus.currentTime = 0;
+					musicUranus.play();
+				}
 			}
 
 
@@ -142,6 +149,11 @@ fullboton.addEventListener("click", fullscreen);
 				if (actualBGString == "bgSaturno") {
 					musicSaturn.currentTime = 0;
 					musicSaturn.play();
+				}
+				
+				if (actualBGString == "bgUrano") {
+					musicUranus.currentTime = 0;
+					musicUranus.play();
 				}
 			}
 
@@ -369,6 +381,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicAsteroidBelt.pause()
 				musicJupiter.pause()
 				musicSaturn.pause()
+				musicUranus.pause()
 			}
 
 
@@ -475,6 +488,17 @@ fullboton.addEventListener("click", fullscreen);
 					fireAsteroid.use = true
 					miniAsteroid.use = true
 					iceAsteroid.use = true
+				}
+				
+				if (actualBGString == "bgUrano"){
+					satelite.use = true
+					sateliteSpecial.use = true
+					asteroid.use = true
+					asteroid2.use = true
+					fireAsteroid.use = true
+					fireAsteroid.hotLevel = 0.15
+					iceAsteroid.use = true
+					iceAsteroidAura.use = true
 				}
 
 			}

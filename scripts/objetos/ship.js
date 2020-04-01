@@ -53,19 +53,39 @@
 			ship.x -= ship.speed
 			
 			if (ship.show == true){
+				//velocidad normal o rapida
 				if (ship.speed >= 1.5){
 					temp.value += bg.tempAdd
 				}
 			}
 			
 			if (ship.show == true){
+				//velocidad menor que normal
 				if (ship.speed < 1.5){
+					//temperaura mayor que minima
 					if (bg.minTemp < temp.realValue){
-						temp.value -= 0.05
+						
+						if (bg.tempAdd <= -0.5){
+							temp.value -= 0.11
+						} else {
+							
+							if (bg.tempAdd > 0){
+								temp.value -= 0.05
+								
+							} else {
+								temp.value -= 0.1
+							}
+						}
+						
+					//temperatura menor que minima
 					} else {
 						
-						temp.value -= 0.01
 						
+						if (bg.tempAdd > 0){
+							temp.value -= 0.01
+						} else {
+							temp.value -= 0.1
+						}
 					}
 				}
 			}
@@ -283,7 +303,7 @@
 			
 			if (ship.speed >= 4.5){
 				particles.blue = true
-				temp.value += 0.1
+				temp.value += fireAsteroid.hotLevel
 			} else {
 				particles.blue = false
 			}
