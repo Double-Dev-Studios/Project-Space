@@ -10,4 +10,6 @@ Moon,
 Venus,
 Mars,
 Asteroid Belt,
-Jupiter
+Jupiter,
+Saturn,
+Uranus
