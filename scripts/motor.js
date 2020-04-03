@@ -27,6 +27,7 @@ fullboton.addEventListener("click", fullscreen);
 			function dibujarEnemigos(){
 				dibujarIceAsteroidAura()
 				dibujarLava()
+				dibujarWater()
 				dibujarSatelite()
 				dibujarSateliteSpecial()
 				dibujarAsteroid()
@@ -63,6 +64,7 @@ fullboton.addEventListener("click", fullscreen);
 				actualizarSatelite()
 				actualizarSateliteSpecial()
 				actualizarLava()
+				actualizarWater()
 				actualizarTwister()
 				actualizarTemp()
 				actualizarBigAsteroid()
@@ -112,6 +114,11 @@ fullboton.addEventListener("click", fullscreen);
 					musicUranus.currentTime = 0;
 					musicUranus.play();
 				}
+				
+				if (musicNeptune.currentTime > 76){
+					musicNeptune.currentTime = 0;
+					musicNeptune.play();
+				}
 			}
 
 
@@ -154,6 +161,11 @@ fullboton.addEventListener("click", fullscreen);
 				if (actualBGString == "bgUrano") {
 					musicUranus.currentTime = 0;
 					musicUranus.play();
+				}
+				
+				if (actualBGString == "bgNeptuno") {
+					musicNeptune.currentTime = 0;
+					musicNeptune.play();
 				}
 			}
 
@@ -333,6 +345,35 @@ fullboton.addEventListener("click", fullscreen);
 					}
 
 				}
+				
+				
+				
+				
+				//water
+				if (water.use == true){
+
+					if (contadorWater > 0){
+						contadorWater -= 1
+
+						if (contadorWater < 51){
+							if (contadorWater > 49){
+								water.x = getRandomInt(256, canvas.width + 256),
+								sprWater = sprWater0
+								sprWaterString = "sprWater0"
+								water.show = true
+							}
+						}
+					}
+
+					if (contadorWater <= 0){
+						generarWater()
+						contadorWater = 5
+						if (sprWaterString == "sprWater4"){
+							contadorWater = 200
+						}
+					}
+
+				}
 
 
 				//disparos
@@ -382,6 +423,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicJupiter.pause()
 				musicSaturn.pause()
 				musicUranus.pause()
+				musicNeptune.pause()
 			}
 
 
@@ -499,6 +541,18 @@ fullboton.addEventListener("click", fullscreen);
 					fireAsteroid.hotLevel = 0.15
 					iceAsteroid.use = true
 					iceAsteroidAura.use = true
+				}
+				
+				if (actualBGString == "bgNeptuno"){
+					satelite.use = true
+					sateliteSpecial.use = true
+					asteroid.use = true
+					asteroid2.use = true
+					fireAsteroid.use = true
+					fireAsteroid.hotLevel = 0.16
+					iceAsteroid.use = true
+					iceAsteroidAura.use = true
+					water.use = true
 				}
 
 			}

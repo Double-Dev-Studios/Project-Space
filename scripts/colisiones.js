@@ -266,10 +266,10 @@
 							
 							if (iceAsteroidAura.show == true) {
 								
-								if (iceAsteroidAura.x2 >= shipHitbox.x) {
-									if (iceAsteroidAura.x <= shipHitbox.x2) {
-										if (iceAsteroidAura.y2 >= shipHitbox.y) {
-											if (iceAsteroidAura.y <= shipHitbox.y2) {
+								if (iceAsteroidAura.x2 -32 >= shipHitbox.x) {
+									if (iceAsteroidAura.x +32 <= shipHitbox.x2) {
+										if (iceAsteroidAura.y2 -32 >= shipHitbox.y) {
+											if (iceAsteroidAura.y +32 <= shipHitbox.y2) {
 												
 												ship.speed = 0.5
 												
@@ -393,6 +393,27 @@
 								if (lavaHitbox.x <= shipHitbox.x2) {
 									if (lavaHitbox.y2 >= shipHitbox.y) {
 										if (lavaHitbox.y <= shipHitbox.y2) {
+											
+											shipKill()
+										}
+									}
+								}
+							}
+						}
+					}
+					
+					
+					
+					
+					// Water al tocar ship
+					
+					if (ship.show == true){
+						if (water.show == true) {
+							
+							if (waterHitbox.x2 >= shipHitbox.x) {
+								if (waterHitbox.x <= shipHitbox.x2) {
+									if (waterHitbox.y2 >= shipHitbox.y) {
+										if (waterHitbox.y <= shipHitbox.y2) {
 											
 											shipKill()
 										}
@@ -1022,6 +1043,66 @@
 									if (lavaHitbox.x <= disparo3.x2) {
 										if (lavaHitbox.y2 >= disparo3.y) {
 											if (lavaHitbox.y <= disparo3.y2) {
+												
+												disparo3.disparado = false
+											}
+										}
+									}
+								}
+								
+							}
+						}
+						
+						
+						
+						
+						
+						// water al tocar disparos
+							
+						//disparo 1
+						if (water.show == true) {
+							if (disparo.disparado == true) {
+									
+								if (waterHitbox.x2 >= disparo.x) {
+									if (waterHitbox.x <= disparo.x2) {
+										if (waterHitbox.y2 >= disparo.y) {
+											if (waterHitbox.y <= disparo.y2) {
+												
+												disparo.disparado = false
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 2
+						if (water.show == true) {
+							if (disparo2.disparado == true) {
+								
+								if (waterHitbox.x2 >= disparo2.x) {
+									if (waterHitbox.x <= disparo2.x2) {
+										if (waterHitbox.y2 >= disparo2.y) {
+											if (waterHitbox.y <= disparo2.y2) {
+												
+												disparo2.disparado = false
+											}
+										}
+									}
+								}
+								
+							}
+						}
+							
+						//disparo 3
+						if (water.show == true) {
+							if (disparo2.disparado == true) {
+								
+								if (waterHitbox.x2 >= disparo3.x) {
+									if (waterHitbox.x <= disparo3.x2) {
+										if (waterHitbox.y2 >= disparo3.y) {
+											if (waterHitbox.y <= disparo3.y2) {
 												
 												disparo3.disparado = false
 											}
