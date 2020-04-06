@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgNeptuno = new Image()
-	bgNeptuno.src = "bg/neptuno.png"
+	bgNeptuno.src = "../../bg/neptuno.png"
 
 // variables de fondo
 	var actualBG = bgNeptuno

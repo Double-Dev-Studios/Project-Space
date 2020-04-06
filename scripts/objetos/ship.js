@@ -6,10 +6,10 @@
 		var sprShipDmg = new Image()
 		var sprShipExplosion = new Image()
 		var sprShipHP = new Image()
-		sprShipNormal.src = "sprites/ship/ship.png"
-		sprShipDmg.src = "sprites/ship/shipDmg.png"
-		sprShipExplosion.src = "sprites/ship/explosion.png"
-		sprShipHP.src = "sprites/ship/shipHP.png"
+		sprShipNormal.src = "../../sprites/ship/ship.png"
+		sprShipDmg.src = "../../sprites/ship/shipDmg.png"
+		sprShipExplosion.src = "../../sprites/ship/explosion.png"
+		sprShipHP.src = "../../sprites/ship/shipHP.png"
 		
 		sprShip = sprShipNormal
 		sprShipString = "sprShipNormal"
@@ -166,7 +166,7 @@
 		
 		var gameoverShow = false
 		var sprGameover = new Image()
-		sprGameover.src = "menu/gameover.png"
+		sprGameover.src = "../../menu/gameover.png"
 		
 		function dibujarGameover(){
 			if (gameoverShow == true){
@@ -203,12 +203,12 @@
 	var sprShield3 = new Image()
 	var sprShield4 = new Image()
 	var sprShield5 = new Image()
-	sprShield0.src = "sprites/shield/0.png"
-	sprShield1.src = "sprites/shield/1.png"
-	sprShield2.src = "sprites/shield/2.png"
-	sprShield3.src = "sprites/shield/3.png"
-	sprShield4.src = "sprites/shield/4.png"
-	sprShield5.src = "sprites/shield/5.png"
+	sprShield0.src = "../../sprites/shield/0.png"
+	sprShield1.src = "../../sprites/shield/1.png"
+	sprShield2.src = "../../sprites/shield/2.png"
+	sprShield3.src = "../../sprites/shield/3.png"
+	sprShield4.src = "../../sprites/shield/4.png"
+	sprShield5.src = "../../sprites/shield/5.png"
 		
 	var sprShield = sprShield5
 	var sprShieldString = 5
@@ -255,10 +255,10 @@
 	var sprParticles2 = new Image()
 	var sprParticlesBlue1 = new Image()
 	var sprParticlesBlue2 = new Image()
-	sprParticles1.src = "sprites/ship/particles.png"
-	sprParticles2.src = "sprites/ship/particles2.png"
-	sprParticlesBlue1.src = "sprites/ship/particlesBlue.png"
-	sprParticlesBlue2.src = "sprites/ship/particlesBlue2.png"
+	sprParticles1.src = "../../sprites/ship/particles.png"
+	sprParticles2.src = "../../sprites/ship/particles2.png"
+	sprParticlesBlue1.src = "../../sprites/ship/particlesBlue.png"
+	sprParticlesBlue2.src = "../../sprites/ship/particlesBlue2.png"
 	
 	
 	var sprParticles = sprParticles1

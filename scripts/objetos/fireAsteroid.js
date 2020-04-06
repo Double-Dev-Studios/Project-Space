@@ -7,15 +7,17 @@
 		var sprFireAsteroidDestruct3 = new Image()
 		var sprFireAsteroid = sprFireAsteroidNormal
 		var sprFireAsteroidString = "sprFireAsteroidNormal"
-		sprFireAsteroidNormal.src = "sprites/fireAsteroid/normal.png"
-		sprFireAsteroidDestruct1.src = "sprites/fireAsteroid/destruct1.png"
-		sprFireAsteroidDestruct2.src = "sprites/fireAsteroid/destruct2.png"
-		sprFireAsteroidDestruct3.src = "sprites/fireAsteroid/destruct3.png"
+		sprFireAsteroidNormal.src = "../../sprites/fireAsteroid/normal.png"
+		sprFireAsteroidDestruct1.src = "../../sprites/fireAsteroid/destruct1.png"
+		sprFireAsteroidDestruct2.src = "../../sprites/fireAsteroid/destruct2.png"
+		sprFireAsteroidDestruct3.src = "../../sprites/fireAsteroid/destruct3.png"
 		
 	//variables de fire asteroid
 		
 		var contadorFireAsteroid = 20
 		var fireAsteroidDamaged = false
+		
+		var fireAsteroidUse = false
 		
 		var fireAsteroid = {
 			x: canvas.width + 72,
@@ -26,8 +28,7 @@
 			y2: this.height * gameScale + this.y,
 			speedX: 1.5,
 			hotLevel: 0.1,
-			show: false,
-			use: false
+			show: false
 		}
 		
 		
@@ -42,7 +43,7 @@
 		
 		
 		function actualizarFireAsteroid(){
-			if (fireAsteroid.use == true) {
+			if (fireAsteroidUse == true) {
 					
 				fireAsteroid.x -= ship.speed
 				

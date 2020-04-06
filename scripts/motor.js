@@ -25,18 +25,19 @@ fullboton.addEventListener("click", fullscreen);
 			}
 
 			function dibujarEnemigos(){
-				dibujarIceAsteroidAura()
-				dibujarLava()
-				dibujarWater()
-				dibujarSatelite()
-				dibujarSateliteSpecial()
-				dibujarAsteroid()
-				dibujarAsteroid2()
-				dibujarFireAsteroid()
-				dibujarIceAsteroid()
-				dibujarMiniAsteroid()
-				dibujarTwister()
-				dibujarBigAsteroid()
+				if (iceAsteroidAuraUse == true) {dibujarIceAsteroidAura()}
+				if (fireAsteroidAuraUse == true) {dibujarFireAsteroidAura()}
+				if (lavaUse == true) {dibujarLava()}
+				if (waterUse == true) {dibujarWater()}
+				if (sateliteUse == true) {dibujarSatelite()}
+				if (sateliteSpecialUse == true) {dibujarSateliteSpecial()}
+				if (asteroidUse == true) {dibujarAsteroid()}
+				if (asteroid2Use == true) {dibujarAsteroid2()}
+				if (fireAsteroidUse == true) {dibujarFireAsteroid()}
+				if (iceAsteroidUse == true) {dibujarIceAsteroid()}
+				if (miniAsteroidUse == true) {dibujarMiniAsteroid()}
+				if (twisterUse == true) {dibujarTwister()}
+				if (bigAsteroidUse == true) {dibujarBigAsteroid()}
 			}
 
 
@@ -50,25 +51,26 @@ fullboton.addEventListener("click", fullscreen);
 				actualizarParticles()
 
 				actualizarEnemigos()
+				
+				actualizarTemp()
 				actualizarDisparos()
 
 			}
 
 			function actualizarEnemigos() {
-				actualizarAsteroid()
-				actualizarAsteroid2()
-				actualizarFireAsteroid()
-				actualizarIceAsteroid()
-				actualizarIceAsteroidAura()
-				actualizarMiniAsteroid()
-				actualizarSatelite()
-				actualizarSateliteSpecial()
-				actualizarLava()
-				actualizarWater()
-				actualizarTwister()
-				actualizarTemp()
-				actualizarBigAsteroid()
-				
+				if (asteroidUse == true) {actualizarAsteroid()}
+				if (asteroid2Use == true) {actualizarAsteroid2()}
+				if (fireAsteroidUse == true) {actualizarFireAsteroid()}
+				if (fireAsteroidAuraUse == true) {actualizarFireAsteroidAura()}
+				if (iceAsteroidUse == true) {actualizarIceAsteroid()}
+				if (iceAsteroidAuraUse == true) {actualizarIceAsteroidAura()}
+				if (bigAsteroidUse == true) {actualizarBigAsteroid()}
+				if (miniAsteroidUse == true) {actualizarMiniAsteroid()}
+				if (sateliteUse == true) {actualizarSatelite()}
+				if (sateliteSpecialUse == true) {actualizarSateliteSpecial()}
+				if (lavaUse == true) {actualizarLava()}
+				if (waterUse == true) {actualizarWater()}
+				if (twisterUse == true) {actualizarTwister()}
 			}
 
 
@@ -119,6 +121,11 @@ fullboton.addEventListener("click", fullscreen);
 					musicNeptune.currentTime = 0;
 					musicNeptune.play();
 				}
+				
+				if (musicSpace.currentTime > 85){
+					musicSpace.currentTime = 0;
+					musicSpace.play();
+				}
 			}
 
 
@@ -166,6 +173,11 @@ fullboton.addEventListener("click", fullscreen);
 				if (actualBGString == "bgNeptuno") {
 					musicNeptune.currentTime = 0;
 					musicNeptune.play();
+				}
+				
+				if (actualBGString == "bgEspacio") {
+					musicSpace.currentTime = 0;
+					musicSpace.play();
 				}
 			}
 
@@ -235,30 +247,35 @@ fullboton.addEventListener("click", fullscreen);
 
 
 				//asteroid
-				if (contadorAsteroid > 0){
-					contadorAsteroid -= 1
-				}
+				if (asteroidUse == true){
+				
+					if (contadorAsteroid > 0){
+						contadorAsteroid -= 1
+					}
 
-				if (contadorAsteroid <= 0){
-					asteroidDamaged = false
+					if (contadorAsteroid <= 0){
+						asteroidDamaged = false
+					}
+					
 				}
-
 
 				//asteroid 2
-				if (contadorAsteroid2 > 0){
-					contadorAsteroid2 -= 1
-				}
+				if (asteroid2Use == true){
+					
+					if (contadorAsteroid2 > 0){
+						contadorAsteroid2 -= 1
+					}
 
-				if (contadorAsteroid2 <= 0){
-					asteroid2Damaged = false
+					if (contadorAsteroid2 <= 0){
+						asteroid2Damaged = false
+					}
 				}
-
 
 
 
 				//miniAsteroid
 
-				if (miniAsteroid.use == true) {
+				if (miniAsteroidUse == true) {
 					if (contadorMiniAsteroid > 0){
 						contadorMiniAsteroid -= 1
 					}
@@ -272,7 +289,7 @@ fullboton.addEventListener("click", fullscreen);
 
 				//fireAsteroid
 
-				if (fireAsteroid.use == true) {
+				if (fireAsteroidUse == true) {
 					if (contadorFireAsteroid > 0){
 						contadorFireAsteroid -= 1
 					}
@@ -288,7 +305,7 @@ fullboton.addEventListener("click", fullscreen);
 				
 				//iceAsteroid
 
-				if (iceAsteroid.use == true) {
+				if (iceAsteroidUse == true) {
 					if (contadorIceAsteroid > 0){
 						contadorIceAsteroid -= 1
 					}
@@ -300,28 +317,33 @@ fullboton.addEventListener("click", fullscreen);
 				
 				
 				//bigAsteroid
-				if (contadorBigAsteroid > 0){
-					contadorBigAsteroid -= 1
-				}
+				
+				if (bigAsteroidUse == true) {
+					if (contadorBigAsteroid > 0){
+						contadorBigAsteroid -= 1
+					}
 
-				if (contadorBigAsteroid <= 0){
-					bigAsteroidDamaged = false
+					if (contadorBigAsteroid <= 0){
+						bigAsteroidDamaged = false
+					}
 				}
 				
 
 
 				//satelite
-				if (contadorSatelite > 0){
-					contadorSatelite -= 1
-				}
+				if (sateliteUse == true) {
+					if (contadorSatelite > 0){
+						contadorSatelite -= 1
+					}
 
-				if (contadorSatelite <= 0){
-					sateliteDamaged = false
+					if (contadorSatelite <= 0){
+						sateliteDamaged = false
+					}
 				}
 
 
 				//lava
-				if (lava.use == true){
+				if (lavaUse == true){
 
 					if (contadorLava > 0){
 						contadorLava -= 1
@@ -350,7 +372,7 @@ fullboton.addEventListener("click", fullscreen);
 				
 				
 				//water
-				if (water.use == true){
+				if (waterUse == true){
 
 					if (contadorWater > 0){
 						contadorWater -= 1
@@ -424,6 +446,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicSaturn.pause()
 				musicUranus.pause()
 				musicNeptune.pause()
+				musicSpace.pause()
 			}
 
 
@@ -471,88 +494,102 @@ fullboton.addEventListener("click", fullscreen);
 
 			function cambiarBG(){
 				if (actualBGString == "bgTierra"){
-					satelite.use = true
-					asteroid.use = true
-					asteroid2.use = true
+					sateliteUse = true
+					asteroidUse = true
+					asteroid2Use = true
 				}
 
 				if (actualBGString == "bgLuna"){
-					satelite.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					miniAsteroid.use = true
+					sateliteUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
 				}
 
 				if (actualBGString == "bgVenus"){
-					satelite.use = true
-					sateliteSpecial.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					miniAsteroid.use = true
-					lava.use = true
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidAuraUse = true
+					lavaUse = true
 				}
 
 				if (actualBGString == "bgMarte"){
-					satelite.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					miniAsteroid.use = true
-					fireAsteroid.use = true
+					sateliteUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
 				}
 				
 				if (actualBGString == "bgAsteroides"){
-					satelite.use = true
-					sateliteSpecial.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					miniAsteroid.use = true
-					fireAsteroid.use = true
-					iceAsteroid.use = true
-					bigAsteroid.use = true
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					iceAsteroidUse = true
+					bigAsteroidUse = true
 				}
 				
 				if (actualBGString == "bgJupiter"){
-					satelite.use = true
-					sateliteSpecial.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					twister.use = true
-					fireAsteroid.use = true
-					iceAsteroid.use = true
-					bigAsteroid.use = true
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					twisterUse = true
+					fireAsteroidUse = true
+					iceAsteroidUse = true
+					bigAsteroidUse = true
 				}
 				
 				if (actualBGString == "bgSaturno"){
-					satelite.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					twister.use = true
-					fireAsteroid.use = true
-					miniAsteroid.use = true
-					iceAsteroid.use = true
+					sateliteUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					twisterUse = true
+					fireAsteroidUse = true
+					miniAsteroidUse = true
+					iceAsteroidUse = true
 				}
 				
 				if (actualBGString == "bgUrano"){
-					satelite.use = true
-					sateliteSpecial.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					fireAsteroid.use = true
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					fireAsteroidUse = true
 					fireAsteroid.hotLevel = 0.15
-					iceAsteroid.use = true
+					iceAsteroidUse = true
 					iceAsteroidAura.use = true
 				}
 				
 				if (actualBGString == "bgNeptuno"){
-					satelite.use = true
-					sateliteSpecial.use = true
-					asteroid.use = true
-					asteroid2.use = true
-					fireAsteroid.use = true
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					fireAsteroidUse = true
 					fireAsteroid.hotLevel = 0.16
-					iceAsteroid.use = true
-					iceAsteroidAura.use = true
-					water.use = true
+					iceAsteroidUse = true
+					iceAsteroidAuraUse = true
+					waterUse = true
+				}
+				
+				if (actualBGString == "bgEspacio"){
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					iceAsteroidUse = true
+					iceAsteroidAuraUse = true
+					bigAsteroidUse = true
 				}
 
 			}

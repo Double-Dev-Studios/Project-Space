@@ -8,15 +8,17 @@
 		var sprAsteroidDestruct3 = new Image()
 		var sprAsteroid = sprAsteroidNormal
 		var sprAsteroidString = "sprAsteroidNormal"
-		sprAsteroidNormal.src = "sprites/asteroid/normal.png"
-		sprAsteroidDestruct1.src = "sprites/asteroid/destruct1.png"
-		sprAsteroidDestruct2.src = "sprites/asteroid/destruct2.png"
-		sprAsteroidDestruct3.src = "sprites/asteroid/destruct3.png"
+		sprAsteroidNormal.src = "../../sprites/asteroid/normal.png"
+		sprAsteroidDestruct1.src = "../../sprites/asteroid/destruct1.png"
+		sprAsteroidDestruct2.src = "../../sprites/asteroid/destruct2.png"
+		sprAsteroidDestruct3.src = "../../sprites/asteroid/destruct3.png"
 		
 	//variables de asteroid
 		
 		var contadorAsteroid = 20
 		var asteroidDamaged = false
+		
+		var asteroidUse = false
 		
 		var asteroid = {
 			x: canvas.width + 72,
@@ -26,8 +28,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
-			show: true,
-			use: false
+			show: true
 		}
 		
 		
@@ -42,7 +43,7 @@
 		
 		
 		function actualizarAsteroid(){
-			if (asteroid.use == true) {
+			if (asteroidUse == true) {
 					
 				asteroid.x -= ship.speed
 				
@@ -106,6 +107,8 @@
 		var contadorAsteroid2 = 20
 		var asteroid2Damaged = false
 		
+		var asteroid2Use = false
+		
 		var asteroid2 = {
 			x: canvas.width + getRandomInt(72, 72 * 7),
 			y: getRandomInt(40, canvas.height - 40),
@@ -114,8 +117,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
-			show: true,
-			use: true
+			show: true
 		}
 						
 						
@@ -130,7 +132,7 @@
 		
 		
 		function actualizarAsteroid2(){
-			if (asteroid2.use == true) {
+			if (asteroid2Use == true) {
 			
 				asteroid2.x -= ship.speed
 				

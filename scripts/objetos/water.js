@@ -7,11 +7,11 @@ var sprWater1 = new Image()
 var sprWater2 = new Image()
 var sprWater3 = new Image()
 var sprWater4 = new Image()
-sprWater0.src = "sprites/water/water0.png"
-sprWater1.src = "sprites/water/water1.png"
-sprWater2.src = "sprites/water/water2.png"
-sprWater3.src = "sprites/water/water3.png"
-sprWater4.src = "sprites/water/water4.png"
+sprWater0.src = "../../sprites/water/water0.png"
+sprWater1.src = "../../sprites/water/water1.png"
+sprWater2.src = "../../sprites/water/water2.png"
+sprWater3.src = "../../sprites/water/water3.png"
+sprWater4.src = "../../sprites/water/water4.png"
 
 var sprWater = sprWater0
 var sprWaterString = "sprWater0"
@@ -21,6 +21,8 @@ var sprWaterString = "sprWater0"
 
 var contadorWater = 600
 
+var waterUse = false
+
 var water = {
 	x: getRandomInt(64, canvas.width - 64),
 	y: 0,
@@ -28,8 +30,7 @@ var water = {
 	height: 64 * gameScale,
 	x2: this.width * gameScale + this.x,
 	y2: this.height * gameScale + this.y,
-	show: false,
-	use: false
+	show: false
 }
 
 var waterHitbox = {
@@ -51,7 +52,7 @@ function dibujarWater(){
 }
 
 function actualizarWater(){
-	if (water.use == true){
+	if (waterUse == true){
 		
 		water.y = 0,
 		
@@ -60,7 +61,7 @@ function actualizarWater(){
 		waterHitbox.x = water.x
 		waterHitbox.width = water.width
 		
-		if (sprLavaString == "sprWater0"){
+		if (sprWaterString == "sprWater0"){
 			waterHitbox.height = 0
 		}
 		

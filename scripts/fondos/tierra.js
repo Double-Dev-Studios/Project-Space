@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgTierra = new Image()
-	bgTierra.src = "bg/tierra.png"
+	bgTierra.src = "../../bg/tierra.png"
 
 // variables de fondo
 	var actualBG = bgTierra

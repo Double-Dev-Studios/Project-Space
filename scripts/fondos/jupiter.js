@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgJupiter = new Image()
-	bgJupiter.src = "bg/jupiter.png"
+	bgJupiter.src = "../../bg/jupiter.png"
 
 // variables de fondo
 	var actualBG = bgJupiter

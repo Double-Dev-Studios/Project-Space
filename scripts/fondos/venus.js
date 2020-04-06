@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgVenus = new Image()
-	bgVenus.src = "bg/venus.png"
+	bgVenus.src = "../../bg/venus.png"
 
 // variables de fondo
 	var actualBG = bgVenus

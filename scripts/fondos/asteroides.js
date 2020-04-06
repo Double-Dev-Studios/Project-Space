@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgAsteroides = new Image()
-	bgAsteroides.src = "bg/asteroides.png"
+	bgAsteroides.src = "../../bg/asteroides.png"
 
 // variables de fondo
 	var actualBG = bgAsteroides

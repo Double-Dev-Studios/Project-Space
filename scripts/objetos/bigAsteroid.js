@@ -8,15 +8,17 @@
 		var sprBigAsteroidDestruct3 = new Image()
 		var sprBigAsteroid = sprBigAsteroidNormal
 		var sprBigAsteroidString = "sprBigAsteroidNormal"
-		sprBigAsteroidNormal.src = "sprites/bigAsteroid/normal.png"
-		sprBigAsteroidDestruct1.src = "sprites/bigAsteroid/destruct1.png"
-		sprBigAsteroidDestruct2.src = "sprites/bigAsteroid/destruct2.png"
-		sprBigAsteroidDestruct3.src = "sprites/bigAsteroid/destruct3.png"
+		sprBigAsteroidNormal.src = "../../sprites/bigAsteroid/normal.png"
+		sprBigAsteroidDestruct1.src = "../../sprites/bigAsteroid/destruct1.png"
+		sprBigAsteroidDestruct2.src = "../../sprites/bigAsteroid/destruct2.png"
+		sprBigAsteroidDestruct3.src = "../../sprites/bigAsteroid/destruct3.png"
 		
 	//variables de bigAsteroid
 		
 		var contadorBigAsteroid = 20
 		var bigAsteroidDamaged = false
+		
+		var bigAsteroidUse = false
 		
 		var bigAsteroid = {
 			x: canvas.width + 128 * getRandomInt(1, 4),
@@ -26,8 +28,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
-			show: false,
-			use: false
+			show: false
 		}
 		
 		
@@ -42,7 +43,7 @@
 		
 		
 		function actualizarBigAsteroid(){
-			if (bigAsteroid.use == true) {
+			if (bigAsteroidUse == true) {
 					
 				bigAsteroid.x -= ship.speed
 				

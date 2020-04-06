@@ -7,15 +7,17 @@
 		var sprMiniAsteroidDestruct3 = new Image()
 		var sprMiniAsteroid = sprMiniAsteroidNormal
 		var sprMiniAsteroidString = "sprMiniAsteroidNormal"
-		sprMiniAsteroidNormal.src = "sprites/miniAsteroid/normal.png"
-		sprMiniAsteroidDestruct1.src = "sprites/miniAsteroid/destruct1.png"
-		sprMiniAsteroidDestruct2.src = "sprites/miniAsteroid/destruct2.png"
-		sprMiniAsteroidDestruct3.src = "sprites/miniAsteroid/destruct3.png"
+		sprMiniAsteroidNormal.src = "../../sprites/miniAsteroid/normal.png"
+		sprMiniAsteroidDestruct1.src = "../../sprites/miniAsteroid/destruct1.png"
+		sprMiniAsteroidDestruct2.src = "../../sprites/miniAsteroid/destruct2.png"
+		sprMiniAsteroidDestruct3.src = "../../sprites/miniAsteroid/destruct3.png"
 		
 	//variables de miniAsteroid
 		
 		var contadorMiniAsteroid = 10
 		var miniAsteroidDamaged = false
+		
+		var miniAsteroidUse = false
 		
 		var miniAsteroid = {
 			x: canvas.width + (72 * getRandomInt(3, 10)),
@@ -25,8 +27,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1.5,
-			show: false,
-			use: false
+			show: false
 		}
 		
 		
@@ -41,7 +42,7 @@
 		
 		
 		function actualizarMiniAsteroid(){
-			if (miniAsteroid.use == true) {
+			if (miniAsteroidUse == true) {
 			
 				miniAsteroid.x -= ship.speed
 				

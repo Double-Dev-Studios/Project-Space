@@ -3,7 +3,7 @@
 	//sprites de disparos (aplica a todos)
 	
 	var sprBullet = new Image()
-	sprBullet.src = "sprites/ship/bullet.png"
+	sprBullet.src = "../../sprites/ship/bullet.png"
 	
 	
 	

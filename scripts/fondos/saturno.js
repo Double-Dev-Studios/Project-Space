@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgSaturno = new Image()
-	bgSaturno.src = "bg/saturno.png"
+	bgSaturno.src = "../../bg/saturno.png"
 
 // variables de fondo
 	var actualBG = bgSaturno

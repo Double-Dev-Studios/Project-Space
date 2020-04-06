@@ -7,15 +7,17 @@
 		var sprIceAsteroidDestruct3 = new Image()
 		var sprIceAsteroid = sprIceAsteroidNormal
 		var sprIceAsteroidString = "sprIceAsteroidNormal"
-		sprIceAsteroidNormal.src = "sprites/iceAsteroid/normal.png"
-		sprIceAsteroidDestruct1.src = "sprites/iceAsteroid/destruct1.png"
-		sprIceAsteroidDestruct2.src = "sprites/iceAsteroid/destruct2.png"
-		sprIceAsteroidDestruct3.src = "sprites/iceAsteroid/destruct3.png"
+		sprIceAsteroidNormal.src = "../../sprites/iceAsteroid/normal.png"
+		sprIceAsteroidDestruct1.src = "../../sprites/iceAsteroid/destruct1.png"
+		sprIceAsteroidDestruct2.src = "../../sprites/iceAsteroid/destruct2.png"
+		sprIceAsteroidDestruct3.src = "../../sprites/iceAsteroid/destruct3.png"
 		
 	//variables de ice asteroid
 		
 		var contadorIceAsteroid = 20
 		var iceAsteroidDamaged = false
+		
+		var iceAsteroidUse = false
 		
 		var iceAsteroid = {
 			x: canvas.width + 72 * getRandomInt(1, 5),
@@ -25,8 +27,7 @@
 			x2: this.width + this.x,
 			y2: this.height + this.y,
 			speedX: 0.7,
-			show: false,
-			use: false
+			show: false
 		}
 		
 		
@@ -40,7 +41,7 @@
 		
 		
 		function actualizarIceAsteroid(){
-			if (iceAsteroid.use == true) {
+			if (iceAsteroidUse == true) {
 					
 				iceAsteroid.x -= ship.speed
 				

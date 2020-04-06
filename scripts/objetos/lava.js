@@ -7,11 +7,11 @@ var sprLava1 = new Image()
 var sprLava2 = new Image()
 var sprLava3 = new Image()
 var sprLava4 = new Image()
-sprLava0.src = "sprites/lava/lava0.png"
-sprLava1.src = "sprites/lava/lava1.png"
-sprLava2.src = "sprites/lava/lava2.png"
-sprLava3.src = "sprites/lava/lava3.png"
-sprLava4.src = "sprites/lava/lava4.png"
+sprLava0.src = "../../sprites/lava/lava0.png"
+sprLava1.src = "../../sprites/lava/lava1.png"
+sprLava2.src = "../../sprites/lava/lava2.png"
+sprLava3.src = "../../sprites/lava/lava3.png"
+sprLava4.src = "../../sprites/lava/lava4.png"
 
 var sprLava = sprLava0
 var sprLavaString = "sprLava0"
@@ -21,6 +21,8 @@ var sprLavaString = "sprLava0"
 
 var contadorLava = 600
 
+var lavaUse = false
+
 var lava = {
 	x: getRandomInt(64, canvas.width - 64),
 	y: canvas.height - (64 * gameScale),
@@ -28,8 +30,7 @@ var lava = {
 	height: 64 * gameScale,
 	x2: this.width * gameScale + this.x,
 	y2: this.height * gameScale + this.y,
-	show: false,
-	use: false
+	show: false
 }
 
 var lavaHitbox = {
@@ -51,7 +52,7 @@ function dibujarLava(){
 }
 
 function actualizarLava(){
-	if (lava.use == true){
+	if (lavaUse == true){
 		
 		lava.y = canvas.height - (64 * gameScale),
 		

@@ -7,15 +7,17 @@
 		var sprSateliteDestruct3 = new Image()
 		var sprSatelite = sprSateliteNormal
 		var sprSateliteString = "sprSateliteNormal"
-		sprSateliteNormal.src = "sprites/satelite/normal.png"
-		sprSateliteDestruct1.src = "sprites/satelite/destruct1.png"
-		sprSateliteDestruct2.src = "sprites/satelite/destruct2.png"
-		sprSateliteDestruct3.src = "sprites/satelite/destruct3.png"
+		sprSateliteNormal.src = "../../sprites/satelite/normal.png"
+		sprSateliteDestruct1.src = "../../sprites/satelite/destruct1.png"
+		sprSateliteDestruct2.src = "../../sprites/satelite/destruct2.png"
+		sprSateliteDestruct3.src = "../../sprites/satelite/destruct3.png"
 		
 	//variables de satelite
 		
 		var contadorSatelite = 20
 		var sateliteDamaged = false
+		
+		var sateliteUse = false
 		
 		var satelite = {
 			x: canvas.width + getRandomInt(164, 164 * 7),
@@ -25,8 +27,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 0.2,
-			show: true,
-			use: false
+			show: true
 		}
 		
 		var sateliteHitbox = { 
@@ -50,7 +51,7 @@
 						
 						
 		function actualizarSatelite(){
-			if (satelite.use == true) {
+			if (sateliteUse == true) {
 					
 				//satelite
 				satelite.x -= ship.speed
@@ -119,9 +120,11 @@
 	//sprites de satelite especial
 		
 		var sprSateliteSpecial = new Image()
-		sprSateliteSpecial.src = "sprites/satelite/destructSpecial.png"
+		sprSateliteSpecial.src = "../../sprites/satelite/destructSpecial.png"
 		
 	//variables de satelite especial
+		
+		var sateliteSpecialUse = false
 		
 		var sateliteSpecial = {
 			x: canvas.width + getRandomInt(164, 164 * 7),
@@ -129,8 +132,7 @@
 			x2: satelite.width + this.x,
 			y2: satelite.height + this.y,
 			speedX: 0.4,
-			show: true,
-			use: false
+			show: true
 		}
 		
 		var sateliteSpecialHitbox = { 
@@ -152,7 +154,7 @@
 						
 						
 		function actualizarSateliteSpecial(){
-			if (sateliteSpecial.use == true) {
+			if (sateliteSpecialUse == true) {
 					
 				//satelite especial
 				sateliteSpecial.x -= ship.speed

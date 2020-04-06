@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgLuna = new Image()
-	bgLuna.src = "bg/luna.png"
+	bgLuna.src = "../../bg/luna.png"
 
 // variables de fondo
 	var actualBG = bgLuna

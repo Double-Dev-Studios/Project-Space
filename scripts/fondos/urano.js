@@ -2,7 +2,7 @@
 					
 // fondos
 	var bgUrano = new Image()
-	bgUrano.src = "bg/urano.png"
+	bgUrano.src = "../../bg/urano.png"
 
 // variables de fondo
 	var actualBG = bgUrano

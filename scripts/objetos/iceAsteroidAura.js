@@ -2,11 +2,13 @@
 					
 	//sprites de ice asteroid aura
 		var sprIceAsteroidAura = new Image()
-		sprIceAsteroidAura.src = "sprites/iceAsteroid/aura.png"
+		sprIceAsteroidAura.src = "../../sprites/iceAsteroid/aura.png"
 		
 	//variables de ice asteroid aura
 		
 		var contadorIceAsteroidAura = 20
+		
+		var iceAsteroidAuraUse = false
 		
 		var iceAsteroidAura = {
 			x: canvas.width + 128 * getRandomInt(1, 5),
@@ -16,8 +18,7 @@
 			x2: this.width + this.x,
 			y2: this.height + this.y,
 			speedX: 0.8,
-			show: false,
-			use: false
+			show: false
 		}
 		
 		
@@ -31,9 +32,7 @@
 		
 		
 		function actualizarIceAsteroidAura(){
-			if (iceAsteroidAura.use == true) {
-				
-				iceAsteroidAura.show = true
+			if (iceAsteroidAuraUse == true) {
 					
 				iceAsteroidAura.x -= ship.speed
 				

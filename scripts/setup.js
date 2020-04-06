@@ -40,16 +40,42 @@
 	var musicSaturn = document.createElement('audio');
 	var musicUranus = document.createElement('audio');
 	var musicNeptune = document.createElement('audio');
+	var musicSpace = document.createElement('audio');
 	
-	musicEarth.setAttribute('src', 'music/earth.mp3');
-	musicMoon.setAttribute('src', 'music/moon.mp3');
-	musicVenus.setAttribute('src', 'music/venus.mp3');
-	musicMars.setAttribute('src', 'music/mars.mp3');
-	musicAsteroidBelt.setAttribute('src', 'music/asteroids.mp3');
-	musicJupiter.setAttribute('src', 'music/jupiter.mp3');
-	musicSaturn.setAttribute('src', 'music/saturn.mp3');
-	musicUranus.setAttribute('src', 'music/uranus.mp3');
-	musicNeptune.setAttribute('src', 'music/neptune.mp3');
+	musicEarth.setAttribute('src', '../../music/earth.mp3');
+	musicMoon.setAttribute('src', '../../music/moon.mp3');
+	musicVenus.setAttribute('src', '../../music/venus.mp3');
+	musicMars.setAttribute('src', '../../music/mars.mp3');
+	musicAsteroidBelt.setAttribute('src', '../../music/asteroids.mp3');
+	musicJupiter.setAttribute('src', '../../music/jupiter.mp3');
+	musicSaturn.setAttribute('src', '../../music/saturn.mp3');
+	musicUranus.setAttribute('src', '../../music/uranus.mp3');
+	musicNeptune.setAttribute('src', '../../music/neptune.mp3');
+	musicSpace.setAttribute('src', '../../music/space.mp3');
+
+	//setup de objetos
+	
+	var asteroidUse = false
+	var asteroid2Use = false
+	var miniAsteroidUse = false
+	var bigAsteroidUse = false
+	var fireAsteroidUse = false
+	var fireAsteroidAuraUse = false
+	var iceAsteroidUse = false
+	var iceAsteroidAuraUse = false
+	var sateliteUse = false
+	var sateliteSpecialUse = false
+	var lavaUse = false
+	var waterUse = false
+	var twisterUse = false
+	
+	
+	
+	
+	
+	
+	
+
 
 // getRandomInt, si necesitas un numero entero random entre tal y tal numero usa esta funcion
 	function getRandomInt(min, max) {

@@ -4,8 +4,8 @@
 
 var sprTwister = new Image()
 var sprAlert = new Image()
-sprTwister.src = "sprites/twister/twister.png"
-sprAlert.src = "sprites/twister/alert.png"
+sprTwister.src = "../../sprites/twister/twister.png"
+sprAlert.src = "../../sprites/twister/alert.png"
 var sprTwisterN = sprTwister
 
 //variables
@@ -13,6 +13,8 @@ var sprTwisterN = sprTwister
 var contadorT = 40
 var contadorT2 = 48
 var timer = getRandomInt(50, 100)
+
+var twisterUse = false
 
 var twister = {
     x: getRandomInt(64, canvas.width - 64),
@@ -24,7 +26,6 @@ var twister = {
     x2: this.width + this.x,
     y2: this.height + this.y,
     show: true,
-    use: false,
     alert: true,
     direction: "left"
 }
@@ -32,7 +33,7 @@ var twister = {
 //funciones
 
 function dibujarTwister(){
-	if(twister.use == true){
+	if(twisterUse == true){
 		if(twister.show == true){
 			ctx.drawImage(sprTwisterN, twister.x, twister.y, twister.width, twister.height)
 		}
@@ -40,7 +41,7 @@ function dibujarTwister(){
 }
 
 function actualizarTwister(){
-    if(twister.use){
+    if(twisterUse){
 		
 		twister.x2 = twister.width + twister.x
 		twister.y2 = twister.height + twister.y

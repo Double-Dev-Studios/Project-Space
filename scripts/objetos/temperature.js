@@ -4,8 +4,8 @@
 
 var sprHot = new Image()
 var sprCold = new Image()
-sprHot.src = "menu/hot.png"
-sprCold.src = "menu/cold.png"
+sprHot.src = "../../menu/hot.png"
+sprCold.src = "../../menu/cold.png"
 
 //variables de temperature
 

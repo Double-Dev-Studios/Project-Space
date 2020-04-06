@@ -1,21 +1,21 @@
 //fondo
 					
 // fondos
-	var bgMarte = new Image()
-	bgMarte.src = "../../bg/marte.png"
+	var bgEspacio = new Image()
+	bgEspacio.src = "../../bg/espacio.png"
 
 // variables de fondo
-	var actualBG = bgMarte
+	var actualBG = bgEspacio
 		
-		var actualBGString = "bgMarte"
+		var actualBGString = "bgEspacio"
 	
 	var bg = {
-		offset: 200,
-		speed: 0.1,
-		minTemp: -20,
+		offset: 0,
+		speed: 0,
+		minTemp: -99,
 		tempAdd: 0
 	}
-				
+	
 // funciones de fondo
 	function dibujarFondo(){
 		ctx.drawImage(actualBG, bg.offset, 0,)
