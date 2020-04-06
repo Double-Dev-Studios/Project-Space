@@ -1,9 +1,11 @@
 # Project Space
 Space Machines Remake
 
-for now is just a beta-demo of the final game
+for now is just a beta of the final game
 
 Levels:
+
+Space Machines:
 
 Earth,
 Moon,
@@ -13,4 +15,7 @@ Asteroid Belt,
 Jupiter,
 Saturn,
 Uranus,
-Neptune
+Neptune,
+Space
+
+The lost levels: coming soon
