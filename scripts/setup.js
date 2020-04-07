@@ -5,17 +5,33 @@
 	var bucle;
 	var boton = document.getElementById("boton");
 	var fullboton = document.getElementById("fullboton");
+	var playstop = document.getElementById("playstop");
 	
 	//setup del teclado
 	var k = 0
+	
+	//movimiento flechas
 	var kRight = 39
 	var kLeft = 37
 	var kUp = 38	
 	var kDown = 40
+	//disparo y velocidad flechas
 	var kZ = 90
 	var kX = 88
 	var kC = 67
 	var kV = 86
+	
+	//movimiento wasd
+	var kD = 68
+	var kA = 65
+	var kW = 87
+	var kS = 83
+	//disparo y velocidad wasd
+	var kP = 80
+	var kU = 85
+	var kI = 73
+	var kO = 79
+	
 	
 	var k1 = 49
 	var k2 = 50

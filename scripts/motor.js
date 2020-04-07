@@ -482,10 +482,12 @@ fullboton.addEventListener("click", fullscreen);
 			function iniciarParar(){
 				if (pausa){
 					pausa = false;
+					playstop.src = "../../menu/pause.png"
 					musicStart()
 					bucle = setInterval(frame, 16)
 				} else {
 					pausa = true;
+					playstop.src = "../../menu/play.png"
 					musicPause()
 					clearInterval(bucle)
 				}
