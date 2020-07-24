@@ -130,17 +130,17 @@
 								
 				else if (sprShield == sprShield1) {
 					sprShip = sprShipExplosion
+					useExplosion()
 					
 					sprShield = sprShield0
 					sprShieldString = 0
 					ship.speed = 0
 					particles.use = false
 					particles.show = false
-					ship.show = false
 					
-					contadorExplosion = 10
+					contadorExplosion = 15
 				}
-				
+				useHit()
 				contadorShield = 30
 				shipDamaged = true
 			}
@@ -150,6 +150,7 @@
 		
 		function shipKill() {
 			sprShip = sprShipExplosion
+			useExplosion()
 			
 			sprShield = sprShield0
 			sprShieldString = "sprShield0"

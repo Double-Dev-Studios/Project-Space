@@ -49,6 +49,7 @@
 		}
 				
 		function disparar(){
+			useShoot()
 			disparo.disparado = true
 			contadorDisparo = 50
 		}
@@ -99,6 +100,7 @@
 		}
 		
 		function disparar2(){
+			useShoot2()
 			disparo2.disparado = true
 			contadorDisparo2 = 50
 		}
@@ -147,6 +149,7 @@
 		}
 		
 		function disparar3(){
+			useShoot()
 			disparo3.disparado = true
 			contadorDisparo3 = 50
 		}

@@ -3,6 +3,12 @@ boton.addEventListener("click", iniciarParar);
 
 fullboton.addEventListener("click", fullscreen);
 
+resethtml.addEventListener("click", resethtmlF);
+
+gobackhtml.addEventListener("click", gobackhtmlF);
+
+setInterval(contadoresOutgame, 16)
+
 
 			function dibujar(){
 				//no saques ni comentes el ctx.clearRect a menos de que sepas lo que haces
@@ -432,7 +438,25 @@ fullboton.addEventListener("click", fullscreen);
 						disparo3.disparado = false
 					}
 				}
-
+			}
+			
+			function contadoresOutgame(){
+				//contador reset
+				if (contadorReset > 0){
+					contadorReset -= 1
+				}
+				if (contadorReset <= 0){
+					location.reload();
+				}
+				
+				//contador go back
+				if (contadorGoBack > 0){
+					contadorGoBack -= 1
+				}
+				if (contadorGoBack <= 0){
+					location.href = "../../index.html"
+				}
+				
 			}
 
 
@@ -452,20 +476,31 @@ fullboton.addEventListener("click", fullscreen);
 
 			function fullscreen(){
 				if (fullscreenVar == false){
-
+					
+					useSelect()
 					fullscreenVar = true
 					canvas.width = 1000
 					canvas.height = 600
 				}
 
 				else{
-
+					
+					useSelect()
 					fullscreenVar = false
 					canvas.width = 800
 					canvas.height = 500
 				}
 			}
-
+			
+			function resethtmlF() {
+				useSelect();
+				contadorReset = 15
+			}
+			
+			function gobackhtmlF() {
+				useSelect();
+				contadorGoBack = 15
+			}
 
 
 			function frame(){
@@ -483,11 +518,13 @@ fullboton.addEventListener("click", fullscreen);
 				if (pausa){
 					pausa = false;
 					playstop.src = "../../menu/pause.png"
+					useSelect()
 					musicStart()
 					bucle = setInterval(frame, 16)
 				} else {
 					pausa = true;
 					playstop.src = "../../menu/play.png"
+					useSelect()
 					musicPause()
 					clearInterval(bucle)
 				}

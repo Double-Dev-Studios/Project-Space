@@ -144,6 +144,7 @@
 								ship.show = false
 								ship.speed = 0
 								
+								useExplosion()
 								sprShield = sprShield0
 								sprShieldString = "sprShield0"
 								shipGAMEOVER()
@@ -377,6 +378,7 @@
 									if (twister.x <= shipHitbox.x2) {
 										if (twister.y2 >= shipHitbox.y) {
 											if (twister.y <= shipHitbox.y2) {
+												
 												shipDamage()
 												ship.speedY = -5
 												

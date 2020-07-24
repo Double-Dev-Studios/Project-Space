@@ -6,6 +6,8 @@
 	var boton = document.getElementById("boton");
 	var fullboton = document.getElementById("fullboton");
 	var playstop = document.getElementById("playstop");
+	var resethtml = document.getElementById("reset")
+	var gobackhtml = document.getElementById("back")
 	
 	//setup del teclado
 	var k = 0
@@ -42,8 +44,6 @@
 	var fullscreenVar = false
 	var gameScale = 4
 	
-	//var charge = false
-	
 	
 	//setup de musica
 	
@@ -68,6 +68,26 @@
 	musicUranus.setAttribute('src', '../../music/uranus.mp3');
 	musicNeptune.setAttribute('src', '../../music/neptune.mp3');
 	musicSpace.setAttribute('src', '../../music/space.mp3');
+	
+	//setup de sfx
+	
+	var sfxExplosion = document.createElement('audio');
+	var sfxHit = document.createElement('audio');
+	var sfxSelect = document.createElement('audio');
+	var sfxShield = document.createElement('audio');
+	var sfxShoot = document.createElement('audio');
+	var sfxShoot2 = document.createElement('audio');
+	
+	sfxExplosion.setAttribute('src', '../../sfx/explosion.wav');
+	sfxHit.setAttribute('src', '../../sfx/hit.wav');
+	sfxSelect.setAttribute('src', '../../sfx/select.wav');
+	sfxShield.setAttribute('src', '../../sfx/shield.wav');
+	sfxShoot.setAttribute('src', '../../sfx/shoot.wav');
+	sfxShoot2.setAttribute('src', '../../sfx/shoot2.wav');
+	
+	//misc
+	var contadorReset;
+	var contadorGoBack;
 
 	//setup de objetos
 	
@@ -101,6 +121,7 @@
 	function randomSatelite(){
 		random = Math.floor(Math.random() * 2)
 		if (random == 1){
+			useShield()
 			sprShieldString += 1
 			contadorShield = 30
 			sprShip = sprShipHP
