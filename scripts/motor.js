@@ -185,6 +185,11 @@ setInterval(contadoresOutgame, 16)
 					musicSpace.currentTime = 0;
 					musicSpace.play();
 				}
+
+				if (actualBGString == "bgChallengeComplete") {
+					musicChallengeC.currentTime = 0;
+					musicChallengeC.play();
+				}
 			}
 
 
@@ -629,6 +634,21 @@ setInterval(contadoresOutgame, 16)
 					iceAsteroidUse = true
 					iceAsteroidAuraUse = true
 					bigAsteroidUse = true
+				}
+
+				if (actualBGString == "bgChallengeComplete"){
+					sateliteUse = false
+					sateliteSpecialUse = false
+					asteroidUse = false
+					asteroid2Use = false
+					fireAsteroidUse = false
+					fireAsteroidAuraUse = false
+					iceAsteroidUse = false
+					iceAsteroidAuraUse = false
+					bigAsteroidUse = false
+					waterUse = false
+					lavaUse = false
+					miniAsteroidUse = false
 				}
 
 			}

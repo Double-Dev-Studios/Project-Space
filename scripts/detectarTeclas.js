@@ -52,7 +52,7 @@
 					
 					// k == abajo
 					if (k == kDown || k == kS) {
-						ship.speedY = 6
+						ship.speedY = 9
 					}
 					
 				}
@@ -85,6 +85,13 @@
 				// k == V || O
 				if (k == kV || k == kO) {
 					ship.speed = 3
+				}
+
+				// k == debug (9)
+				if (k == k9) {
+					ship.speed = 6
+					temp.value = 0
+					bg.speed += 1
 				}
 			}
 			

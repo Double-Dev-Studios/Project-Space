@@ -48,11 +48,12 @@
 		}
 		
 		function actualizarShip(){
-			ship.x += ship.speedX
-			ship.y += ship.speedY
-			ship.x -= ship.speed
-			
 			if (ship.show == true){
+				ship.x += ship.speedX
+				ship.y += ship.speedY
+				ship.x -= ship.speed
+			
+			
 				//velocidad normal o rapida
 				if (ship.speed >= 1.5){
 					temp.value += bg.tempAdd

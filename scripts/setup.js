@@ -22,6 +22,9 @@
 	var kX = 88
 	var kC = 67
 	var kV = 86
+
+	//debug
+	var k9 = 57
 	
 	//movimiento wasd
 	var kD = 68
@@ -57,6 +60,7 @@
 	var musicUranus = document.createElement('audio');
 	var musicNeptune = document.createElement('audio');
 	var musicSpace = document.createElement('audio');
+	var musicChallengeC = document.createElement('audio');
 	
 	musicEarth.setAttribute('src', '../../music/earth.mp3');
 	musicMoon.setAttribute('src', '../../music/moon.mp3');
@@ -68,6 +72,7 @@
 	musicUranus.setAttribute('src', '../../music/uranus.mp3');
 	musicNeptune.setAttribute('src', '../../music/neptune.mp3');
 	musicSpace.setAttribute('src', '../../music/space.mp3');
+	musicChallengeC.setAttribute('src', '../../music/challengeComplete.mp3');
 	
 	//setup de sfx
 	
@@ -84,6 +89,14 @@
 	sfxShield.setAttribute('src', '../../sfx/shield.wav');
 	sfxShoot.setAttribute('src', '../../sfx/shoot.wav');
 	sfxShoot2.setAttribute('src', '../../sfx/shoot2.wav');
+
+	//volumen
+	sfxExplosion.volume = 0.5
+	sfxHit.volume = 0.6
+	sfxSelect.volume = 0.6
+	sfxShield.volume = 0.6
+	sfxShoot.volume = 0.6
+	sfxShoot2.volume = 0.6
 	
 	//misc
 	var contadorReset;
