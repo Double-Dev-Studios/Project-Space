@@ -1,0 +1,186 @@
+<html>
+	<head>
+	
+	<title>Project Space | Space Machines</title>
+	<link rel="icon" href="menu/icon.png" type="image/png"/>
+	
+	</head>
+	<body
+	style="background-color: black"
+	background="menu/Background/stars.png"
+	>
+	
+	<style>
+		
+		.mini {
+			background-color: black;
+			border: none;
+			color: white;
+			cursor: pointer;
+		}
+		
+		.button {
+			background-color: white;
+			border: none;
+			color: black;
+			display: inline-block;
+			font-size: 32px;
+			margin: 8px 4px;
+			cursor: pointer;
+		}
+		
+		.blackButton {
+			background-color: black;
+			border: none;
+			color: white;
+			display: inline-block;
+			font-size: 32px;
+			margin: 8px 4px;
+			cursor: pointer;
+		}
+		
+		.header {
+			color: white;
+			font-size: 64px;
+		}
+		
+		.header2 {
+			color: white;
+			font-size: 32px;
+		}
+		
+		.text {
+			color: white;
+		}
+	</style>
+	<a href="index.html"> <button id="back" class="blackButton"><img src="menu/back.png"></button></a>
+	<center>
+	<!--<p class="header" > PROJECT SPACE </p></h1>-->
+	<img src="game2.png" width="600" height="215">
+	<h1>
+	</center>
+	<br>
+	<hr>
+	<center>
+	<a href="levels/sm/infinite.html">
+	<button id="espacio" class="blackButton">SPACE MACHINES <br>CHALLENGE
+	<br> <img src="menu/thumbnails/sm challenge.png" alt="SPACE MACHINES CHALLENGE" width="128" height="128"> </button>
+	</a>
+	<br>
+	
+	<a href="levels/sm/tierra.html">
+	<button id="earth" class="button">EARTH
+	<br> <img src="menu/thumbnails/tierra.png" alt="EARTH" width="128" height="128"></button></a>
+	
+	<a href="levels/sm/luna.html">
+	<button id="moon" class="button">MOON
+	<br> <img src="menu/thumbnails/luna.png" alt="MOON" width="128" height="128"></button></a>
+	
+	<a href="levels/sm/venus.html">
+	<button id="venus" class="button">VENUS
+	<br> <img src="menu/thumbnails/venus.png" alt="VENUS" width="128" height="128"></button></a>
+
+	<!--
+	<button id="levelLost" class="button">level lost
+	<br> <img src="menu/thumbnails/lost.png" alt="A Lost Level" width="128" height="128"> </button> -->
+	
+
+	<a href="levels/sm/marte.html">
+	<button id="marte" class="button">MARS
+	<br> <img src="menu/thumbnails/marte.png" alt="MARS" width="128" height="128"></button></a>
+
+	<a href="levels/sm/asteroides.html">
+	<button id="asteroides" class="button">ASTEROID <br> BELT
+	<br> <img src="menu/thumbnails/asteroids.png" alt="ASTEROID BELT" width="128" height="128"></button></a>
+	
+	<a href="levels/sm/jupiter.html">
+	<button id="jupiter" class="button">JUPITER
+	<br> <img src="menu/thumbnails/jupiter.png" alt="JUPITER" width="128" height="128"></button></a>
+	
+	<a href="levels/sm/saturno.html">
+	<button id="saturno" class="button">SATURN
+	<br> <img src="menu/thumbnails/saturno.png" alt="SATURN" width="128" height="128"></button></a>
+
+	<a href="levels/sm/urano.html">
+	<button id="urano" class="button">URANUS
+	<br> <img src="menu/thumbnails/urano.png" alt="URANUS" width="128" height="128"></button></a>
+	
+	<a href="levels/sm/neptuno.html">
+	<button id="neptuno" class="button">NEPTUNE
+	<br> <img src="menu/thumbnails/neptuno.png" alt="NEPTUNE" width="128" height="128"></button></a>
+	
+	<a href="levels/sm/espacio.html">
+	<button id="espacio" class="button">SPACE
+	<br> <img src="menu/thumbnails/espacio.png" alt="SPACE" width="128" height="128"></button></a>
+	<br>
+
+	
+	<br>
+	<button id="musicOnOff" class="blackButton"><img id="musicPNG" src="menu/musicOff.png"></button><br>
+	<text class="header2">Pro tip: press F11</text>
+
+
+	
+	<script>
+	
+	setInterval(musicLoop, 32)
+	
+	var musicMenu = document.createElement('audio');
+	musicMenu.setAttribute('src', 'music/menu.mp3');
+	
+	var musicPNG = document.getElementById("musicPNG");
+	
+	var musicB = document.getElementById("musicOnOff");
+	musicB.addEventListener("click", music);
+	
+	var musicMenuIsPaused = true
+	
+	function music(){
+		if (musicMenuIsPaused == true){
+			
+			musicMenu.currentTime = 0;
+			musicMenu.play();
+			musicMenuIsPaused = false
+			musicPNG.src = "menu/musicOn.png"
+			
+		} else {
+			
+			musicMenu.pause()
+			musicMenuIsPaused = true
+			musicPNG.src = "menu/musicOff.png"
+			
+		}
+	}
+	
+	function changeMusic(){
+		musicMenu.setAttribute('src', 'music/menuOld.mp3')
+	}
+	
+	function musicLoop(){
+		if (musicMenuIsPaused == false){
+			if (musicMenu.currentTime > 134){
+				
+				musicMenu.currentTime = 0;
+				musicMenu.play();
+			}
+		}
+	}
+	
+	
+	</script> <br>
+	
+	<br><br><br> <hr>
+	<small class="text">
+	By Double Dev<button id="dot" class="mini">.</button> Studios
+	</small>
+	<script>
+	var dot = document.getElementById("dot");
+	dot.addEventListener("click", changeMusic);
+	
+	
+	</script>
+	
+	</center>
+	
+	</body>
+</html><
