@@ -464,6 +464,30 @@ setInterval(contadoresOutgame, 16)
 				
 			}
 
+			function challenge(){
+				if (actualChallenge == "bigAsteroids"){
+					asteroid.width = 36 * gameScale
+					asteroid.height = 36 * gameScale
+					asteroid.delayTime = 40
+
+					asteroid2.width = 36 * gameScale
+					asteroid2.height = 36 * gameScale
+					asteroid2.delayTime = 40
+
+					fireAsteroid.width = 36 * gameScale
+					fireAsteroid.height = 36 * gameScale
+					fireAsteroid.delayTime = 40
+
+					iceAsteroid.width = 36 * gameScale
+					iceAsteroid.height = 36 * gameScale
+					iceAsteroid.delayTime = 40
+
+					iceAsteroid.width = 36 * gameScale
+					iceAsteroid.height = 36 * gameScale
+					iceAsteroid.delayTime = 50
+				}
+			}
+
 
 			function musicPause(){
 				musicEarth.pause()
@@ -523,6 +547,7 @@ setInterval(contadoresOutgame, 16)
 				if (pausa){
 					pausa = false;
 					playstop.src = "../../menu/pause.png"
+					challenge()
 					useSelect()
 					musicStart()
 					bucle = setInterval(frame, 16)

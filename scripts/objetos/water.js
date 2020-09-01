@@ -73,27 +73,17 @@ function actualizarWater(){
 
 
 function generarWater(){
-		if (sprWaterString == "sprWater0"){
+		if (sprWaterString == "sprWater3"){
 			waterHitbox.y = 0
 			waterHitbox.x2 = waterHitbox.width + waterHitbox.x
 			waterHitbox.y2 = waterHitbox.height + waterHitbox.y
-			waterHitbox.height = 16 * gameScale
+			waterHitbox.height = 64 * gameScale
 			
-			sprWater = sprWater1
-			sprWaterString = "sprWater1"
+			sprWater = sprWater4
+			sprWaterString = "sprWater4"
 		}
-		
-		else if (sprWaterString == "sprWater1"){
-			waterHitbox.y = 0
-			waterHitbox.x2 = waterHitbox.width + waterHitbox.x
-			waterHitbox.y2 = waterHitbox.height + waterHitbox.y
-			waterHitbox.height = 32 * gameScale
-			
-			sprWater = sprWater2
-			sprWaterString = "sprWater2"
-		}
-		
-		else if (sprWaterString == "sprWater2"){
+
+		if (sprWaterString == "sprWater2"){
 			waterHitbox.y = 0
 			waterHitbox.x2 = waterHitbox.width + waterHitbox.x
 			waterHitbox.y2 = waterHitbox.height + waterHitbox.y
@@ -103,14 +93,25 @@ function generarWater(){
 			sprWaterString = "sprWater3"
 		}
 		
-		else if (sprWaterString == "sprWater3"){
+
+		if (sprWaterString == "sprWater1"){
 			waterHitbox.y = 0
 			waterHitbox.x2 = waterHitbox.width + waterHitbox.x
 			waterHitbox.y2 = waterHitbox.height + waterHitbox.y
-			waterHitbox.height = 64 * gameScale
+			waterHitbox.height = 32 * gameScale
 			
-			sprWater = sprWater4
-			sprWaterString = "sprWater4"
+			sprWater = sprWater2
+			sprWaterString = "sprWater2"
+		}
+
+		if (sprWaterString == "sprWater0"){
+			waterHitbox.y = 0
+			waterHitbox.x2 = waterHitbox.width + waterHitbox.x
+			waterHitbox.y2 = waterHitbox.height + waterHitbox.y
+			waterHitbox.height = 16 * gameScale
+			
+			sprWater = sprWater1
+			sprWaterString = "sprWater1"
 		}
 		
 	

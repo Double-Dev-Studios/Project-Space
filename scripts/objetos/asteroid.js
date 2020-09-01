@@ -28,6 +28,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
+			delayTime: 20,
 			show: true
 		}
 		
@@ -61,7 +62,7 @@
 		function asteroidDamage(){
 			
 			asteroidDamaged = true
-			contadorAsteroid = 20
+			contadorAsteroid = asteroid.delayTime
 			
 			if (sprAsteroidString == "sprAsteroidNormal") {
 				sprAsteroid = sprAsteroidDestruct1
@@ -117,6 +118,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
+			delayTime: 20,
 			show: true
 		}
 						
@@ -148,7 +150,7 @@
 		function asteroid2Damage(){
 			
 			asteroid2Damaged = true
-			contadorAsteroid2 = 20
+			contadorAsteroid2 = asteroid2.delayTime
 			
 			if (sprAsteroid2String == "sprAsteroidNormal") {
 				sprAsteroid2 = sprAsteroidDestruct1

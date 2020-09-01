@@ -28,6 +28,7 @@
 			y2: this.height * gameScale + this.y,
 			speedX: 1.5,
 			hotLevel: 0.1,
+			delayTime: 20,
 			show: false
 		}
 		
@@ -61,7 +62,7 @@
 		function fireAsteroidDamage(){
 			
 			fireAsteroidDamaged = true
-			contadorFireAsteroid = 20
+			contadorFireAsteroid = fireAsteroid.delayTime
 			
 			if (sprFireAsteroidString == "sprFireAsteroidNormal") {
 				sprFireAsteroid = sprFireAsteroidDestruct1

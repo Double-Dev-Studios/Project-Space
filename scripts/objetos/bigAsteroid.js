@@ -28,6 +28,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
+			delayTime: 30,
 			show: false
 		}
 		
@@ -61,7 +62,7 @@
 		function bigAsteroidDamage(){
 			
 			bigAsteroidDamaged = true
-			contadorBigAsteroid = 20
+			contadorBigAsteroid = bigAsteroid.delayTime
 			
 			if (sprBigAsteroidString == "sprBigAsteroidNormal") {
 				sprBigAsteroid = sprBigAsteroidDestruct1

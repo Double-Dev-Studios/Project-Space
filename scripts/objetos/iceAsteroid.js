@@ -27,6 +27,7 @@
 			x2: this.width + this.x,
 			y2: this.height + this.y,
 			speedX: 0.7,
+			delayTime: 20,
 			show: false
 		}
 		
@@ -59,7 +60,7 @@
 		function iceAsteroidDamage(){
 			
 			iceAsteroidDamaged = true
-			contadorIceAsteroid = 20
+			contadorIceAsteroid = iceAsteroid.delayTime
 			
 			if (sprIceAsteroidString == "sprIceAsteroidNormal") {
 				sprIceAsteroid = sprIceAsteroidDestruct1

@@ -46,6 +46,7 @@
 	//setup de escala y otros
 	var fullscreenVar = false
 	var gameScale = 4
+	var actualChallenge;
 	
 	
 	//setup de musica
@@ -148,11 +149,23 @@
 	function randomBigAsteroid(){
 		random = Math.floor(Math.random() * 2)
 		if (random == 1){
-			bigAsteroid.width = 32 * gameScale
-			bigAsteroid.height = 32 * gameScale
+			if (actualChallenge == "bigAsteroids"){
+				bigAsteroid.width = 48 * gameScale
+				bigAsteroid.height = 48 * gameScale
 			} else {
-			bigAsteroid.width = 48 * gameScale
-			bigAsteroid.height = 48 * gameScale
+				bigAsteroid.width = 32 * gameScale
+				bigAsteroid.height = 32 * gameScale
+			}
+
+		} else { //random !== 0
+
+			if (actualChallenge == "bigAsteroids"){
+				bigAsteroid.width = 64 * gameScale
+				bigAsteroid.height = 64 * gameScale
+			} else {
+				bigAsteroid.width = 48 * gameScale
+				bigAsteroid.height = 48 * gameScale
+			}
 		}
 	}
 	

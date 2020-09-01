@@ -6,8 +6,7 @@
 
 // variables de fondo
 	var actualBG = bgJupiter
-		
-		var actualBGString = "bgJupiter"
+	var actualBGString = "bgJupiter"
 	
 	var bg = {
 		offset: 200,

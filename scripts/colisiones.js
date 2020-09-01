@@ -4,9 +4,9 @@
 					
 					// asteroid al tocar borde
 					if (asteroidUse == true){
-						if (asteroid.x <= -72 || asteroid.show == false){
-							asteroid.x = canvas.width + 72
-							asteroid.y = getRandomInt(40, canvas.height - 40)
+						if (asteroid.x <= 0 - asteroid.width || asteroid.show == false){
+							asteroid.x = canvas.width + asteroid.width
+							asteroid.y = getRandomInt(10, canvas.height - 10)
 							sprAsteroid = sprAsteroidNormal
 							sprAsteroidString = "sprAsteroidNormal"
 							asteroid.show = true
@@ -16,9 +16,9 @@
 					
 					// asteroid 2 al tocar borde
 					if (asteroid2Use == true){
-						if (asteroid2.x <= -72 || asteroid2.show == false){
-							asteroid2.x = canvas.width + 72
-							asteroid2.y = getRandomInt(40, canvas.height - 40)
+						if (asteroid2.x <= 0 - asteroid2.width || asteroid2.show == false){
+							asteroid2.x = canvas.width + asteroid2.width
+							asteroid2.y = getRandomInt(10, canvas.height - 10)
 							sprAsteroid2 = sprAsteroidNormal
 							sprAsteroid2String = "sprAsteroidNormal"
 							asteroid2.show = true
@@ -31,8 +31,8 @@
 					// miniAsteroid al tocar borde
 					if (miniAsteroidUse == true) {
 						
-						if (miniAsteroid.x <= -72 || miniAsteroid.show == false){
-							miniAsteroid.x = canvas.width + (72 * getRandomInt(3, 10))
+						if (miniAsteroid.x <= 0 - miniAsteroid.width || miniAsteroid.show == false){
+							miniAsteroid.x = canvas.width + (miniAsteroid.width * getRandomInt(3, 10))
 							miniAsteroid.y = getRandomInt(40, canvas.height - 40)
 							sprMiniAsteroid = sprMiniAsteroidNormal
 							sprMiniAsteroidString = "sprMiniAsteroidNormal"
@@ -45,8 +45,8 @@
 					// fire asteroid al tocar borde
 					if (fireAsteroidUse == true){
 						
-						if (fireAsteroid.x <= -72 || fireAsteroid.show == false){
-							fireAsteroid.x = canvas.width + 72
+						if (fireAsteroid.x <= 0 - fireAsteroid.width || fireAsteroid.show == false){
+							fireAsteroid.x = canvas.width + fireAsteroid.width
 							fireAsteroid.y = getRandomInt(40, canvas.height - 40)
 							sprFireAsteroid = sprFireAsteroidNormal
 							sprFireAsteroidString = "sprFireAsteroidNormal"
@@ -72,8 +72,8 @@
 					// ice asteroid al tocar borde
 					if (iceAsteroidUse == true){
 						
-						if (iceAsteroid.x <= -72 || iceAsteroid.show == false){
-							iceAsteroid.x = canvas.width + 72
+						if (iceAsteroid.x <= 0 - iceAsteroid.width || iceAsteroid.show == false){
+							iceAsteroid.x = canvas.width + iceAsteroid.width
 							iceAsteroid.y = getRandomInt(40, canvas.height - 40)
 							sprIceAsteroid = sprIceAsteroidNormal
 							sprIceAsteroidString = "sprIceAsteroidNormal"
@@ -95,8 +95,8 @@
 					
 					// bigAsteroid al tocar borde
 					if (bigAsteroidUse == true){
-						if (bigAsteroid.x <= -192 || bigAsteroid.show == false){
-							bigAsteroid.x = canvas.width + 528
+						if (bigAsteroid.x <= 0 - bigAsteroid.width || bigAsteroid.show == false){
+							bigAsteroid.x = canvas.width + bigAsteroid.width
 							bigAsteroid.y = getRandomInt(40, canvas.height - 40)
 							sprBigAsteroid = sprBigAsteroidNormal
 							sprBigAsteroidString = "sprBigAsteroidNormal"
