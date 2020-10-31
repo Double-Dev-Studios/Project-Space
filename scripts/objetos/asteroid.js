@@ -138,7 +138,7 @@
 			
 				asteroid2.x -= ship.speed
 				
-				asteroid2.x -= asteroid.speedX
+				asteroid2.x -= asteroid2.speedX
 				
 				asteroid2.x2 = asteroid2.width + asteroid2.x
 				asteroid2.y2 = asteroid2.height + asteroid2.y

@@ -39,7 +39,8 @@ var waterHitbox = {
 	width: water.width,
 	height: 0,
 	x2: this.width + this.x,
-	y2: this.height + this.y
+	y2: this.height + this.y,
+	use: false
 }
 
 
@@ -63,7 +64,8 @@ function actualizarWater(){
 		
 		if (sprWaterString == "sprWater0"){
 			waterHitbox.height = 0
-		}
+			waterHitbox.use = false
+		} else {waterHitbox.use = true}
 		
 		waterHitbox.x2 = waterHitbox.width + waterHitbox.x
 		waterHitbox.y2 = waterHitbox.height + waterHitbox.y

@@ -132,6 +132,11 @@ setInterval(contadoresOutgame, 16)
 					musicSpace.currentTime = 0;
 					musicSpace.play();
 				}
+
+				if (musicPhobos.currentTime > 76){
+					musicPhobos.currentTime = 0;
+					musicPhobos.play();
+				}
 			}
 
 
@@ -189,6 +194,11 @@ setInterval(contadoresOutgame, 16)
 				if (actualBGString == "bgChallengeComplete") {
 					musicChallengeC.currentTime = 0;
 					musicChallengeC.play();
+				}
+
+				if (actualBGString == "bgFobos") {
+					musicPhobos.currentTime = 0;
+					musicPhobos.play();
 				}
 			}
 
@@ -359,9 +369,9 @@ setInterval(contadoresOutgame, 16)
 					if (contadorLava > 0){
 						contadorLava -= 1
 
-						if (contadorLava < 51){
-							if (contadorLava > 49){
-								lava.x = getRandomInt(256, canvas.width + 256),
+						if (contadorLava <= 51){
+							if (contadorLava >= 49){
+								lava.x = getRandomInt(256, canvas.width + 256)
 								sprLava = sprLava0
 								sprLavaString = "sprLava0"
 								lava.show = true
@@ -390,7 +400,7 @@ setInterval(contadoresOutgame, 16)
 
 						if (contadorWater < 51){
 							if (contadorWater > 49){
-								water.x = getRandomInt(256, canvas.width + 256),
+								water.x = getRandomInt(256, canvas.width + 256)
 								sprWater = sprWater0
 								sprWaterString = "sprWater0"
 								water.show = true
@@ -500,6 +510,7 @@ setInterval(contadoresOutgame, 16)
 				musicUranus.pause()
 				musicNeptune.pause()
 				musicSpace.pause()
+				musicPhobos.pause()
 			}
 
 
@@ -674,6 +685,19 @@ setInterval(contadoresOutgame, 16)
 					waterUse = false
 					lavaUse = false
 					miniAsteroidUse = false
+				}
+
+				if (actualBGString == "bgFobos"){
+					sateliteUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					bigAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					miniAsteroid.speedX += 2
+					miniAsteroid.speedY += 1
+					asteroid.speedX += 2
 				}
 
 			}

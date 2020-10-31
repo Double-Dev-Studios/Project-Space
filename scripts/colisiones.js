@@ -1,1250 +1,401 @@
-// C O L I S I O N E S
-				//colisiones, cuando hagas un objeto solido, COLISIONES.
-				function colisiones(){
-					
-					// asteroid al tocar borde
-					if (asteroidUse == true){
-						if (asteroid.x <= 0 - asteroid.width || asteroid.show == false){
-							asteroid.x = canvas.width + asteroid.width
-							asteroid.y = getRandomInt(10, canvas.height - 10)
-							sprAsteroid = sprAsteroidNormal
-							sprAsteroidString = "sprAsteroidNormal"
-							asteroid.show = true
-						}
-					}
-					
-					
-					// asteroid 2 al tocar borde
-					if (asteroid2Use == true){
-						if (asteroid2.x <= 0 - asteroid2.width || asteroid2.show == false){
-							asteroid2.x = canvas.width + asteroid2.width
-							asteroid2.y = getRandomInt(10, canvas.height - 10)
-							sprAsteroid2 = sprAsteroidNormal
-							sprAsteroid2String = "sprAsteroidNormal"
-							asteroid2.show = true
-						}
-					}
-					
-					
-					
-					
-					// miniAsteroid al tocar borde
-					if (miniAsteroidUse == true) {
-						
-						if (miniAsteroid.x <= 0 - miniAsteroid.width || miniAsteroid.show == false){
-							miniAsteroid.x = canvas.width + (miniAsteroid.width * getRandomInt(3, 10))
-							miniAsteroid.y = getRandomInt(40, canvas.height - 40)
-							sprMiniAsteroid = sprMiniAsteroidNormal
-							sprMiniAsteroidString = "sprMiniAsteroidNormal"
-							miniAsteroid.show = true
-						}
-						
-					}
-					
-					
-					// fire asteroid al tocar borde
-					if (fireAsteroidUse == true){
-						
-						if (fireAsteroid.x <= 0 - fireAsteroid.width || fireAsteroid.show == false){
-							fireAsteroid.x = canvas.width + fireAsteroid.width
-							fireAsteroid.y = getRandomInt(40, canvas.height - 40)
-							sprFireAsteroid = sprFireAsteroidNormal
-							sprFireAsteroidString = "sprFireAsteroidNormal"
-							fireAsteroid.show = true
-						}
-						
-					}
-					
-					
-					// fire asteroid aura al tocar borde
-					if (fireAsteroidAuraUse == true){
-						
-						if (fireAsteroidAura.x <= -200 || fireAsteroidAura.show == false){
-							fireAsteroidAura.x = canvas.width + 200
-							fireAsteroidAura.y = getRandomInt(128, canvas.height - 128)
-							fireAsteroidAura.show = true
-						}
-						
-					}
-					
-					
-					
-					// ice asteroid al tocar borde
-					if (iceAsteroidUse == true){
-						
-						if (iceAsteroid.x <= 0 - iceAsteroid.width || iceAsteroid.show == false){
-							iceAsteroid.x = canvas.width + iceAsteroid.width
-							iceAsteroid.y = getRandomInt(40, canvas.height - 40)
-							sprIceAsteroid = sprIceAsteroidNormal
-							sprIceAsteroidString = "sprIceAsteroidNormal"
-							iceAsteroid.show = true
-						}
-						
-					}
-					
-					// ice asteroid aura al tocar borde
-					if (iceAsteroidAuraUse == true){
-						
-						if (iceAsteroidAura.x <= -256 || iceAsteroidAura.show == false){
-							iceAsteroidAura.x = canvas.width + 256
-							iceAsteroidAura.y = getRandomInt(128, canvas.height - 128)
-							iceAsteroidAura.show = true
-						}
-						
-					}
-					
-					// bigAsteroid al tocar borde
-					if (bigAsteroidUse == true){
-						if (bigAsteroid.x <= 0 - bigAsteroid.width || bigAsteroid.show == false){
-							bigAsteroid.x = canvas.width + bigAsteroid.width
-							bigAsteroid.y = getRandomInt(40, canvas.height - 40)
-							sprBigAsteroid = sprBigAsteroidNormal
-							sprBigAsteroidString = "sprBigAsteroidNormal"
-							bigAsteroid.show = true
-							randomBigAsteroid()
-						}
-					}
-					
-					
-					
-					// satelite al tocar borde
-					if (sateliteUse == true){
-						if (satelite.x <= -40 * gameScale || satelite.show == false){
-							satelite.x = canvas.width + 72
-							satelite.y = getRandomInt(0, canvas.height - 164),
-							sprSatelite = sprSateliteNormal
-							sprSateliteString = "sprSateliteNormal"
-							satelite.show = true
-						}
-					}
-					
-					
-					// sateliteSpecial al tocar borde
-					if (sateliteSpecialUse == true){
-						if (sateliteSpecial.x <= -30 * gameScale || sateliteSpecial.show == false){
-							sateliteSpecial.x = canvas.width + 72
-							sateliteSpecial.y = getRandomInt(0, canvas.height - 164),
-							sateliteSpecial.show = true
-						}
-					}
-					
-					
-					
-					
-					// ship al tocar borde
-					
-					if (ship.show == true){
-						if (ship.x <= -36 || ship.y <= -36||
-							ship.x >= canvas.width - 36 ||
-							ship.y >= canvas.height - 36){
-								
-								
-								ship.x = canvas.width / 2
-								ship.y = canvas.height / 2
-								ship.show = false
-								ship.speed = 0
-								
-								useExplosion()
-								sprShield = sprShield0
-								sprShieldString = "sprShield0"
-								shipGAMEOVER()
-							}
-					}
-					
-					
-					// asteroid al tocar ship
-					if (asteroidUse == true){
-						if (ship.show == true){
-							if (asteroid.show == true) {
-								if (asteroidDamaged == false) {
-									
-									if (asteroid.x2 >= shipHitbox.x) {
-										if (asteroid.x <= shipHitbox.x2) {
-											if (asteroid.y2 >= shipHitbox.y) {
-												if (asteroid.y <= shipHitbox.y2) {
-													
-													asteroidDamage()
-													shipDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-					}
-					
-					
-					
-					// asteroid 2 al tocar ship
-					
-					if (asteroid2Use == true){
-						if (ship.show == true){
-							if (asteroid2.show == true) {
-								if (asteroid2Damaged == false) {
-									
-									if (asteroid2.x2 >= shipHitbox.x) {
-										if (asteroid2.x <= shipHitbox.x2) {
-											if (asteroid2.y2 >= shipHitbox.y) {
-												if (asteroid2.y <= shipHitbox.y2) {
-													
-													asteroid2Damage()
-													shipDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-					}
-					
-					
-					// miniAsteroid al tocar ship
-					
-					if (miniAsteroidUse == true) {
-						if (ship.show == true){
+// COLISIONES
 
-							if (miniAsteroid.show == true) {
-								if (miniAsteroidDamaged == false) {
-										
-									if (miniAsteroid.x2 >= shipHitbox.x) {
-										if (miniAsteroid.x <= shipHitbox.x2) {
-											if (miniAsteroid.y2 >= shipHitbox.y) {
-												if (miniAsteroid.y <= shipHitbox.y2) {
-													
-													miniAsteroidDamage()
-													shipDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						}
-					}
-					
-					
-					// fireAsteroid al tocar ship
-					
-					if (fireAsteroidUse == true) {
-						if (ship.show == true){
-							
-							if (fireAsteroid.show == true) {
-								if (fireAsteroidDamaged == false) {
-									
-									if (fireAsteroid.x2 >= shipHitbox.x) {
-										if (fireAsteroid.x <= shipHitbox.x2) {
-											if (fireAsteroid.y2 >= shipHitbox.y) {
-												if (fireAsteroid.y <= shipHitbox.y2) {
-													
-													fireAsteroidDamage()
-													shipDamage()
-													ship.speed = 4.5
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						}
-					}
-					
-					
-					// fireAsteroidAura al tocar ship
-					
-					if (fireAsteroidAuraUse == true) {
-						if (ship.show == true){
-						
-							if (fireAsteroidAura.show == true) {
-								
-								if (fireAsteroidAura.x2 -32 >= shipHitbox.x) {
-									if (fireAsteroidAura.x +32 <= shipHitbox.x2) {
-										if (fireAsteroidAura.y2 -32 >= shipHitbox.y) {
-											if (fireAsteroidAura.y +32 <= shipHitbox.y2) {
-												
-												ship.speed = 4.5
-												
-											}
-										}
-									}
-								}
-							}
-							
-						}
-					}
-					
-					
-					// iceAsteroid al tocar ship
-					
-					if (iceAsteroidUse == true) {
-						if (ship.show == true){
-						
-							if (iceAsteroid.show == true) {
-								if (iceAsteroidDamaged == false) {
-									
-									if (iceAsteroid.x2 >= shipHitbox.x) {
-										if (iceAsteroid.x <= shipHitbox.x2) {
-											if (iceAsteroid.y2 >= shipHitbox.y) {
-												if (iceAsteroid.y <= shipHitbox.y2) {
-													
-													iceAsteroidDamage()
-													shipDamage()
-													ship.speed = 0
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						}
-					}
-					
-					
-					
-					// iceAsteroidAura al tocar ship
-					
-					if (iceAsteroidAuraUse == true) {
-						if (ship.show == true){
-							
-							if (iceAsteroidAura.show == true) {
-								
-								if (iceAsteroidAura.x2 -32 >= shipHitbox.x) {
-									if (iceAsteroidAura.x +32 <= shipHitbox.x2) {
-										if (iceAsteroidAura.y2 -32 >= shipHitbox.y) {
-											if (iceAsteroidAura.y +32 <= shipHitbox.y2) {
-												
-												ship.speed = 0.5
-												
-											}
-										}
-									}
-								}
-							}
-							
-						}
-					}
-					
-					
-					
-					
-					
-					
-					// bigAsteroid al tocar ship
-					
-					if (bigAsteroidUse == true) {
-					if (ship.show == true){
-							
-							if (bigAsteroid.show == true) {
-								if (bigAsteroidDamaged == false) {
-									
-									if (bigAsteroid.x2 >= shipHitbox.x) {
-										if (bigAsteroid.x <= shipHitbox.x2) {
-											if (bigAsteroid.y2 >= shipHitbox.y) {
-												if (bigAsteroid.y <= shipHitbox.y2) {
-													
-													bigAsteroidDamage()
-													shipDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						}
-					}
-					
-					
-					
-					
-					// Twister al tocar ship
-					
-					if (twisterUse == true) {
-						if (ship.show == true){
-						
-							if (twister.show == true) {
-									
-								if (twister.x2 >= shipHitbox.x) {
-									if (twister.x <= shipHitbox.x2) {
-										if (twister.y2 >= shipHitbox.y) {
-											if (twister.y <= shipHitbox.y2) {
-												
-												shipDamage()
-												ship.speedY = -5
-												
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-					
-					
-					
-					
-					// satelite al tocar ship
-					
-					if (sateliteUse == true){
-						if (ship.show == true){
-							if (satelite.show == true) {
-								if (sateliteDamaged == false) {
-									
-									if (sateliteHitbox.x2 >= shipHitbox.x) {
-										if (sateliteHitbox.x <= shipHitbox.x2) {
-											if (sateliteHitbox.y2 >= shipHitbox.y) {
-												if (sateliteHitbox.y <= shipHitbox.y2) {
-													
-													sateliteDamage()
-													shipDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-					}
-					
-					
-					
-					// sateliteSpecial al tocar ship
-					
-					if (sateliteSpecialUse == true){
-						if (ship.show == true){
-							if (sateliteSpecial.show == true) {
-								
-								if (sateliteSpecialHitbox.x2 >= shipHitbox.x) {
-									if (sateliteSpecialHitbox.x <= shipHitbox.x2) {
-										if (sateliteSpecialHitbox.y2 >= shipHitbox.y) {
-											if (sateliteSpecialHitbox.y <= shipHitbox.y2) {
-												
-												sateliteSpecialDamage()
-												shipDamage()
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-					
-					
-					
-					
-					// lava al tocar ship
-					
-					if (lavaUse == true){
-						if (ship.show == true){
-							if (lava.show == true) {
-								
-								if (lavaHitbox.x2 >= shipHitbox.x) {
-									if (lavaHitbox.x <= shipHitbox.x2) {
-										if (lavaHitbox.y2 >= shipHitbox.y) {
-											if (lavaHitbox.y <= shipHitbox.y2) {
-												
-												shipKill()
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-					
-					
-					
-					
-					// Water al tocar ship
-					
-					if (waterUse == true){
-						if (ship.show == true){
-							if (water.show == true) {
-								
-								if (waterHitbox.x2 >= shipHitbox.x) {
-									if (waterHitbox.x <= shipHitbox.x2) {
-										if (waterHitbox.y2 >= shipHitbox.y) {
-											if (waterHitbox.y <= shipHitbox.y2) {
-												
-												shipKill()
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-					
-					
-					
-						
-					// asteroid al tocar disparos
-					if (asteroidUse == true) {
-						//disparo 1
-						
-						if (asteroid.show == true) {
-							if (disparo.disparado == true) {
-									
-								if (asteroid.x2 >= disparo.x) {
-									if (asteroid.x <= disparo.x2) {
-										if (asteroid.y2 >= disparo.y) {
-											if (asteroid.y <= disparo.y2) {
-												
-												disparo.disparado = false
-												
-												if (asteroidDamaged == false) {
-													asteroidDamage()
-												}
-											}
-										}
-									}
-								}
-								
-							}
-						}
-							
-						//disparo 2
-						if (asteroid.show == true) {
-							if (disparo2.disparado == true) {
-								
-								if (asteroid.x2 >= disparo2.x) {
-									if (asteroid.x <= disparo2.x2) {
-										if (asteroid.y2 >= disparo2.y) {
-											if (asteroid.y <= disparo2.y2) {
-												
-												disparo2.disparado = false
-												
-												if (asteroidDamaged == false) {
-													asteroidDamage()
-												}
-											}
-										}
-									}
-								}
-								
-							}
-						}
-							
-						//disparo 3
-						if (asteroid.show == true) {
-							if (disparo3.disparado == true) {
-								
-								if (asteroid.x2 >= disparo3.x) {
-									if (asteroid.x <= disparo3.x2) {
-										if (asteroid.y2 >= disparo3.y) {
-											if (asteroid.y <= disparo3.y2) {
-												
-												disparo3.disparado = false
-												
-												if (asteroidDamaged == false) {
-													asteroidDamage()
-												}
-											}
-										}
-									}
-								}
-								
-							}
-						}
-					}
-						
-						
-						
-						// asteroid 2 al tocar disparos
-						if (asteroid2Use == true){
-						//disparo 1
-							if (asteroid2.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (asteroid2.x2 >= disparo.x) {
-										if (asteroid2.x <= disparo.x2) {
-											if (asteroid2.y2 >= disparo.y) {
-												if (asteroid2.y <= disparo.y2) {
-													
-													disparo.disparado = false
-													
-													if (asteroid2Damaged == false) {
-														asteroid2Damage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (asteroid2.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (asteroid2.x2 >= disparo2.x) {
-										if (asteroid2.x <= disparo2.x2) {
-											if (asteroid2.y2 >= disparo2.y) {
-												if (asteroid2.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-													
-													if (asteroid2Damaged == false) {
-														asteroid2Damage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (asteroid.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (asteroid2.x2 >= disparo3.x) {
-										if (asteroid2.x <= disparo3.x2) {
-											if (asteroid2.y2 >= disparo3.y) {
-												if (asteroid2.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-													
-													if (asteroid2Damaged == false) {
-														asteroid2Damage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						
-					}
-						
-						
-					
-					//miniAsteroid al tocar disparos
-						if (miniAsteroidUse == true) {
-							
-							//disparo 1
-							if (miniAsteroid.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (miniAsteroid.x2 >= disparo.x) {
-										if (miniAsteroid.x <= disparo.x2) {
-											if (miniAsteroid.y2 >= disparo.y) {
-												if (miniAsteroid.y <= disparo.y2) {
-													
-													disparo.disparado = false
-													
-													if (miniAsteroidDamaged == false) {
-														miniAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-								
-							//disparo 2
-							if (miniAsteroid.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (miniAsteroid.x2 >= disparo2.x) {
-										if (miniAsteroid.x <= disparo2.x2) {
-											if (miniAsteroid.y2 >= disparo2.y) {
-												if (miniAsteroid.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-													
-													if (miniAsteroidDamaged == false) {
-														miniAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-								
-							//disparo 3
-							if (miniAsteroid.show == true) {
-								if (disparo3.disparado == true) {
-									
-									if (miniAsteroid.x2 >= disparo3.x) {
-										if (miniAsteroid.x <= disparo3.x2) {
-											if (miniAsteroid.y2 >= disparo3.y) {
-												if (miniAsteroid.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-													
-													if (miniAsteroidDamaged == false) {
-														miniAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-							
-						}
-						
-						
-						
-						
-						
-						// fireAsteroid al tocar disparos
-						if (fireAsteroidUse == true){
-						//disparo 1
-							if (fireAsteroid.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (fireAsteroid.x2 >= disparo.x) {
-										if (fireAsteroid.x <= disparo.x2) {
-											if (fireAsteroid.y2 >= disparo.y) {
-												if (fireAsteroid.y <= disparo.y2) {
-													
-													disparo.disparado = false
-													
-													if (fireAsteroidDamaged == false) {
-														fireAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (fireAsteroid.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (fireAsteroid.x2 >= disparo2.x) {
-										if (fireAsteroid.x <= disparo2.x2) {
-											if (fireAsteroid.y2 >= disparo2.y) {
-												if (fireAsteroid.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-													
-													if (fireAsteroidDamaged == false) {
-														fireAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (fireAsteroid.show == true) {
-								if (disparo3.disparado == true) {
-									
-									if (fireAsteroid.x2 >= disparo3.x) {
-										if (fireAsteroid.x <= disparo3.x2) {
-											if (fireAsteroid.y2 >= disparo3.y) {
-												if (fireAsteroid.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-													
-													if (fireAsteroidDamaged == false) {
-														fireAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-						
-						
-						
-						// iceAsteroid al tocar disparos
-						if (iceAsteroidUse == true){
-						//disparo 1
-							if (iceAsteroid.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (iceAsteroid.x2 >= disparo.x) {
-										if (iceAsteroid.x <= disparo.x2) {
-											if (iceAsteroid.y2 >= disparo.y) {
-												if (iceAsteroid.y <= disparo.y2) {
-													
-													disparo.disparado = false
-													
-													if (iceAsteroidDamaged == false) {
-														iceAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (iceAsteroid.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (iceAsteroid.x2 >= disparo2.x) {
-										if (iceAsteroid.x <= disparo2.x2) {
-											if (iceAsteroid.y2 >= disparo2.y) {
-												if (iceAsteroid.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-													
-													if (iceAsteroidDamaged == false) {
-														iceAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (iceAsteroid.show == true) {
-								if (disparo3.disparado == true) {
-									
-									if (iceAsteroid.x2 >= disparo3.x) {
-										if (iceAsteroid.x <= disparo3.x2) {
-											if (iceAsteroid.y2 >= disparo3.y) {
-												if (iceAsteroid.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-													
-													if (iceAsteroidDamaged == false) {
-														iceAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						
-						}
-						
-						
-						
-						
-						
-						// bigAsteroid al tocar disparos
-						if (bigAsteroidUse == true){
-						//disparo 1
-							if (bigAsteroid.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (bigAsteroid.x2 >= disparo.x) {
-										if (bigAsteroid.x <= disparo.x2) {
-											if (bigAsteroid.y2 >= disparo.y) {
-												if (bigAsteroid.y <= disparo.y2) {
-													
-													disparo.disparado = false
-													
-													if (bigAsteroidDamaged == false) {
-														bigAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (bigAsteroid.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (bigAsteroid.x2 >= disparo2.x) {
-										if (bigAsteroid.x <= disparo2.x2) {
-											if (bigAsteroid.y2 >= disparo2.y) {
-												if (bigAsteroid.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-													
-													if (bigAsteroidDamaged == false) {
-														bigAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (bigAsteroid.show == true) {
-								if (disparo3.disparado == true) {
-									
-									if (bigAsteroid.x2 >= disparo3.x) {
-										if (bigAsteroid.x <= disparo3.x2) {
-											if (bigAsteroid.y2 >= disparo3.y) {
-												if (bigAsteroid.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-													
-													if (bigAsteroidDamaged == false) {
-														bigAsteroidDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-						
-						
-						
-						
-						
-					
-					// satelite al tocar disparos
-						if (sateliteUse == true) {
-						//disparo 1
-							if (satelite.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (sateliteHitbox.x2 >= disparo.x) {
-										if (sateliteHitbox.x <= disparo.x2) {
-											if (sateliteHitbox.y2 >= disparo.y) {
-												if (sateliteHitbox.y <= disparo.y2) {
-													
-													disparo.disparado = false
-													
-													if (sateliteDamaged == false) {
-														sateliteDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (satelite.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (sateliteHitbox.x2 >= disparo2.x) {
-										if (sateliteHitbox.x <= disparo2.x2) {
-											if (sateliteHitbox.y2 >= disparo2.y) {
-												if (sateliteHitbox.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-													
-													if (sateliteDamaged == false) {
-														sateliteDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (satelite.show == true) {
-								if (disparo3.disparado == true) {
-									
-									if (sateliteHitbox.x2 >= disparo3.x) {
-										if (sateliteHitbox.x <= disparo3.x2) {
-											if (sateliteHitbox.y2 >= disparo3.y) {
-												if (sateliteHitbox.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-													
-													if (sateliteDamaged == false) {
-														sateliteDamage()
-													}
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-						
-					
-					
-					
-					// sateliteSpecial al tocar disparos
-						if (sateliteSpecialUse == true){
-						//disparo 1
-							if (sateliteSpecial.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (sateliteSpecialHitbox.x2 >= disparo.x) {
-										if (sateliteSpecialHitbox.x <= disparo.x2) {
-											if (sateliteSpecialHitbox.y2 >= disparo.y) {
-												if (sateliteSpecialHitbox.y <= disparo.y2) {
-													
-													disparo.disparado = false
-													sateliteSpecialDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (sateliteSpecial.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (sateliteSpecialHitbox.x2 >= disparo2.x) {
-										if (sateliteSpecialHitbox.x <= disparo2.x2) {
-											if (sateliteSpecialHitbox.y2 >= disparo2.y) {
-												if (sateliteSpecialHitbox.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-													sateliteSpecialDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (sateliteSpecial.show == true) {
-								if (disparo3.disparado == true) {
-									
-									if (sateliteSpecialHitbox.x2 >= disparo3.x) {
-										if (sateliteSpecialHitbox.x <= disparo3.x2) {
-											if (sateliteSpecialHitbox.y2 >= disparo3.y) {
-												if (sateliteSpecialHitbox.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-													sateliteSpecialDamage()
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-					
-					
-					
-					
-					
-					// lava al tocar disparos
-						if (lavaUse == true){	
-						//disparo 1
-							if (lava.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (lavaHitbox.x2 >= disparo.x) {
-										if (lavaHitbox.x <= disparo.x2) {
-											if (lavaHitbox.y2 >= disparo.y) {
-												if (lavaHitbox.y <= disparo.y2) {
-													
-													disparo.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-								
-						//disparo 2
-							if (lava.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (lavaHitbox.x2 >= disparo2.x) {
-										if (lavaHitbox.x <= disparo2.x2) {
-											if (lavaHitbox.y2 >= disparo2.y) {
-												if (lavaHitbox.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-								
-						//disparo 3
-							if (lava.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (lavaHitbox.x2 >= disparo3.x) {
-										if (lavaHitbox.x <= disparo3.x2) {
-											if (lavaHitbox.y2 >= disparo3.y) {
-												if (lavaHitbox.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-						
-						
-						
-						
-						
-						// water al tocar disparos
-						if (waterUse == true){
-						//disparo 1
-							if (water.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (waterHitbox.x2 >= disparo.x) {
-										if (waterHitbox.x <= disparo.x2) {
-											if (waterHitbox.y2 >= disparo.y) {
-												if (waterHitbox.y <= disparo.y2) {
-													
-													disparo.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (water.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (waterHitbox.x2 >= disparo2.x) {
-										if (waterHitbox.x <= disparo2.x2) {
-											if (waterHitbox.y2 >= disparo2.y) {
-												if (waterHitbox.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (water.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (waterHitbox.x2 >= disparo3.x) {
-										if (waterHitbox.x <= disparo3.x2) {
-											if (waterHitbox.y2 >= disparo3.y) {
-												if (waterHitbox.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-							
-						
-						
-						
-						
-						
-						// twister al tocar disparos
-						if (twisterUse == true){
-						//disparo 1
-							if (twister.show == true) {
-								if (disparo.disparado == true) {
-										
-									if (twister.x2 >= disparo.x) {
-										if (twister.x <= disparo.x2) {
-											if (twister.y2 >= disparo.y) {
-												if (twister.y <= disparo.y2) {
-													
-													disparo.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 2
-							if (twister.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (twister.x2 >= disparo2.x) {
-										if (twister.x <= disparo2.x2) {
-											if (twister.y2 >= disparo2.y) {
-												if (twister.y <= disparo2.y2) {
-													
-													disparo2.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-							
-						//disparo 3
-							if (twister.show == true) {
-								if (disparo2.disparado == true) {
-									
-									if (twister.x2 >= disparo3.x) {
-										if (twister.x <= disparo3.x2) {
-											if (twister.y2 >= disparo3.y) {
-												if (twister.y <= disparo3.y2) {
-													
-													disparo3.disparado = false
-												}
-											}
-										}
-									}
-									
-								}
-							}
-						}
-					
-					
-					
-				
+// original version: 1250 lineas
+// optimized version: 398 lineas
+function detectCollision(object1, object2){
+	if (object1.x2 >= object2.x) {
+		if (object1.x <= object2.x2) {
+			if (object1.y2 >= object2.y) {
+				if (object1.y <= object2.y2) {
+					return true;
 				}
+			}
+		}
+	}
+};
+
+function colisionDisparo(object, objectHitbox){
+	if (object.show){
+		if (disparo.disparado){
+			if (detectCollision(objectHitbox, disparo)){
+				disparo.disparado = false;
+				return true;
+			} else if (detectCollision(objectHitbox, disparo2)) {
+				disparo2.disparado = false;
+				return true;
+			} else if (detectCollision(objectHitbox, disparo3)) {
+				disparo3.disparado = false;
+				return true;
+			}
+		}
+	}
+};
+
+//colisiones, cuando hagas un objeto solido, COLISIONES.
+function colisiones(){
+
+	// asteroid -> borde
+	if (asteroidUse){
+		if (asteroid.x <= 0 - asteroid.width || asteroid.show == false){
+			asteroid.x = canvas.width + asteroid.width;
+			asteroid.y = getRandomInt(10, canvas.height - 10);
+			sprAsteroid = sprAsteroidNormal;
+			sprAsteroidString = "sprAsteroidNormal";
+			asteroid.show = true;
+		}
+	};
+						
+	// asteroid2 -> borde
+	if (asteroid2Use){
+		if (asteroid2.x <= 0 - asteroid2.width || asteroid2.show == false){
+			asteroid2.x = canvas.width + asteroid2.width;
+			asteroid2.y = getRandomInt(10, canvas.height - 10);
+			sprAsteroid2 = sprAsteroidNormal;
+			sprAsteroid2String = "sprAsteroidNormal";
+			asteroid2.show = true;
+		}
+	};
+
+	// miniAsteroid -> borde
+	if (miniAsteroidUse) {
+		if (miniAsteroid.x <= 0 - miniAsteroid.width || miniAsteroid.show == false){
+			miniAsteroid.x = canvas.width + (miniAsteroid.width * getRandomInt(3, 10));
+			if (miniAsteroid.speedY > 0){
+				miniAsteroid.y = getRandomInt(-100, canvas.height / 2);
+			} else {
+				miniAsteroid.y = getRandomInt(40, canvas.height - 40);
+			};
+			sprMiniAsteroid = sprMiniAsteroidNormal;
+			sprMiniAsteroidString = "sprMiniAsteroidNormal";
+			miniAsteroid.show = true;
+		}				
+	};
+
+
+	// fireAsteroid -> borde
+	if (fireAsteroidUse){
+		if (fireAsteroid.x <= 0 - fireAsteroid.width || fireAsteroid.show == false){
+			fireAsteroid.x = canvas.width + fireAsteroid.width;
+			fireAsteroid.y = getRandomInt(40, canvas.height - 40);
+			sprFireAsteroid = sprFireAsteroidNormal;
+			sprFireAsteroidString = "sprFireAsteroidNormal";
+			fireAsteroid.show = true;
+		}
+	};
+
+	// fireAsteroidAura -> borde
+	if (fireAsteroidAuraUse){
+		if (fireAsteroidAura.x <= -200 || fireAsteroidAura.show == false){
+			fireAsteroidAura.x = canvas.width + 200;
+			fireAsteroidAura.y = getRandomInt(128, canvas.height - 128);
+			fireAsteroidAura.show = true;
+		}
+	};
+
+	// iceAsteroid -> borde
+	if (iceAsteroidUse){
+		if (iceAsteroid.x <= 0 - iceAsteroid.width || iceAsteroid.show == false){
+			iceAsteroid.x = canvas.width + iceAsteroid.width;
+			iceAsteroid.y = getRandomInt(40, canvas.height - 40);
+			sprIceAsteroid = sprIceAsteroidNormal;
+			sprIceAsteroidString = "sprIceAsteroidNormal";
+			iceAsteroid.show = true;
+		}
+	};
+
+	// iceAsteroidAura -> borde
+	if (iceAsteroidAuraUse){
+		if (iceAsteroidAura.x <= -256 || iceAsteroidAura.show == false){
+			iceAsteroidAura.x = canvas.width + 256;
+			iceAsteroidAura.y = getRandomInt(128, canvas.height - 128);
+			iceAsteroidAura.show = true;
+		}
+	};
+
+	// bigAsteroid -> borde
+	if (bigAsteroidUse){
+		if (bigAsteroid.x <= 0 - bigAsteroid.width || bigAsteroid.show == false){
+			bigAsteroid.x = canvas.width + bigAsteroid.width;
+			bigAsteroid.y = getRandomInt(40, canvas.height - 40);
+			sprBigAsteroid = sprBigAsteroidNormal;
+			sprBigAsteroidString = "sprBigAsteroidNormal";
+			bigAsteroid.show = true;
+			randomBigAsteroid();
+		}
+	};
+
+	// satelite -> borde
+	if (sateliteUse){
+		if (satelite.x <= -40 * gameScale || satelite.show == false){
+			satelite.x = canvas.width + 72;
+			satelite.y = getRandomInt(0, canvas.height - 164);
+			sprSatelite = sprSateliteNormal;
+			sprSateliteString = "sprSateliteNormal";
+			satelite.show = true;
+		}
+	};
+
+	// sateliteSpecial -> borde
+	if (sateliteSpecialUse){
+		if (sateliteSpecial.x <= -30 * gameScale || sateliteSpecial.show == false){
+			sateliteSpecial.x = canvas.width + 72;
+			sateliteSpecial.y = getRandomInt(0, canvas.height - 164);
+			sateliteSpecial.show = true;
+		}
+	};
+
+	// ship -> borde
+	if (ship.show){
+		if (ship.x <= -36 || ship.y <= -36||
+			ship.x >= canvas.width - 36 ||
+			ship.y >= canvas.height - 36){
+			
+			ship.x = canvas.width / 2;
+			ship.y = canvas.height / 2;
+			ship.show = false;
+			ship.speed = 0;
+			
+			useExplosion();
+			sprShield = sprShield0;
+			sprShieldString = "sprShield0";
+			shipGAMEOVER();
+		}
+	};
+// ------------------------------------------------------- SHIP
+	// asteroid -> ship
+	if (ship.show){
+		if (asteroidUse){
+			if (asteroidDamaged == false) {
+				if (detectCollision(asteroid, shipHitbox)){
+					asteroidDamage();
+					shipDamage();
+				}
+			}
+		}
+	};
+
+	// asteroid2 -> ship
+	if (ship.show){
+		if (asteroid2Use){
+			if (asteroid2Damaged == false) {
+				if (detectCollision(shipHitbox, asteroid2)){
+					asteroid2Damage();
+					shipDamage();
+				}
+			}
+		}
+	};
+
+	// miniAsteroid -> ship
+	if (ship.show){
+		if (miniAsteroidUse){
+			if (miniAsteroidDamaged == false) {
+				if (detectCollision(shipHitbox, miniAsteroid)){
+					miniAsteroidDamage();
+					shipDamage();
+				}
+			}
+		}
+	};
+	
+	// fireAsteroid -> ship
+	if (ship.show){
+		if (fireAsteroidUse){
+			if (fireAsteroidDamaged == false) {
+				if (detectCollision(shipHitbox, fireAsteroid)){
+					fireAsteroidDamage();
+					shipDamage();
+					ship.speed = 4.5;
+				}
+			}
+		}
+	};
+
+
+	// fireAsteroidAura -> ship
+	if (fireAsteroidAuraUse){
+		if (ship.show){
+			if (detectCollision(shipHitbox, fireAsteroidAura)){
+				ship.speed = 4.5;
+			}
+		}
+	};
+
+	// iceAsteroid -> ship
+	if (iceAsteroidUse){
+		if (ship.show){
+			if (iceAsteroidDamaged == false) {
+				if (detectCollision(shipHitbox, iceAsteroid)){
+					iceAsteroidDamage();
+					shipDamage();
+					ship.speed = 0;
+				}
+			}
+		}
+	};
+
+	// iceAsteroidAura -> ship
+	if (iceAsteroidAuraUse){
+		if (ship.show){
+			if(detectCollision(shipHitbox, iceAsteroidAura)){
+				ship.speed = 0.5;
+			}
+		}
+	};
+
+	// bigAsteroid -> ship
+	if (bigAsteroidUse){
+		if (ship.show){
+			if (bigAsteroidDamaged == false) {
+				if (detectCollision(shipHitbox, bigAsteroid)){
+					bigAsteroidDamage();
+					shipDamage();
+				}
+			}
+		}
+	};
+
+	// twister -> ship
+	if (twisterUse){
+		if (ship.show){
+			if (twister.show) {
+				if (detectCollision(shipHitbox, twister)){
+					shipDamage();
+					ship.speedY = -5;
+				}
+			}
+		}
+	};
+	
+	// satelite -> ship
+	if (sateliteUse){
+		if (ship.show){
+			if (sateliteDamaged == false) {
+				if (detectCollision(shipHitbox, sateliteHitbox)){			
+					sateliteDamage();
+					shipDamage();
+				}
+			}
+		}
+	};
+
+	// sateliteSpecial -> ship
+	if (sateliteSpecialUse){
+		if (ship.show){
+			if (detectCollision(shipHitbox, sateliteSpecialHitbox)){
+				sateliteSpecialDamage();
+				shipDamage();
+			}
+		}
+	};
+
+	// lava -> ship
+	if (lavaUse){
+		if (ship.show){
+			if (lavaHitbox.use) {
+				if (detectCollision(shipHitbox, lavaHitbox)){
+					shipKill();
+				}
+			}
+		}
+	};
+
+	// Water -> ship
+	if (waterUse){
+		if (ship.show){
+			if (waterHitbox.use) {
+				if (detectCollision(shipHitbox, waterHitbox)){
+					shipKill();
+				}
+			}
+		}
+	};
+
+	// ----------------------------------------------------------------------- DISPAROS
+
+	// asteroid -> disparos
+	if (asteroidUse) {
+		if (colisionDisparo(asteroid, asteroid)){
+			if (asteroidDamaged == false){
+				asteroidDamage();
+			}
+		}
+	};
+
+	// asteroid 2 -> disparos
+	if (asteroid2Use){
+		if (colisionDisparo(asteroid2, asteroid2)){
+			if (asteroid2Damaged == false){
+				asteroid2Damage();
+			}
+		}
+	};
+
+	// miniAsteroid -> disparos
+	if (miniAsteroidUse) {
+		if (colisionDisparo(miniAsteroid, miniAsteroid)){
+			if (miniAsteroidDamaged == false){
+				miniAsteroidDamage();
+			}
+		}
+	};
+
+	// fireAsteroid -> disparos
+	if (fireAsteroidUse == true){
+		if(colisionDisparo(fireAsteroid, fireAsteroid)){
+			if (fireAsteroidDamaged == false){
+				fireAsteroidDamage();
+			}
+		}
+	};
+
+	// iceAsteroid -> disparos
+	if (iceAsteroidUse){
+		if (colisionDisparo(iceAsteroid, iceAsteroid)){
+			if (iceAsteroidDamaged == false){
+				iceAsteroidDamage();
+			}
+		}
+	};
+
+	// bigAsteroid -> disparos
+	if (bigAsteroidUse){
+		if (colisionDisparo(bigAsteroid, bigAsteroid)){
+			if (bigAsteroidDamaged == false){
+				bigAsteroidDamage();
+			}
+		}
+	};
+
+	// satelite -> disparos
+	if (sateliteUse) {
+		if (colisionDisparo(satelite, sateliteHitbox)){
+			if (sateliteDamaged == false){
+				sateliteDamage();
+			}
+		}
+	};
+
+	// sateliteSpecial -> disparos
+	if (sateliteSpecialUse == true){
+		if (colisionDisparo(sateliteSpecial, sateliteSpecialHitbox)){
+			sateliteSpecialDamage();
+		}
+	};
+
+	// lava -> disparos
+	if (lavaUse == true){	
+		colisionDisparo(lava, lavaHitbox);
+	};
+
+
+	// water -> disparos
+	if (waterUse == true){
+		colisionDisparo(water, waterHitbox);
+	};
+
+	// twister -> disparos
+	if (twisterUse == true){
+		colisionDisparo(twister, twister);
+	};
+};

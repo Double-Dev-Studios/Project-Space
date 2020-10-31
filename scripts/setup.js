@@ -62,6 +62,7 @@
 	var musicNeptune = document.createElement('audio');
 	var musicSpace = document.createElement('audio');
 	var musicChallengeC = document.createElement('audio');
+	var musicPhobos = document.createElement('audio');
 	
 	musicEarth.setAttribute('src', '../../music/earth.mp3');
 	musicMoon.setAttribute('src', '../../music/moon.mp3');
@@ -74,6 +75,7 @@
 	musicNeptune.setAttribute('src', '../../music/neptune.mp3');
 	musicSpace.setAttribute('src', '../../music/space.mp3');
 	musicChallengeC.setAttribute('src', '../../music/challengeComplete.mp3');
+	musicPhobos.setAttribute('src', '../../music/phobos.mp3');
 	
 	//setup de sfx
 	
@@ -94,7 +96,7 @@
 	//volumen
 	sfxExplosion.volume = 0.5
 	sfxHit.volume = 0.6
-	sfxSelect.volume = 0.6
+	sfxSelect.volume = 0.5
 	sfxShield.volume = 0.6
 	sfxShoot.volume = 0.6
 	sfxShoot2.volume = 0.6

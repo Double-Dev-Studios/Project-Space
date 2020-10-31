@@ -2,21 +2,19 @@
 	//lo que pase cuando sueltas una tecla
 	function soltarTecla(){
 		var kf = event.keyCode;
-		
 		//izquierda o derecha suelta
-			if (kf == kRight){ship.speedX = 0}
-			if (kf == kLeft){ship.speedX = 0}
+			if (kf == kRight) {ship.speedX = 0};
+			if (kf == kLeft) {ship.speedX = 0};
 		//arriba o abajo suelta
-			if (kf == kUp){ship.speedY = 0}
-			if (kf == kDown){ship.speedY = 0}
-			
+			if (kf == kUp) {ship.speedY = 0};
+			if (kf == kDown) {ship.speedY = 0};
 			
 		//A o D suelta
-			if (kf == kD){ship.speedX = 0}
-			if (kf == kA){ship.speedX = 0}
+			if (kf == kD) {ship.speedX = 0};
+			if (kf == kA) {ship.speedX = 0};
 		//W o S suelta
-			if (kf == kW){ship.speedY = 0}
-			if (kf == kS){ship.speedY = 0}
+			if (kf == kW) {ship.speedY = 0};
+			if (kf == kS) {ship.speedY = 0};
 	}
 	
 	

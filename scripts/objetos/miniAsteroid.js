@@ -27,6 +27,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1.5,
+			speedY: 0,
 			show: false
 		}
 		
@@ -45,8 +46,8 @@
 			if (miniAsteroidUse == true) {
 			
 				miniAsteroid.x -= ship.speed
-				
-					miniAsteroid.x -= miniAsteroid.speedX
+				miniAsteroid.x -= miniAsteroid.speedX
+				miniAsteroid.y += miniAsteroid.speedY
 								
 				// actualizar miniAsteroid.x2/y2
 				miniAsteroid.x2 = miniAsteroid.width + miniAsteroid.x
