@@ -118,6 +118,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
+			speedY: 0,
 			delayTime: 20,
 			show: true
 		}
@@ -139,6 +140,7 @@
 				asteroid2.x -= ship.speed
 				
 				asteroid2.x -= asteroid2.speedX
+				asteroid2.y += asteroid2.speedY
 				
 				asteroid2.x2 = asteroid2.width + asteroid2.x
 				asteroid2.y2 = asteroid2.height + asteroid2.y
