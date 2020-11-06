@@ -137,6 +137,11 @@ setInterval(contadoresOutgame, 16)
 					musicPhobos.currentTime = 0;
 					musicPhobos.play();
 				}
+
+				if (musicDeimos.currentTime > 118){
+					musicDeimos.currentTime = 0;
+					musicDeimos.play();
+				}
 			}
 
 
@@ -199,6 +204,11 @@ setInterval(contadoresOutgame, 16)
 				if (actualBGString == "bgFobos") {
 					musicPhobos.currentTime = 0;
 					musicPhobos.play();
+				}
+
+				if (actualBGString == "bgDeimos") {
+					musicDeimos.currentTime = 0;
+					musicDeimos.play();
 				}
 			}
 
@@ -511,6 +521,8 @@ setInterval(contadoresOutgame, 16)
 				musicNeptune.pause()
 				musicSpace.pause()
 				musicPhobos.pause()
+				musicDeimos.pause()
+
 			}
 
 
@@ -698,6 +710,19 @@ setInterval(contadoresOutgame, 16)
 					miniAsteroid.speedX += 2
 					miniAsteroid.speedY += 1
 					asteroid.speedX += 2
+				}
+
+				if (actualBGString == "bgDeimos"){
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					miniAsteroid.speedX += 2
+					miniAsteroid.speedY += 1
+					asteroid.speedX += 2
+					asteroid2.speedY += 0.5
 				}
 
 			}

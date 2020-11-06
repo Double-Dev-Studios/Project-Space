@@ -49,7 +49,11 @@ function colisiones(){
 	if (asteroid2Use){
 		if (asteroid2.x <= 0 - asteroid2.width || asteroid2.show == false){
 			asteroid2.x = canvas.width + asteroid2.width;
-			asteroid2.y = getRandomInt(10, canvas.height - 10);
+			if (asteroid2.speedY > 0){
+				asteroid2.y = getRandomInt(-100, canvas.height / 2);
+			} else {
+				asteroid2.y = getRandomInt(10, canvas.height - 10);
+			};
 			sprAsteroid2 = sprAsteroidNormal;
 			sprAsteroid2String = "sprAsteroidNormal";
 			asteroid2.show = true;

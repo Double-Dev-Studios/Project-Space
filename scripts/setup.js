@@ -63,6 +63,7 @@
 	var musicSpace = document.createElement('audio');
 	var musicChallengeC = document.createElement('audio');
 	var musicPhobos = document.createElement('audio');
+	var musicDeimos = document.createElement('audio');
 	
 	musicEarth.setAttribute('src', '../../music/earth.mp3');
 	musicMoon.setAttribute('src', '../../music/moon.mp3');
@@ -76,6 +77,7 @@
 	musicSpace.setAttribute('src', '../../music/space.mp3');
 	musicChallengeC.setAttribute('src', '../../music/challengeComplete.mp3');
 	musicPhobos.setAttribute('src', '../../music/phobos.mp3');
+	musicDeimos.setAttribute('src', '../../music/deimos.mp3');
 	
 	//setup de sfx
 	
@@ -120,11 +122,6 @@
 	var lavaUse = false
 	var waterUse = false
 	var twisterUse = false
-	
-	
-	
-	
-	
 	
 	
 
