@@ -1,0 +1,7 @@
+prev:
+* The Lost Levels: Deimos
+
+now:
+* Reset and Back button lag has been fixed
+* Replaced title with a holydays one just like in Halloween
+* This is the last update of the year, Happy Holydays to everyone!
