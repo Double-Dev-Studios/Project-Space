@@ -3,13 +3,6 @@ boton.addEventListener("click", iniciarParar);
 
 fullboton.addEventListener("click", fullscreen);
 
-resethtml.addEventListener("click", resethtmlF);
-
-gobackhtml.addEventListener("click", gobackhtmlF);
-
-setInterval(contadoresOutgame, 16)
-
-
 			function dibujar(){
 				//no saques ni comentes el ctx.clearRect a menos de que sepas lo que haces
 				ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -464,25 +457,6 @@ setInterval(contadoresOutgame, 16)
 					}
 				}
 			}
-			
-			function contadoresOutgame(){
-				//contador reset
-				if (contadorReset > 0){
-					contadorReset -= 1
-				}
-				if (contadorReset <= 0){
-					location.reload();
-				}
-				
-				//contador go back
-				if (contadorGoBack > 0){
-					contadorGoBack -= 1
-				}
-				if (contadorGoBack <= 0){
-					location.href = "../../index.html"
-				}
-				
-			}
 
 			function challenge(){
 				if (actualChallenge == "bigAsteroids"){
@@ -543,45 +517,7 @@ setInterval(contadoresOutgame, 16)
 					canvas.height = 500
 				}
 			}
-			
-			function resethtmlF() {
-				useSelect();
-				contadorReset = 15
-			}
-			
-			function gobackhtmlF() {
-				useSelect();
-				contadorGoBack = 15
-			}
 
-
-			function frame(){
-				//esto pasa en cada frame
-				musicBucle();
-				contadores();
-				actualizar();
-				colisiones();
-				dibujar();
-			}
-
-
-			//iniciarParar, puedes asignar lo que sea para pausar y despausar el juego
-			function iniciarParar(){
-				if (pausa){
-					pausa = false;
-					playstop.src = "../../menu/pause.png"
-					challenge()
-					useSelect()
-					musicStart()
-					bucle = setInterval(frame, 16)
-				} else {
-					pausa = true;
-					playstop.src = "../../menu/play.png"
-					useSelect()
-					musicPause()
-					clearInterval(bucle)
-				}
-			}
 
 
 			function cambiarBG(){
@@ -729,3 +665,32 @@ setInterval(contadoresOutgame, 16)
 
 
 			cambiarBG()
+
+
+			function frame(){
+				//esto pasa en cada frame
+				musicBucle();
+				contadores();
+				actualizar();
+				colisiones();
+				dibujar();
+			}
+
+
+			//iniciarParar, puedes asignar lo que sea para pausar y despausar el juego
+			function iniciarParar(){
+				if (pausa){
+					pausa = false;
+					playstop.src = "../../menu/pause.png"
+					challenge()
+					useSelect()
+					musicStart()
+					bucle = setInterval(frame, 16)
+				} else {
+					pausa = true;
+					playstop.src = "../../menu/play.png"
+					useSelect()
+					musicPause()
+					clearInterval(bucle)
+				}
+			}
