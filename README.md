@@ -1,7 +1,7 @@
 # Project Space
 Space Machines Remake
 
-for now is just a beta of the final game
+This game is still not finished
 
 Levels:
 
@@ -18,4 +18,9 @@ Uranus,
 Neptune,
 Space
 
-The lost levels: coming soon
+The lost levels:
+
+Phobos,
+Deimos
+
+Coming soon!
