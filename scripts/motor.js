@@ -27,6 +27,7 @@ fullboton.addEventListener("click", fullscreen);
 				if (iceAsteroidAuraUse == true) {dibujarIceAsteroidAura()}
 				if (fireAsteroidAuraUse == true) {dibujarFireAsteroidAura()}
 				if (lavaUse == true) {dibujarLava()}
+				if (lavaRUse == true) {dibujarLava()}
 				if (waterUse == true) {dibujarWater()}
 				if (sateliteUse == true) {dibujarSatelite()}
 				if (sateliteSpecialUse == true) {dibujarSateliteSpecial()}
@@ -69,6 +70,7 @@ fullboton.addEventListener("click", fullscreen);
 				if (sateliteSpecialUse == true) {actualizarSateliteSpecial()}
 				if (lavaUse == true) {actualizarLava()}
 				if (waterUse == true) {actualizarWater()}
+				if (lavaRUse == true) {actualizarLavaR()}
 				if (twisterUse == true) {actualizarTwister()}
 			}
 
@@ -135,6 +137,11 @@ fullboton.addEventListener("click", fullscreen);
 					musicDeimos.currentTime = 0;
 					musicDeimos.play();
 				}
+
+				if (musicMercury.currentTime > 83){
+					musicMercury.currentTime = 0;
+					musicMercury.play();
+				}
 			}
 
 
@@ -194,6 +201,11 @@ fullboton.addEventListener("click", fullscreen);
 					musicChallengeC.play();
 				}
 
+				if (actualBGString == "bgLvlComplete") {
+					musicLvl.currentTime = 0;
+					musicLvl.play();
+				}
+
 				if (actualBGString == "bgFobos") {
 					musicPhobos.currentTime = 0;
 					musicPhobos.play();
@@ -202,6 +214,11 @@ fullboton.addEventListener("click", fullscreen);
 				if (actualBGString == "bgDeimos") {
 					musicDeimos.currentTime = 0;
 					musicDeimos.play();
+				}
+
+				if (actualBGString == "bgMercurio") {
+					musicMercury.currentTime = 0;
+					musicMercury.play();
 				}
 			}
 
@@ -391,6 +408,31 @@ fullboton.addEventListener("click", fullscreen);
 					}
 
 				}
+
+				if (lavaRUse == true){
+
+					if (contadorLavaR > 0){
+						contadorLavaR -= 1
+
+						if (contadorLavaR <= 51){
+							if (contadorLavaR >= 49){
+								lavaR.y = getRandomInt(64, canvas.height - 64)
+								sprLavaR = sprLavaR0
+								sprLavaRString = "sprLavaR0"
+								lavaR.show = true
+							}
+						}
+					}
+
+					if (contadorLavaR <= 0){
+						generarLavaR()
+						contadorLavaR = 5
+						if (sprLavaRString == "sprLavaR4"){
+							contadorLavaR = 200
+						}
+					}
+
+				}
 				
 				
 				
@@ -496,6 +538,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicSpace.pause()
 				musicPhobos.pause()
 				musicDeimos.pause()
+				musicMercury.pause()
 
 			}
 
@@ -659,6 +702,20 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroid.speedY += 1
 					asteroid.speedX += 2
 					asteroid2.speedY += 0.5
+				}
+
+				if (actualBGString == "bgMercurio"){
+					sateliteUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					miniAsteroid.speedX += 2
+					miniAsteroid.speedY -= 1
+					asteroid.speedX += 3
+					asteroid2.speedY += 0.5
+					lavaRUse = true
 				}
 
 			}

@@ -315,6 +315,17 @@ function colisiones(){
 		}
 	};
 
+	// lavaR -> ship
+	if (lavaRUse){
+		if (ship.show){
+			if (lavaRHitbox.use) {
+				if (detectCollision(shipHitbox, lavaRHitbox)){
+					shipKill();
+				}
+			}
+		}
+	};
+
 	// ----------------------------------------------------------------------- DISPAROS
 
 	// asteroid -> disparos
