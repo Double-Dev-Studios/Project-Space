@@ -13,15 +13,32 @@ sprLava2.src = "../../sprites/lava/lava2.png"
 sprLava3.src = "../../sprites/lava/lava3.png"
 sprLava4.src = "../../sprites/lava/lava4.png"
 
+// Lava Right
+var sprLavaR0 = new Image()
+var sprLavaR1 = new Image()
+var sprLavaR2 = new Image()
+var sprLavaR3 = new Image()
+var sprLavaR4 = new Image()
+sprLavaR0.src = "../../sprites/lava/lavaR0.png"
+sprLavaR1.src = "../../sprites/lava/lavaR1.png"
+sprLavaR2.src = "../../sprites/lava/lavaR2.png"
+sprLavaR3.src = "../../sprites/lava/lavaR3.png"
+sprLavaR4.src = "../../sprites/lava/lavaR4.png"
+
 var sprLava = sprLava0
 var sprLavaString = "sprLava0"
+
+var sprLavaR = sprLavaR0
+var sprLavaRString = "sprLavaR0"
 
 
 //variables de lava
 
 var contadorLava = 600
+var contadorLavaR = 600
 
 var lavaUse = false
+var lavaRUse = false
 
 var lava = {
 	x: getRandomInt(64, canvas.width - 64),
@@ -43,12 +60,38 @@ var lavaHitbox = {
 	use: false
 }
 
+// lava r
+
+var lavaR = {
+	x: 0,
+	y: getRandomInt(64, canvas.width - 64), 
+	width: 64 * gameScale,
+	height: 16 * gameScale,
+	x2: this.width * gameScale + this.x,
+	y2: this.height * gameScale + this.y,
+	show: false
+}
+
+var lavaRHitbox = {
+	x: 0,
+	y: lavaR.y,
+	width: 0,
+	height: lavaR.height,
+	x2: this.width + this.x,
+	y2: this.height + this.y,
+	use: false
+}
+
 
 //funciones de lava
 
 function dibujarLava(){
 	if (lava.show == true){
 		ctx.drawImage(sprLava, lava.x, lava.y, lava.width, lava.height)
+	}
+
+	if (lavaR.show == true){
+		ctx.drawImage(sprLavaR, lavaR.x, lavaR.y, lavaR.width, lavaR.height)
 	}
 }
 
@@ -69,6 +112,22 @@ function actualizarLava(){
 		
 		lavaHitbox.x2 = lavaHitbox.width + lavaHitbox.x
 		lavaHitbox.y2 = lavaHitbox.height + lavaHitbox.y
+	}
+}
+
+function actualizarLavaR(){
+	if (lavaRUse == true){
+		
+		lavaRHitbox.y = lavaR.y
+		lavaRHitbox.height = lavaR.height
+		
+		if (sprLavaRString == "sprLavaR0"){
+			lavaRHitbox.width = 0
+			lavaRHitbox.use = false
+		} else {lavaRHitbox.use = true}
+		
+		lavaRHitbox.x2 = lavaRHitbox.width + lavaRHitbox.x
+		lavaRHitbox.y2 = lavaRHitbox.height + lavaRHitbox.y
 	}
 }
 
@@ -113,6 +172,47 @@ function generarLava(){
 		
 		sprLava = sprLava1;
 		sprLavaString = "sprLava1";
+	};
+	
+}
+
+
+function generarLavaR(){
+	if (sprLavaRString == "sprLavaR3"){
+		lavaRHitbox.width = 64 * gameScale;
+		lavaRHitbox.x2 = lavaRHitbox.width + lavaRHitbox.x;
+		lavaRHitbox.y2 = lavaRHitbox.height + lavaRHitbox.y;
+		
+		sprLavaR = sprLavaR4;
+		sprLavaRString = "sprLavaR4";
+	};
+
+		if (sprLavaRString == "sprLavaR2"){
+		lavaRHitbox.width = 48 * gameScale;
+		lavaRHitbox.x2 = lavaRHitbox.width + lavaRHitbox.x;
+		lavaRHitbox.y2 = lavaRHitbox.height + lavaRHitbox.y;
+		
+		sprLavaR = sprLavaR3;
+		sprLavaRString = "sprLavaR3";
+	};
+
+	if (sprLavaRString == "sprLavaR1"){
+		lavaRHitbox.width = 32 * gameScale;
+		lavaRHitbox.x2 = lavaRHitbox.width + lavaRHitbox.x;
+		lavaRHitbox.y2 = lavaRHitbox.height + lavaRHitbox.y;
+		
+		sprLavaR = sprLavaR2;
+		sprLavaRString = "sprLavaR2";
+	};
+	
+	if (sprLavaRString == "sprLavaR0"){
+		lavaRHitbox.width = 16 * gameScale;
+		lavaRHitbox.x2 = lavaRHitbox.width + lavaRHitbox.x;
+		lavaRHitbox.y2 = lavaRHitbox.height + lavaRHitbox.y;
+		
+		sprLavaR = sprLavaR1;
+		sprLavaRString = "sprLavaR1";
+		//lavaRHitbox.use = true;
 	};
 	
 }
