@@ -21,6 +21,7 @@ Space
 The lost levels:
 
 Phobos,
-Deimos
+Deimos,
+Mercury
 
 Coming soon!
