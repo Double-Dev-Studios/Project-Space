@@ -171,6 +171,7 @@
 		asteroidUse = false
 		asteroid2Use = false
 		miniAsteroidUse = false
+		bigAsteroidUse = false
 		sateliteUse = false
 		sateliteSpecialUse = false
 		lavaUse = false

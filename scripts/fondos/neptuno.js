@@ -4,10 +4,12 @@
 	var bgNeptuno = new Image()
 	bgNeptuno.src = "../../bg/neptuno.png"
 
+	var bgLvlComplete = new Image()
+	bgLvlComplete.src = "../../bg/lvlComplete.png"
+
 // variables de fondo
 	var actualBG = bgNeptuno
-		
-		var actualBGString = "bgNeptuno"
+	var actualBGString = "bgNeptuno"
 	
 	var bg = {
 		offset: 400,
@@ -15,12 +17,59 @@
 		minTemp: -50,
 		tempAdd: -0.09
 	}
+
+	var minOffset = -800
 	
 // funciones de fondo
 	function dibujarFondo(){
-		ctx.drawImage(actualBG, bg.offset, 0,)
+		if (actualBGString == "bgLvlComplete"){
+			ctx.drawImage(actualBG, bg.offset, 0, canvas.width, canvas.height)
+			ctx.fillStyle = "yellow";
+			ctx.fillText("Neptune", canvas.width / 2.8, canvas.height / 1.25)
+		} else {
+			ctx.drawImage(actualBG, bg.offset, 0,)
+		}
 	}
 						
 	function actualizarFondo(){
 		bg.offset -= (ship.speed / 2 * bg.speed)
+
+		if (bg.offset <= minOffset){
+			endLevel()
+			musicPause()
+			musicStart()
+			disableEnemies()
+			cambiarBG()
+		}
+	}
+
+	function endLevel(){
+		if (actualBGString == "bgNeptuno"){
+
+			bg.offset = 0
+			minOffset = -1
+			actualBG = bgLvlComplete
+			actualBGString = "bgLvlComplete"
+
+			bg.speed = 0
+			bg.minTemp = -99
+			bg.tempAdd = 0
+			ship.show = false
+		}
+	}
+
+	function disableEnemies(){
+		asteroidUse = false
+		asteroid2Use = false
+		miniAsteroidUse = false
+		bigAsteroidUse = false
+		sateliteUse = false
+		sateliteSpecialUse = false
+		lavaUse = false
+		waterUse = false
+		twisterUse = false
+		fireAsteroidUse = false
+		fireAsteroidAuraUse = false
+		iceAsteroidUse = false
+		iceAsteroidAuraUse = false
 	}
