@@ -22,6 +22,7 @@ The lost levels:
 
 Phobos,
 Deimos,
-Mercury
+Mercury,
+Europe
 
 Coming soon!
