@@ -1,0 +1,33 @@
+prev3:
+
+1.2.3
+
+* The Lost Levels: Deimos
+
+prev2:
+
+1.2.4
+
+* Reset and Back button lag has been fixed
+* Replaced title with a holydays one just like in Halloween
+* This is the last update of the year, Happy Holydays to everyone!
+
+prev:
+
+1.3.0
+
+* The Lost Levels: Mercury
+* Back to the original Title
+* Now it's possible to finish any level
+(except for not scrolling ones, sorry Space and Asteroid belt)
+* New type of lava
+* Buttons href has been fixed
+* Minor changes
+
+now:
+
+1.4.0
+
+* The Lost Levels: Europe
+* Shoot speed fixed
+* Lava particles
