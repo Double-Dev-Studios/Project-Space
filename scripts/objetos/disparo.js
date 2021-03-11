@@ -44,7 +44,7 @@
 				disparo.x = ship.x + 10
 				disparo.y = ship.y + 30
 			} else {
-				disparo.speedX = 6
+				disparo.speedX = 7
 			}
 		}
 				
@@ -95,7 +95,8 @@
 				disparo2.x = ship.x + 10
 				disparo2.y = ship.y + 30
 			} else {
-				disparo2.speedX = 6
+				//disparo2.x += 10
+				disparo2.speedX = 7
 			}
 		}
 		
@@ -144,7 +145,7 @@
 				disparo3.x = ship.x + 10
 				disparo3.y = ship.y + 30
 			} else {
-				disparo3.speedX = 6
+				disparo3.speedX = 7
 			}
 		}
 		

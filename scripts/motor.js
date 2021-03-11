@@ -127,7 +127,7 @@ fullboton.addEventListener("click", fullscreen);
 					musicSpace.currentTime = 0;
 					musicSpace.play();
 				}
-
+				// lost levels:
 				if (musicPhobos.currentTime > 76){
 					musicPhobos.currentTime = 0;
 					musicPhobos.play();
@@ -142,6 +142,12 @@ fullboton.addEventListener("click", fullscreen);
 					musicMercury.currentTime = 0;
 					musicMercury.play();
 				}
+
+				if (musicEurope.currentTime > 76){
+					musicEurope.currentTime = 0;
+					musicEurope.play();
+				}
+
 			}
 
 
@@ -206,6 +212,8 @@ fullboton.addEventListener("click", fullscreen);
 					musicLvl.play();
 				}
 
+				// lost levels
+
 				if (actualBGString == "bgFobos") {
 					musicPhobos.currentTime = 0;
 					musicPhobos.play();
@@ -219,6 +227,11 @@ fullboton.addEventListener("click", fullscreen);
 				if (actualBGString == "bgMercurio") {
 					musicMercury.currentTime = 0;
 					musicMercury.play();
+				}
+
+				if (actualBGString == "bgEuropa") {
+					musicEurope.currentTime = 0;
+					musicEurope.play();
 				}
 			}
 
@@ -407,6 +420,15 @@ fullboton.addEventListener("click", fullscreen);
 						}
 					}
 
+					if (contadorLavaParticles > 0){
+						contadorLavaParticles -= 1
+					}
+
+					if (contadorLavaParticles <= 0){
+						nextLavaParticle()
+						contadorLavaParticles = 5
+					}
+
 				}
 
 				if (lavaRUse == true){
@@ -431,7 +453,6 @@ fullboton.addEventListener("click", fullscreen);
 							contadorLavaR = 200
 						}
 					}
-
 				}
 				
 				
@@ -539,7 +560,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicPhobos.pause()
 				musicDeimos.pause()
 				musicMercury.pause()
-
+				musicEurope.pause()
 			}
 
 
@@ -716,6 +737,20 @@ fullboton.addEventListener("click", fullscreen);
 					asteroid.speedX += 3
 					asteroid2.speedY += 0.5
 					lavaRUse = true
+				}
+
+				if (actualBGString == "bgEuropa"){
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					iceAsteroidUse = true
+					miniAsteroid.speedX += 2
+					miniAsteroid.speedY += 1
+					asteroid.speedX += 3
+					asteroid2.speedY -= 0.5
 				}
 
 			}

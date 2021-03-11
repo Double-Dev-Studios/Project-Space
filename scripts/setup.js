@@ -63,9 +63,11 @@
 	var musicSpace = document.createElement('audio');
 	var musicChallengeC = document.createElement('audio');
 	var musicLvl = document.createElement('audio');
+
 	var musicPhobos = document.createElement('audio');
 	var musicDeimos = document.createElement('audio');
 	var musicMercury = document.createElement('audio');
+	var musicEurope = document.createElement('audio');
 	
 	musicEarth.setAttribute('src', '../../music/earth.mp3');
 	musicMoon.setAttribute('src', '../../music/moon.mp3');
@@ -79,9 +81,11 @@
 	musicSpace.setAttribute('src', '../../music/space.mp3');
 	musicChallengeC.setAttribute('src', '../../music/challengeComplete.mp3');
 	musicLvl.setAttribute('src', '../../music/lvlcomplete.mp3');
+
 	musicPhobos.setAttribute('src', '../../music/phobos.mp3');
 	musicDeimos.setAttribute('src', '../../music/deimos.mp3');
 	musicMercury.setAttribute('src', '../../music/mercury.mp3');
+	musicEurope.setAttribute('src', '../../music/europe.mp3');
 	
 	//setup de sfx
 	
@@ -181,5 +185,3 @@
 			iceAsteroid.aura = false
 		}
 	}
-
-

@@ -1,5 +1,5 @@
 //fondo
-					
+
 // fondos
 	var bgMercurio = new Image()
 	bgMercurio.src = "../../bg/mercurio.png"
