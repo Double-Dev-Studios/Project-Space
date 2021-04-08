@@ -1,7 +1,7 @@
 # Project Space
 Space Machines Remake
 
-This game is still not finished
+The game isn't finished yet
 
 Levels:
 
@@ -23,6 +23,5 @@ The lost levels:
 Phobos,
 Deimos,
 Mercury,
-Europe
-
-Coming soon!
+Europe,
+Io
