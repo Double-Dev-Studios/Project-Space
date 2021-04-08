@@ -1,10 +1,10 @@
-prev3:
+prev:
 
 1.2.3
 
 * The Lost Levels: Deimos
 
-prev2:
+prev:
 
 1.2.4
 
@@ -24,10 +24,19 @@ prev:
 * Buttons href has been fixed
 * Minor changes
 
-now:
+prev:
 
 1.4.0
 
 * The Lost Levels: Europe
 * Shoot speed fixed
 * Lava particles
+
+now:
+
+1.5.0
+
+* The Lost Levels: Io
+* Challenge Complete and Level Complete Sounds fixed
+* Some music code optimization
+* Added Github link button
