@@ -74,170 +74,83 @@ fullboton.addEventListener("click", fullscreen);
 				if (twisterUse == true) {actualizarTwister()}
 			}
 
-
+			function CurrentTimeLoop(music, s){ // CurrentTimeLoop(Musica a loopear, segundo en el que reiniciarla)
+				if(music.currentTime > s){
+					music.currentTime = 0;
+					music.play();
+				}
+			}
 
 			function musicBucle(){
 				// currentTime guarda el tiempo en segundos
-				if (musicEarth.currentTime > 108){
-					musicEarth.currentTime = 0;
-					musicEarth.play();
-				}
 
-				if (musicMoon.currentTime > 51){
-					musicMoon.currentTime = 0;
-					musicMoon.play();
-				}
+				CurrentTimeLoop(musicEarth, 108);
+				CurrentTimeLoop(musicMoon, 51);
+				CurrentTimeLoop(musicVenus, 76);
+				CurrentTimeLoop(musicMars, 89);
+				CurrentTimeLoop(musicAsteroidBelt, 76);
+				CurrentTimeLoop(musicJupiter, 118);
+				CurrentTimeLoop(musicSaturn, 89);
+				CurrentTimeLoop(musicUranus, 89);
+				CurrentTimeLoop(musicNeptune, 76);
+				CurrentTimeLoop(musicSpace, 85);
 
-				if (musicVenus.currentTime > 76){
-					musicVenus.currentTime = 0;
-					musicVenus.play();
+				CurrentTimeLoop(musicPhobos, 76);
+				CurrentTimeLoop(musicDeimos, 118);
+				CurrentTimeLoop(musicMercury, 83);
+				CurrentTimeLoop(musicEurope, 76);
+				CurrentTimeLoop(musicIo, 68);
+			}
+			
+			function musicStartIf(music, bg){ // (musicMusica, "bgNivel")
+				if (actualBGString == bg) {
+					music.currentTime = 0;
+					music.play();
 				}
-
-				if (musicMars.currentTime > 89){
-					musicMars.currentTime = 0;
-					musicMars.play();
-				}
-				
-				if (musicAsteroidBelt.currentTime > 76){
-					musicAsteroidBelt.currentTime = 0;
-					musicAsteroidBelt.play();
-				}
-				
-				if (musicJupiter.currentTime > 118){
-					musicJupiter.currentTime = 0;
-					musicJupiter.play();
-				}
-				
-				if (musicSaturn.currentTime > 89){
-					musicSaturn.currentTime = 0;
-					musicSaturn.play();
-				}
-				
-				if (musicUranus.currentTime > 89){
-					musicUranus.currentTime = 0;
-					musicUranus.play();
-				}
-				
-				if (musicNeptune.currentTime > 76){
-					musicNeptune.currentTime = 0;
-					musicNeptune.play();
-				}
-				
-				if (musicSpace.currentTime > 85){
-					musicSpace.currentTime = 0;
-					musicSpace.play();
-				}
-				// lost levels:
-				if (musicPhobos.currentTime > 76){
-					musicPhobos.currentTime = 0;
-					musicPhobos.play();
-				}
-
-				if (musicDeimos.currentTime > 118){
-					musicDeimos.currentTime = 0;
-					musicDeimos.play();
-				}
-
-				if (musicMercury.currentTime > 83){
-					musicMercury.currentTime = 0;
-					musicMercury.play();
-				}
-
-				if (musicEurope.currentTime > 76){
-					musicEurope.currentTime = 0;
-					musicEurope.play();
-				}
-
 			}
 
-
 			function musicStart(){
-				if (actualBGString == "bgTierra") {
-					musicEarth.currentTime = 0;
-					musicEarth.play();
-				}
+				musicStartIf(musicEarth, "bgTierra");
+				musicStartIf(musicMoon, "bgLuna");
+				musicStartIf(musicMars, "bgMarte");
+				musicStartIf(musicAsteroidBelt, "bgAsteroides");
+				musicStartIf(musicJupiter, "bgJupiter");
+				musicStartIf(musicUranus, "bgUrano");
+				musicStartIf(musicNeptune, "bgNeptuno");
+				musicStartIf(musicSpace, "bgEspacio");
 
-				if (actualBGString == "bgLuna") {
-					musicMoon.currentTime = 0;
-					musicMoon.play();
-				}
-
-				if (actualBGString == "bgVenus") {
-					musicVenus.currentTime = 0;
-					musicVenus.play();
-				}
-
-				if (actualBGString == "bgMarte") {
-					musicMars.currentTime = 0;
-					musicMars.play();
-				}
-				
-				if (actualBGString == "bgAsteroides") {
-					musicAsteroidBelt.currentTime = 0;
-					musicAsteroidBelt.play();
-				}
-				
-				if (actualBGString == "bgJupiter") {
-					musicJupiter.currentTime = 0;
-					musicJupiter.play();
-				}
-				
-				if (actualBGString == "bgSaturno") {
-					musicSaturn.currentTime = 0;
-					musicSaturn.play();
-				}
-				
-				if (actualBGString == "bgUrano") {
-					musicUranus.currentTime = 0;
-					musicUranus.play();
-				}
-				
-				if (actualBGString == "bgNeptuno") {
-					musicNeptune.currentTime = 0;
-					musicNeptune.play();
-				}
-				
-				if (actualBGString == "bgEspacio") {
-					musicSpace.currentTime = 0;
-					musicSpace.play();
-				}
-
-				if (actualBGString == "bgChallengeComplete") {
-					musicChallengeC.currentTime = 0;
-					musicChallengeC.play();
-				}
-
-				if (actualBGString == "bgLvlComplete") {
-					musicLvl.currentTime = 0;
-					musicLvl.play();
-				}
+				musicStartIf(musicChallengeC, "bgChallengeComplete");
+				musicStartIf(musicLvl, "bgLvlComplete");
 
 				// lost levels
 
-				if (actualBGString == "bgFobos") {
-					musicPhobos.currentTime = 0;
-					musicPhobos.play();
-				}
-
-				if (actualBGString == "bgDeimos") {
-					musicDeimos.currentTime = 0;
-					musicDeimos.play();
-				}
-
-				if (actualBGString == "bgMercurio") {
-					musicMercury.currentTime = 0;
-					musicMercury.play();
-				}
-
-				if (actualBGString == "bgEuropa") {
-					musicEurope.currentTime = 0;
-					musicEurope.play();
-				}
+				musicStartIf(musicPhobos, "bgFobos");
+				musicStartIf(musicDeimos, "bgDeimos");
+				musicStartIf(musicEurope, "bgEuropa");
+				musicStartIf(musicIo, "bgIo");
 			}
 
+			function musicPause(){
+				musicEarth.pause()
+				musicMoon.pause()
+				musicVenus.pause()
+				musicMars.pause()
+				musicAsteroidBelt.pause()
+				musicJupiter.pause()
+				musicSaturn.pause()
+				musicUranus.pause()
+				musicNeptune.pause()
+				musicSpace.pause()
 
+				musicChallengeC.pause()
+				musicLvl.pause()
 
-
+				musicPhobos.pause()
+				musicDeimos.pause()
+				musicMercury.pause()
+				musicEurope.pause()
+				musicIo.pause()
+			}
 
 			function contadores(){
 
@@ -546,24 +459,6 @@ fullboton.addEventListener("click", fullscreen);
 			}
 
 
-			function musicPause(){
-				musicEarth.pause()
-				musicMoon.pause()
-				musicVenus.pause()
-				musicMars.pause()
-				musicAsteroidBelt.pause()
-				musicJupiter.pause()
-				musicSaturn.pause()
-				musicUranus.pause()
-				musicNeptune.pause()
-				musicSpace.pause()
-				musicPhobos.pause()
-				musicDeimos.pause()
-				musicMercury.pause()
-				musicEurope.pause()
-			}
-
-
 			function fullscreen(){
 				if (fullscreenVar == false){
 					
@@ -751,6 +646,23 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroid.speedY += 1
 					asteroid.speedX += 3
 					asteroid2.speedY -= 0.5
+				}
+
+				if (actualBGString == "bgIo"){
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					iceAsteroidUse = true
+					miniAsteroid.speedX += 2
+					miniAsteroid.speedY += 1
+					asteroid.speedX += 3
+					asteroid2.speedY -= 0.5
+					lavaUse = true
+					waterUse = true
 				}
 
 			}

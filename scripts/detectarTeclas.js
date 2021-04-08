@@ -19,8 +19,6 @@
 	
 	
 //T E C L A S
-	// recorda: http://giovaelpetv.blogspot.com/p/codigos-teclas-javascript.html
-		
 		
 		function detectarTecla(event){
 			var k = event.keyCode;
@@ -86,13 +84,10 @@
 				}
 
 				// k == debug (9)
-				/*if (k == k9) {
+				if (k == k9) {
 					ship.speed = 6
 					temp.value = 0
 					bg.speed += 1
-				}*/
+				}
 			}
-			
-			
-			//cualquier tecla que quieras saber su codigo: http://giovaelpetv.blogspot.com/p/codigos-teclas-javascript.html
 		}
