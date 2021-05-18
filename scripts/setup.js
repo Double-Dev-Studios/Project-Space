@@ -69,6 +69,8 @@
 	var musicMercury = document.createElement('audio');
 	var musicEurope = document.createElement('audio');
 	var musicIo = document.createElement('audio');
+	var musicTitan = document.createElement('audio');
+	var musicTitania = document.createElement('audio');
 	
 	musicEarth.setAttribute('src', '../../music/earth.mp3');
 	musicMoon.setAttribute('src', '../../music/moon.mp3');
@@ -87,7 +89,9 @@
 	musicDeimos.setAttribute('src', '../../music/deimos.mp3');
 	musicMercury.setAttribute('src', '../../music/mercury.mp3');
 	musicEurope.setAttribute('src', '../../music/europe.mp3');
-	musicIo.setAttribute('src', '../../music/io.mp3')
+	musicIo.setAttribute('src', '../../music/io.mp3');
+	musicTitan.setAttribute('src', '../../music/titan.mp3');
+	musicTitania.setAttribute('src', '../../music/titania.mp3');
 	
 	//setup de sfx
 	

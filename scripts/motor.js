@@ -100,6 +100,8 @@ fullboton.addEventListener("click", fullscreen);
 				CurrentTimeLoop(musicMercury, 83);
 				CurrentTimeLoop(musicEurope, 76);
 				CurrentTimeLoop(musicIo, 68);
+				CurrentTimeLoop(musicTitan, 115);
+				CurrentTimeLoop(musicTitania, 83);
 			}
 			
 			function musicStartIf(music, bg){ // (musicMusica, "bgNivel")
@@ -112,9 +114,11 @@ fullboton.addEventListener("click", fullscreen);
 			function musicStart(){
 				musicStartIf(musicEarth, "bgTierra");
 				musicStartIf(musicMoon, "bgLuna");
+				musicStartIf(musicVenus, "bgVenus");
 				musicStartIf(musicMars, "bgMarte");
 				musicStartIf(musicAsteroidBelt, "bgAsteroides");
 				musicStartIf(musicJupiter, "bgJupiter");
+				musicStartIf(musicSaturn, "bgSaturno");
 				musicStartIf(musicUranus, "bgUrano");
 				musicStartIf(musicNeptune, "bgNeptuno");
 				musicStartIf(musicSpace, "bgEspacio");
@@ -126,8 +130,11 @@ fullboton.addEventListener("click", fullscreen);
 
 				musicStartIf(musicPhobos, "bgFobos");
 				musicStartIf(musicDeimos, "bgDeimos");
+				musicStartIf(musicMercury, "bgMercurio");
 				musicStartIf(musicEurope, "bgEuropa");
 				musicStartIf(musicIo, "bgIo");
+				musicStartIf(musicTitan, "bgTitan");
+				musicStartIf(musicTitania, "bgTitania");
 			}
 
 			function musicPause(){
@@ -150,6 +157,8 @@ fullboton.addEventListener("click", fullscreen);
 				musicMercury.pause()
 				musicEurope.pause()
 				musicIo.pause()
+				musicTitan.pause()
+				musicTitania.pause()
 			}
 
 			function contadores(){
@@ -665,6 +674,36 @@ fullboton.addEventListener("click", fullscreen);
 					waterUse = true
 				}
 
+				if (actualBGString == "bgTitan"){
+					sateliteUse = true
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					iceAsteroidUse = true
+					iceAsteroidAuraUse = true
+					miniAsteroid.speedX += 2
+					miniAsteroid.speedY -= 1
+					asteroid.speedX += 3
+					asteroid2.speedY += 0.5
+					waterUse = true
+				}
+
+				if (actualBGString == "bgTitania"){
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					iceAsteroidUse = true
+					iceAsteroidAuraUse = true
+					miniAsteroid.speedX += 2
+					miniAsteroid.speedY -= 1
+					asteroid.speedX += 3
+					asteroid2.speedY += 0.5
+				}
 			}
 
 
