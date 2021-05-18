@@ -24,4 +24,6 @@ Phobos,
 Deimos,
 Mercury,
 Europe,
-Io
+Io,
+Titan,
+Titania
