@@ -32,7 +32,7 @@ prev:
 * Shoot speed fixed
 * Lava particles
 
-now:
+prev:
 
 1.5.0
 
@@ -40,3 +40,13 @@ now:
 * Challenge Complete and Level Complete Sounds fixed
 * Some music code optimization
 * Added Github link button
+
+now:
+
+1.6.0
+
+* The Lost Levels: Titan
+* The Lost Levels: Titania
+* Renamed SoundTest Music
+* Backgrounds now are pixel perfect, no longer HD moon in 16 bit game
+* Some levels didn't have music, now they have
