@@ -1,7 +1,7 @@
 # Project Space
-Space Machines Remake
+Space Machines and Space Machines: The Lost Levels Remake
 
-The game isn't finished yet
+FINALLY RELEASED!
 
 Levels:
 
@@ -26,4 +26,9 @@ Mercury,
 Europe,
 Io,
 Titan,
-Titania
+Titania,
+Pluto,
+Triton,
+Sun
+
+Probably more levels coming soon!

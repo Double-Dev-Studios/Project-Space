@@ -41,7 +41,7 @@ prev:
 * Some music code optimization
 * Added Github link button
 
-now:
+prev:
 
 1.6.0
 
@@ -50,3 +50,12 @@ now:
 * Renamed SoundTest Music
 * Backgrounds now are pixel perfect, no longer HD moon in 16 bit game
 * Some levels didn't have music, now they have
+
+now:
+
+2.0.0
+
+* The Lost Levels: Pluto!
+* The Lost Levels: Triton!
+* The Lost Levels: The Sun!
+* Challenges: The Lost Levels Challenge!
