@@ -83,11 +83,14 @@
 					ship.speed = 3
 				}
 
-				// k == debug (9)
-				/*if (k == k9) {
+				/*// k == debug (9)
+				if (k == k9) {
 					ship.speed = 6
+					sprShield = sprShield5
+					sprShieldString = 5
 					temp.value = 0
 					bg.speed += 1
-				}*/
+				}  /*PERO SACAME EL DEBUG
+					 QUE PELOTUDO QUE SOS!*/
 			}
 		}

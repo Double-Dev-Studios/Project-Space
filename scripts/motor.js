@@ -102,6 +102,9 @@ fullboton.addEventListener("click", fullscreen);
 				CurrentTimeLoop(musicIo, 68);
 				CurrentTimeLoop(musicTitan, 115);
 				CurrentTimeLoop(musicTitania, 83);
+				CurrentTimeLoop(musicPluto, 70);
+				CurrentTimeLoop(musicTriton, 92);
+				CurrentTimeLoop(musicSun, 111);
 			}
 			
 			function musicStartIf(music, bg){ // (musicMusica, "bgNivel")
@@ -135,6 +138,9 @@ fullboton.addEventListener("click", fullscreen);
 				musicStartIf(musicIo, "bgIo");
 				musicStartIf(musicTitan, "bgTitan");
 				musicStartIf(musicTitania, "bgTitania");
+				musicStartIf(musicPluto, "bgPluton");
+				musicStartIf(musicTriton, "bgTriton");
+				musicStartIf(musicSun, "bgSun");
 			}
 
 			function musicPause(){
@@ -159,6 +165,9 @@ fullboton.addEventListener("click", fullscreen);
 				musicIo.pause()
 				musicTitan.pause()
 				musicTitania.pause()
+				musicPluto.pause()
+				musicTriton.pause()
+				musicSun.pause()
 			}
 
 			function contadores(){
@@ -611,9 +620,9 @@ fullboton.addEventListener("click", fullscreen);
 					bigAsteroidUse = true
 					fireAsteroidUse = true
 					fireAsteroidAuraUse = true
-					miniAsteroid.speedX += 2
-					miniAsteroid.speedY += 1
-					asteroid.speedX += 2
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault + 1
+					asteroid.speedX = asteroid.speedYDefault + 2
 				}
 
 				if (actualBGString == "bgDeimos"){
@@ -623,10 +632,10 @@ fullboton.addEventListener("click", fullscreen);
 					asteroid2Use = true
 					miniAsteroidUse = true
 					fireAsteroidUse = true
-					miniAsteroid.speedX += 2
-					miniAsteroid.speedY += 1
-					asteroid.speedX += 2
-					asteroid2.speedY += 0.5
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault + 1
+					asteroid.speedX = asteroid.speedXDefault + 2
+					asteroid2.speedY = asteroid.speedYDefault + 0.5
 				}
 
 				if (actualBGString == "bgMercurio"){
@@ -636,10 +645,10 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroidUse = true
 					fireAsteroidUse = true
 					fireAsteroidAuraUse = true
-					miniAsteroid.speedX += 2
-					miniAsteroid.speedY -= 1
-					asteroid.speedX += 3
-					asteroid2.speedY += 0.5
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault - 1
+					asteroid.speedX = asteroid.speedXDefault + 3
+					asteroid2.speedY = asteroid2.speedYDefault + 0.5
 					lavaRUse = true
 				}
 
@@ -651,10 +660,10 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroidUse = true
 					fireAsteroidUse = true
 					iceAsteroidUse = true
-					miniAsteroid.speedX += 2
-					miniAsteroid.speedY += 1
-					asteroid.speedX += 3
-					asteroid2.speedY -= 0.5
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault + 1
+					asteroid.speedX = asteroid.speedXDefault + 3
+					asteroid2.speedY = asteroid2.speedYDefault - 0.5
 				}
 
 				if (actualBGString == "bgIo"){
@@ -666,10 +675,10 @@ fullboton.addEventListener("click", fullscreen);
 					fireAsteroidUse = true
 					fireAsteroidAuraUse = true
 					iceAsteroidUse = true
-					miniAsteroid.speedX += 2
-					miniAsteroid.speedY += 1
-					asteroid.speedX += 3
-					asteroid2.speedY -= 0.5
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault + 1
+					asteroid.speedX = asteroid.speedXDefault + 3
+					asteroid2.speedY = asteroid2.speedYDefault - 0.5
 					lavaUse = true
 					waterUse = true
 				}
@@ -684,10 +693,10 @@ fullboton.addEventListener("click", fullscreen);
 					fireAsteroidAuraUse = true
 					iceAsteroidUse = true
 					iceAsteroidAuraUse = true
-					miniAsteroid.speedX += 2
-					miniAsteroid.speedY -= 1
-					asteroid.speedX += 3
-					asteroid2.speedY += 0.5
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault - 1
+					asteroid.speedX = asteroid.speedXDefault + 3
+					asteroid2.speedY = asteroid2.speedYDefault + 0.5
 					waterUse = true
 				}
 
@@ -699,10 +708,59 @@ fullboton.addEventListener("click", fullscreen);
 					fireAsteroidUse = true
 					iceAsteroidUse = true
 					iceAsteroidAuraUse = true
-					miniAsteroid.speedX += 2
-					miniAsteroid.speedY -= 1
-					asteroid.speedX += 3
-					asteroid2.speedY += 0.5
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault - 1
+					asteroid.speedX = asteroid.speedXDefault + 3
+					asteroid2.speedY = asteroid2.speedYDefault + 0.5
+				}
+
+				if (actualBGString == "bgPluton"){
+					sateliteUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					iceAsteroidAuraUse = true
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 2
+					miniAsteroid.speedY = miniAsteroid.speedYDefault + 1
+					asteroid.speedX = asteroid.speedXDefault + 4
+					asteroid2.speedY = asteroid2.speedYDefault - 1.8
+				}
+
+				if (actualBGString == "bgTriton"){
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					iceAsteroidAuraUse = true
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 3
+					asteroid.speedX = asteroid.speedXDefault + 2
+					asteroid.speedY = asteroid.speedYDefault + 1.8
+					waterUse = true
+				}
+
+				if (actualBGString == "bgSun"){
+					sateliteSpecialUse = true
+					asteroidUse = true
+					asteroid2Use = true
+					miniAsteroidUse = true
+					fireAsteroidUse = true
+					fireAsteroidAuraUse = true
+					bigAsteroidUse = true
+					lavaUse = true
+					lavaRUse = true
+					sateliteSpecial.speedX = sateliteSpecial.speedXDefault + 10
+					miniAsteroid.speedX = miniAsteroid.speedXDefault + 8
+					miniAsteroid.speedY = miniAsteroid.speedYDefault + 2
+					asteroid.speedX = asteroid.speedXDefault + 6
+					asteroid2.speedX = asteroid2.speedXDefault + 4
+					fireAsteroid.speedX = fireAsteroid.speedXDefault + 5
+					fireAsteroidAura.speedX = fireAsteroidAura.speedXDefault + 5
+					bigAsteroid.speedX = bigAsteroid.speedXDefault + 2
+					sprMiniAsteroidNormal.src = "../../sprites/miniAsteroid/fire.png"
 				}
 			}
 

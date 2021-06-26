@@ -71,6 +71,9 @@
 	var musicIo = document.createElement('audio');
 	var musicTitan = document.createElement('audio');
 	var musicTitania = document.createElement('audio');
+	var musicPluto = document.createElement('audio');
+	var musicTriton = document.createElement('audio');
+	var musicSun = document.createElement('audio');
 	
 	musicEarth.setAttribute('src', '../../music/earth.mp3');
 	musicMoon.setAttribute('src', '../../music/moon.mp3');
@@ -82,6 +85,7 @@
 	musicUranus.setAttribute('src', '../../music/uranus.mp3');
 	musicNeptune.setAttribute('src', '../../music/neptune.mp3');
 	musicSpace.setAttribute('src', '../../music/space.mp3');
+
 	musicChallengeC.setAttribute('src', '../../music/challengeComplete.mp3');
 	musicLvl.setAttribute('src', '../../music/lvlcomplete.mp3');
 
@@ -92,6 +96,9 @@
 	musicIo.setAttribute('src', '../../music/io.mp3');
 	musicTitan.setAttribute('src', '../../music/titan.mp3');
 	musicTitania.setAttribute('src', '../../music/titania.mp3');
+	musicPluto.setAttribute('src', '../../music/pluto.mp3');
+	musicTriton.setAttribute('src', '../../music/triton.mp3');
+	musicSun.setAttribute('src', '../../music/sun.mp3');
 	
 	//setup de sfx
 	
@@ -138,9 +145,6 @@
 	var twisterUse = false
 	var lavaRUse = false
 	
-	
-
-
 // getRandomInt, si necesitas un numero entero random entre tal y tal numero usa esta funcion
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) ) + min;
