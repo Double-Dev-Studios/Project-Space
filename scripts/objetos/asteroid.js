@@ -28,6 +28,7 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
+			speedXDefault: 1,
 			delayTime: 20,
 			show: true
 		}
@@ -118,7 +119,9 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
+			speedXDefault: 1,
 			speedY: 0,
+			speedYDefault: 0,
 			delayTime: 20,
 			show: true
 		}

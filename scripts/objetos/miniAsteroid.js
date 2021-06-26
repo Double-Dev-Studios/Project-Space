@@ -27,7 +27,9 @@
 			x2: this.width * gameScale + this.x,
 			y2: this.height * gameScale + this.y,
 			speedX: 1.5,
+			speedXDefault: 1.5,
 			speedY: 0,
+			speedYDefault: 0,
 			show: false
 		}
 		
