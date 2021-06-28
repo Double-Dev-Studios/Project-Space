@@ -132,6 +132,7 @@
 			x2: satelite.width + this.x,
 			y2: satelite.height + this.y,
 			speedX: 0.4,
+			speedXDefault: 0.4,
 			show: true
 		}
 		
