@@ -51,7 +51,7 @@ prev:
 * Backgrounds now are pixel perfect, no longer HD moon in 16 bit game
 * Some levels didn't have music, now they have
 
-now:
+prev:
 
 2.0.0
 
@@ -59,3 +59,20 @@ now:
 * The Lost Levels: Triton!
 * The Lost Levels: The Sun!
 * Challenges: The Lost Levels Challenge!
+
+prev:
+
+2.0.1 (hotfix)
+
+* Special Satellite default speed wasn't defined, causing sun to not have any satellite to recover hp
+
+now:
+
+2.0.2 (patch)
+
+* Ship movement fixed
+* Speedometer added
+* Some changes to bullets (4 instead of 3 bullets max per frame, fixed timing)
+* Title update
+* Easier to identify SFX function names
+* New in-game pseudo tutorial for earth
