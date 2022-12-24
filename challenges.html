@@ -1,24 +1,24 @@
 <html>
 	<head>
-	
+
 	<title>Project Space | Challenges</title>
 	<link rel="icon" href="menu/icon.png" type="image/png"/>
-	
+
 	</head>
 	<body
 	style="background-color: black"
 	background="menu/Background/stars.png"
 	>
-	
+
 	<style>
-		
+
 		.mini {
 			background-color: black;
 			border: none;
 			color: white;
 			cursor: pointer;
 		}
-		
+
 		.button {
 			background-color: white;
 			border: none;
@@ -28,7 +28,7 @@
 			margin: 8px 4px;
 			cursor: pointer;
 		}
-		
+
 		.blackButton {
 			background-color: black;
 			border: none;
@@ -38,26 +38,26 @@
 			margin: 8px 4px;
 			cursor: pointer;
 		}
-		
+
 		.header {
 			color: white;
 			font-size: 64px;
 		}
-		
+
 		.header2 {
 			color: white;
 			font-size: 32px;
 		}
-		
+
 		.text {
 			color: white;
 		}
 	</style>
 	<a href="index.html"> <button id="back" class="blackButton"><img src="menu/back.png"></button></a>
 	<center>
-	
+
 	<!--<p class="header" > PROJECT SPACE </p></h1>-->
-	<img src="game2.png" width="600" height="215">
+	<img src="gameHolydays2.png" width="600" height="215">
 	<h1>
 	</center>
 	<br>
@@ -70,66 +70,66 @@
 	<a href="levels/challenges/infinite2.html">
 	<button id="espacio" class="blackButton">THE LOST LEVELS <br>CHALLENGE
 	<br> <img src="menu/thumbnails/ll challenge.png" alt="THE LOST LEVELS CHALLENGE" width="128" height="128"></button></a>
-	
+
 	<a href="levels/challenges/bigAsteroids.html">
 	<button id="espacio" class="blackButton">BIG ASTEROIDS <br>CHALLENGE
 	<br> <img src="menu/thumbnails/bigAsteroids.png" alt="BIG ASTEROIDS CHALLENGE" width="128" height="128"></button></a>
-	
+
 	<button id="coming" class="blackButton">COMING <br> SOON
 	<br> <img src="menu/thumbnails/lost.png" alt="COMING SOON" width="128" height="128"></button>
 	<br>
 
-	<button id="musicOnOff" class="blackButton"><img id="musicPNG" src="menu/musicOff.png"></button><br> 
+	<button id="musicOnOff" class="blackButton"><img id="musicPNG" src="menu/musicOff.png"></button><br>
 	<text class="header2">Pro tip: press F11</text>
 
 
-	
+
 	<script>
-	
+
 	setInterval(musicLoop, 32)
-	
+
 	var musicMenu = document.createElement('audio');
 	musicMenu.setAttribute('src', 'music/menu.mp3');
-	
+
 	var musicPNG = document.getElementById("musicPNG");
-	
+
 	var musicB = document.getElementById("musicOnOff");
 	musicB.addEventListener("click", music);
-	
+
 	var musicMenuIsPaused = true
-	
+
 	function music(){
 		if (musicMenuIsPaused == true){
-			
+
 			musicMenu.currentTime = 0;
 			musicMenu.play();
 			musicMenuIsPaused = false
 			musicPNG.src = "menu/musicOn.png"
-			
+
 		} else {
-			
+
 			musicMenu.pause()
 			musicMenuIsPaused = true
 			musicPNG.src = "menu/musicOff.png"
-			
+
 		}
 	}
-	
+
 	function changeMusic(){
 		musicMenu.setAttribute('src', 'music/menuOld.mp3')
 	}
-	
+
 	function musicLoop(){
 		if (musicMenuIsPaused == false){
 			if (musicMenu.currentTime > 134){
-				
+
 				musicMenu.currentTime = 0;
 				musicMenu.play();
 			}
 		}
 	}
-	
-	
+
+
 	</script> <br>
 	</h1>
 	<br><br><br> <hr>
@@ -142,8 +142,8 @@
 	<script>
 	var dot = document.getElementById("dot");
 	dot.addEventListener("click", changeMusic);
-	
-	
+
+
 	</script>
 
 </h1>

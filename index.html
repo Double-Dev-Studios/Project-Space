@@ -1,24 +1,24 @@
 <html>
 	<head>
-	
+
 	<title>Project Space</title>
 	<link rel="icon" href="menu/icon.png" type="image/png"/>
-	
+
 	</head>
 	<body
 	style="background-color: black"
 	background="menu/Background/stars.png"
 	>
-	
+
 	<style>
-		
+
 		.mini {
 			background-color: black;
 			border: none;
 			color: white;
 			cursor: pointer;
 		}
-		
+
 		.button {
 			background-color: white;
 			border: none;
@@ -28,7 +28,7 @@
 			margin: 8px 4px;
 			cursor: pointer;
 		}
-		
+
 		.blackButton {
 			background-color: black;
 			border: none;
@@ -38,33 +38,33 @@
 			margin: 8px 4px;
 			cursor: pointer;
 		}
-		
+
 		.header {
 			color: white;
 			font-size: 64px;
 		}
-		
+
 		.header2 {
 			color: white;
 			font-size: 32px;
 		}
-		
+
 		.text {
 			color: white;
 		}
 	</style>
 	<center>
-	
+
 	<h1>
 	<!--<p class="header" > PROJECT SPACE </p></h1>-->
-	<img src="game2.png" width="600" height="215">
-	<p class="header2"> Space Machines Remake </p>
-	<p class="header2"> Release v2.0.1 </p>
-	
+	<img src="gameHolydays2.png" width="600" height="215">
+	<!--<p class="header2"> Space Machines Remake </p>-->
+	<p class="header2"> Release v2.0.2 </p>
+
 	<br>
 	<hr>
-	
-	
+
+
 	<a href="menu/guide.html">
 	<button id="guide" class="blackButton">GUIDE
 	<br> <img src="menu/guide.png" alt="GUIDE" width="128" height="128"></button></a>
@@ -86,61 +86,61 @@
 	<br> <img src="menu/musicLogo.png" alt="SOUND TEST" width="128" height="128"></button></a>
 
 	<br>
-	<button id="musicOnOff" class="blackButton"><img id="musicPNG" src="menu/musicOff.png"></button><br> 
+	<button id="musicOnOff" class="blackButton"><img id="musicPNG" src="menu/musicOff.png"></button><br>
 	<text class="header2">Pro tip: press F11</text>
 
 
-	
+
 	<script>
-	
+
 	setInterval(musicLoop, 32)
-	
+
 	var musicMenu = document.createElement('audio');
 	musicMenu.setAttribute('src', 'music/menu.mp3');
-	
+
 	var musicPNG = document.getElementById("musicPNG");
-	
+
 	var musicB = document.getElementById("musicOnOff");
 	musicB.addEventListener("click", music);
-	
+
 	var musicMenuIsPaused = true
-	
+
 	function music(){
 		if (musicMenuIsPaused == true){
-			
+
 			musicMenu.currentTime = 0;
 			musicMenu.play();
 			musicMenuIsPaused = false
 			musicPNG.src = "menu/musicOn.png"
-			
+
 		} else {
-			
+
 			musicMenu.pause()
 			musicMenuIsPaused = true
 			musicPNG.src = "menu/musicOff.png"
-			
+
 		}
 	}
-	
+
 	function changeMusic(){
 		musicMenu.setAttribute('src', 'music/menuOld.mp3')
 	}
-	
+
 	function musicLoop(){
 		if (musicMenuIsPaused == false){
 			if (musicMenu.currentTime > 134){
-				
+
 				musicMenu.currentTime = 0;
 				musicMenu.play();
 			}
 		}
 	}
-	
-	
+
+
 	</script> <br>
 	</h1>
 	<br><br><br> <hr>
-	<small class="text">	
+	<small class="text">
 	By Manulito1516 & Double Dev. Studios  <button id="dot" class="mini" width="5" height="5">.</button>
 	</small>
 	<div align="right">
@@ -149,8 +149,8 @@
 	<script>
 	var dot = document.getElementById("dot");
 	dot.addEventListener("click", changeMusic);
-	
-	
+
+
 	</script>
 
 	</h1>
