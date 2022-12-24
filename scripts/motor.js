@@ -1,6 +1,5 @@
 
 boton.addEventListener("click", iniciarParar);
-
 fullboton.addEventListener("click", fullscreen);
 
 			function dibujar(){
@@ -8,17 +7,19 @@ fullboton.addEventListener("click", fullscreen);
 				ctx.clearRect(0, 0, canvas.width, canvas.height);
 				//todo lo que dibujes
 				dibujarFondo()
-				
+
 				dibujarEnemigos()
-				
+
 				dibujarDisparos()
 				dibujarShip()
+				dibujarTutorial()
 				dibujarParticles()
-				
-				
+
+
 				dibujarGameover()
-				
+
 				dibujarShield()
+				dibujarSpeedGui()
 				dibujarTemp()
 				dibujarScore()
 			}
@@ -48,10 +49,11 @@ fullboton.addEventListener("click", fullscreen);
 				actualizarFondo()
 
 				actualizarShip()
+				actualizarTutorial()
 				actualizarParticles()
 
 				actualizarEnemigos()
-				
+
 				actualizarTemp()
 				actualizarDisparos()
 
@@ -106,7 +108,7 @@ fullboton.addEventListener("click", fullscreen);
 				CurrentTimeLoop(musicTriton, 92);
 				CurrentTimeLoop(musicSun, 111);
 			}
-			
+
 			function musicStartIf(music, bg){ // (musicMusica, "bgNivel")
 				if (actualBGString == bg) {
 					music.currentTime = 0;
@@ -233,7 +235,7 @@ fullboton.addEventListener("click", fullscreen);
 
 				//asteroid
 				if (asteroidUse == true){
-				
+
 					if (contadorAsteroid > 0){
 						contadorAsteroid -= 1
 					}
@@ -241,12 +243,12 @@ fullboton.addEventListener("click", fullscreen);
 					if (contadorAsteroid <= 0){
 						asteroidDamaged = false
 					}
-					
+
 				}
 
 				//asteroid 2
 				if (asteroid2Use == true){
-					
+
 					if (contadorAsteroid2 > 0){
 						contadorAsteroid2 -= 1
 					}
@@ -283,11 +285,11 @@ fullboton.addEventListener("click", fullscreen);
 						fireAsteroidDamaged = false
 					}
 				}
-				
-				
-				
-				
-				
+
+
+
+
+
 				//iceAsteroid
 
 				if (iceAsteroidUse == true) {
@@ -299,10 +301,10 @@ fullboton.addEventListener("click", fullscreen);
 						iceAsteroidDamaged = false
 					}
 				}
-				
-				
+
+
 				//bigAsteroid
-				
+
 				if (bigAsteroidUse == true) {
 					if (contadorBigAsteroid > 0){
 						contadorBigAsteroid -= 1
@@ -312,7 +314,7 @@ fullboton.addEventListener("click", fullscreen);
 						bigAsteroidDamaged = false
 					}
 				}
-				
+
 
 
 				//satelite
@@ -385,10 +387,10 @@ fullboton.addEventListener("click", fullscreen);
 						}
 					}
 				}
-				
-				
-				
-				
+
+
+
+
 				//water
 				if (waterUse == true){
 
@@ -425,7 +427,7 @@ fullboton.addEventListener("click", fullscreen);
 					}
 
 					if (contadorDisparo <= 0){
-						disparo.disparado = false
+						disparo.disparado = false //esto hay que cambiar
 					}
 				}
 
@@ -448,6 +450,17 @@ fullboton.addEventListener("click", fullscreen);
 
 					if (contadorDisparo3 <= 0){
 						disparo3.disparado = false
+					}
+				}
+
+				if (disparo4.disparado == true){
+
+					if (contadorDisparo4 > 0){
+						contadorDisparo4 -= 1
+					}
+
+				if (contadorDisparo4 <= 0){
+						disparo4.disparado = false
 					}
 				}
 			}
@@ -479,19 +492,21 @@ fullboton.addEventListener("click", fullscreen);
 
 			function fullscreen(){
 				if (fullscreenVar == false){
-					
-					useSelect()
+
+					useSelectSFX()
 					fullscreenVar = true
 					canvas.width = 1000
 					canvas.height = 600
+					actualizarSpeedGui()
 				}
 
 				else{
-					
-					useSelect()
+
+					useSelectSFX()
 					fullscreenVar = false
 					canvas.width = 800
 					canvas.height = 500
+					actualizarSpeedGui()
 				}
 			}
 
@@ -529,7 +544,7 @@ fullboton.addEventListener("click", fullscreen);
 					fireAsteroidUse = true
 					fireAsteroidAuraUse = true
 				}
-				
+
 				if (actualBGString == "bgAsteroides"){
 					sateliteUse = true
 					sateliteSpecialUse = true
@@ -540,7 +555,7 @@ fullboton.addEventListener("click", fullscreen);
 					iceAsteroidUse = true
 					bigAsteroidUse = true
 				}
-				
+
 				if (actualBGString == "bgJupiter"){
 					sateliteUse = true
 					sateliteSpecialUse = true
@@ -551,7 +566,7 @@ fullboton.addEventListener("click", fullscreen);
 					iceAsteroidUse = true
 					bigAsteroidUse = true
 				}
-				
+
 				if (actualBGString == "bgSaturno"){
 					sateliteUse = true
 					asteroidUse = true
@@ -561,7 +576,7 @@ fullboton.addEventListener("click", fullscreen);
 					miniAsteroidUse = true
 					iceAsteroidUse = true
 				}
-				
+
 				if (actualBGString == "bgUrano"){
 					sateliteUse = true
 					sateliteSpecialUse = true
@@ -572,7 +587,7 @@ fullboton.addEventListener("click", fullscreen);
 					iceAsteroidUse = true
 					iceAsteroidAura.use = true
 				}
-				
+
 				if (actualBGString == "bgNeptuno"){
 					sateliteUse = true
 					sateliteSpecialUse = true
@@ -584,7 +599,7 @@ fullboton.addEventListener("click", fullscreen);
 					iceAsteroidAuraUse = true
 					waterUse = true
 				}
-				
+
 				if (actualBGString == "bgEspacio"){
 					sateliteUse = true
 					sateliteSpecialUse = true
@@ -784,13 +799,13 @@ fullboton.addEventListener("click", fullscreen);
 					pausa = false;
 					playstop.src = "../../menu/pause.png"
 					challenge()
-					useSelect()
+					useSelectSFX()
 					musicStart()
 					bucle = setInterval(frame, 16)
 				} else {
 					pausa = true;
 					playstop.src = "../../menu/play.png"
-					useSelect()
+					useSelectSFX()
 					musicPause()
 					clearInterval(bucle)
 				}

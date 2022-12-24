@@ -26,6 +26,9 @@ function colisionDisparo(object, objectHitbox){
 			} else if (detectCollision(objectHitbox, disparo3)) {
 				disparo3.disparado = false;
 				return true;
+			} else if (detectCollision(objectHitbox, disparo4)) {
+				disparo4.disparado = false;
+				return true;
 			}
 		}
 	}
@@ -44,7 +47,7 @@ function colisiones(){
 			asteroid.show = true;
 		}
 	};
-						
+
 	// asteroid2 -> borde
 	if (asteroid2Use){
 		if (asteroid2.x <= 0 - asteroid2.width || asteroid2.show == false){
@@ -72,7 +75,7 @@ function colisiones(){
 			sprMiniAsteroid = sprMiniAsteroidNormal;
 			sprMiniAsteroidString = "sprMiniAsteroidNormal";
 			miniAsteroid.show = true;
-		}				
+		}
 	};
 
 
@@ -153,13 +156,13 @@ function colisiones(){
 		if (ship.x <= -36 || ship.y <= -36||
 			ship.x >= canvas.width - 36 ||
 			ship.y >= canvas.height - 36){
-			
+
 			ship.x = canvas.width / 2;
 			ship.y = canvas.height / 2;
 			ship.show = false;
 			ship.speed = 0;
-			
-			useExplosion();
+
+			useExplosionSFX();
 			sprShield = sprShield0;
 			sprShieldString = "sprShield0";
 			shipGAMEOVER();
@@ -201,7 +204,7 @@ function colisiones(){
 			}
 		}
 	};
-	
+
 	// fireAsteroid -> ship
 	if (ship.show){
 		if (fireAsteroidUse){
@@ -210,6 +213,7 @@ function colisiones(){
 					fireAsteroidDamage();
 					shipDamage();
 					ship.speed = 4.5;
+					actualizarSpeedGui();
 				}
 			}
 		}
@@ -221,6 +225,7 @@ function colisiones(){
 		if (ship.show){
 			if (detectCollision(shipHitbox, fireAsteroidAura)){
 				ship.speed = 4.5;
+				actualizarSpeedGui();
 			}
 		}
 	};
@@ -233,6 +238,7 @@ function colisiones(){
 					iceAsteroidDamage();
 					shipDamage();
 					ship.speed = 0;
+					actualizarSpeedGui();
 				}
 			}
 		}
@@ -243,6 +249,7 @@ function colisiones(){
 		if (ship.show){
 			if(detectCollision(shipHitbox, iceAsteroidAura)){
 				ship.speed = 0.5;
+				actualizarSpeedGui();
 			}
 		}
 	};
@@ -264,19 +271,21 @@ function colisiones(){
 		if (ship.show){
 			if (twister.show) {
 				if (detectCollision(shipHitbox, twister)){
-					shipDamage();
-					ship.speedY = -5;
+					shipDamage()
+
+					ship.upKey = 9;
+					ship.downKey = 0;
 				}
 			}
 		}
 	};
-	
+
 	// satelite -> ship
 	if (sateliteUse){
 		if (ship.show){
 			if (sateliteDamaged == false) {
-				if (detectCollision(shipHitbox, sateliteHitbox)){			
-					sateliteDamage();
+				if (detectCollision(shipHitbox, sateliteHitbox)){
+					sateliteDamage(true); // true en shipDamaged porque la nave choco el satelite
 					shipDamage();
 				}
 			}
@@ -287,7 +296,7 @@ function colisiones(){
 	if (sateliteSpecialUse){
 		if (ship.show){
 			if (detectCollision(shipHitbox, sateliteSpecialHitbox)){
-				sateliteSpecialDamage();
+				sateliteSpecialDamage(true); // true en shipDamaged porque la nave choco el satelite
 				shipDamage();
 			}
 		}
@@ -399,7 +408,7 @@ function colisiones(){
 	};
 
 	// lava -> disparos
-	if (lavaUse == true){	
+	if (lavaUse == true){
 		colisionDisparo(lava, lavaHitbox);
 	};
 
