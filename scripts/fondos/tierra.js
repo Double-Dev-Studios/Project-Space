@@ -1,5 +1,6 @@
-//fondo
-					
+//TUTORIAL
+tutorial.show = true
+
 // fondos
 	var bgTierra = new Image()
 	bgTierra.src = "../../bg/tierra.png"
@@ -10,7 +11,7 @@
 // variables de fondo
 	var actualBG = bgTierra
 	var actualBGString = "bgTierra"
-	
+
 	var bg = {
 		offset: 0,
 		speed: 0.05,
@@ -19,7 +20,7 @@
 	}
 
 	var minOffset = -350
-				
+
 // funciones de fondo
 	function dibujarFondo(){
 		if (actualBGString == "bgLvlComplete"){
@@ -30,7 +31,7 @@
 			ctx.drawImage(actualBG, bg.offset, 0,)
 		}
 	}
-						
+
 	function actualizarFondo(){
 		bg.offset -= (ship.speed / 2 * bg.speed)
 
