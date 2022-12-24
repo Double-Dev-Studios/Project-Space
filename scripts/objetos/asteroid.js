@@ -15,9 +15,8 @@
 		
 	//variables de asteroid
 		
-		var contadorAsteroid = 20
-		var asteroidDamaged = false
 		
+		var asteroidDamaged = false
 		var asteroidUse = false
 		
 		var asteroid = {
@@ -29,9 +28,11 @@
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
 			speedXDefault: 1,
-			delayTime: 20,
+			hitDelay: 8,
 			show: true
 		}
+
+		var contadorAsteroid = asteroid.hitDelay
 		
 		
 		
@@ -63,7 +64,7 @@
 		function asteroidDamage(){
 			
 			asteroidDamaged = true
-			contadorAsteroid = asteroid.delayTime
+			contadorAsteroid = asteroid.hitDelay
 			
 			if (sprAsteroidString == "sprAsteroidNormal") {
 				sprAsteroid = sprAsteroidDestruct1
@@ -106,9 +107,7 @@
 						
 	//variables de asteroid 2
 		
-		var contadorAsteroid2 = 20
 		var asteroid2Damaged = false
-		
 		var asteroid2Use = false
 		
 		var asteroid2 = {
@@ -122,9 +121,10 @@
 			speedXDefault: 1,
 			speedY: 0,
 			speedYDefault: 0,
-			delayTime: 20,
 			show: true
 		}
+
+		var contadorAsteroid2 = asteroid.hitDelay
 						
 						
 						
@@ -155,7 +155,7 @@
 		function asteroid2Damage(){
 			
 			asteroid2Damaged = true
-			contadorAsteroid2 = asteroid2.delayTime
+			contadorAsteroid2 = asteroid.hitDelay
 			
 			if (sprAsteroid2String == "sprAsteroidNormal") {
 				sprAsteroid2 = sprAsteroidDestruct1

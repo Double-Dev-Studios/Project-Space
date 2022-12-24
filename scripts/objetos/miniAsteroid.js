@@ -14,9 +14,8 @@
 		
 	//variables de miniAsteroid
 		
-		var contadorMiniAsteroid = 10
-		var miniAsteroidDamaged = false
 		
+		var miniAsteroidDamaged = false
 		var miniAsteroidUse = false
 		
 		var miniAsteroid = {
@@ -30,8 +29,11 @@
 			speedXDefault: 1.5,
 			speedY: 0,
 			speedYDefault: 0,
+			hitDelay: 4,
 			show: false
 		}
+
+		var contadorMiniAsteroid = miniAsteroid.delayTime
 		
 		
 		
@@ -61,7 +63,7 @@
 		function miniAsteroidDamage(){
 			
 			miniAsteroidDamaged = true
-			contadorMiniAsteroid = 10
+			contadorMiniAsteroid = miniAsteroid.hitDelay
 			
 			if (sprMiniAsteroidString == "sprMiniAsteroidNormal") {
 				sprMiniAsteroid = sprMiniAsteroidDestruct1

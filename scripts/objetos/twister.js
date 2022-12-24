@@ -42,16 +42,16 @@ function dibujarTwister(){
 
 function actualizarTwister(){
     if(twisterUse){
-		
+
 		twister.x2 = twister.width + twister.x
 		twister.y2 = twister.height + twister.y
-		
+
         if(twister.alert != true){
             sprTwisterN = sprTwister
 			if(twister.y <= 0){
 				twister.alert = true
 			}
-            
+
 			twister.y = twister.y - twister.speedY
 
 			if(twister.direction == "left"){

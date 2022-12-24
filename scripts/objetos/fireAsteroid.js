@@ -14,9 +14,8 @@
 		
 	//variables de fire asteroid
 		
-		var contadorFireAsteroid = 20
-		var fireAsteroidDamaged = false
 		
+		var fireAsteroidDamaged = false
 		var fireAsteroidUse = false
 		
 		var fireAsteroid = {
@@ -29,9 +28,11 @@
 			speedX: 1.5,
 			speedXDefault: 1.5,
 			hotLevel: 0.1,
-			delayTime: 20,
+			hitDelay: 8,
 			show: false
 		}
+
+		var contadorFireAsteroid = fireAsteroid.hitDelay;
 		
 		
 		
@@ -63,7 +64,7 @@
 		function fireAsteroidDamage(){
 			
 			fireAsteroidDamaged = true
-			contadorFireAsteroid = fireAsteroid.delayTime
+			contadorFireAsteroid = fireAsteroid.hitDelay
 			
 			if (sprFireAsteroidString == "sprFireAsteroidNormal") {
 				sprFireAsteroid = sprFireAsteroidDestruct1

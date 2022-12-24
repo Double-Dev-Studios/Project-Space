@@ -14,9 +14,8 @@
 		
 	//variables de ice asteroid
 		
-		var contadorIceAsteroid = 20
-		var iceAsteroidDamaged = false
 		
+		var iceAsteroidDamaged = false
 		var iceAsteroidUse = false
 		
 		var iceAsteroid = {
@@ -27,9 +26,11 @@
 			x2: this.width + this.x,
 			y2: this.height + this.y,
 			speedX: 0.7,
-			delayTime: 20,
+			hitDelay: 8,
 			show: false
 		}
+
+		var contadorIceAsteroid = iceAsteroid.hitDelay;
 		
 		
 	//funciones de ice asteroid
@@ -60,7 +61,7 @@
 		function iceAsteroidDamage(){
 			
 			iceAsteroidDamaged = true
-			contadorIceAsteroid = iceAsteroid.delayTime
+			contadorIceAsteroid = iceAsteroid.hitDelay
 			
 			if (sprIceAsteroidString == "sprIceAsteroidNormal") {
 				sprIceAsteroid = sprIceAsteroidDestruct1

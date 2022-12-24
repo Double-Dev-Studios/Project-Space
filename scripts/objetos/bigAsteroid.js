@@ -15,9 +15,8 @@
 		
 	//variables de bigAsteroid
 		
-		var contadorBigAsteroid = 20
-		var bigAsteroidDamaged = false
 		
+		var bigAsteroidDamaged = false
 		var bigAsteroidUse = false
 		
 		var bigAsteroid = {
@@ -29,9 +28,11 @@
 			y2: this.height * gameScale + this.y,
 			speedX: 1,
 			speedXDefault: 1,
-			delayTime: 30,
+			hitDelay: 15,
 			show: false
 		}
+
+		var contadorBigAsteroid = bigAsteroid.hitDelay;
 		
 		
 		
@@ -63,7 +64,7 @@
 		function bigAsteroidDamage(){
 			
 			bigAsteroidDamaged = true
-			contadorBigAsteroid = bigAsteroid.delayTime
+			contadorBigAsteroid = bigAsteroid.hitDelay
 			
 			if (sprBigAsteroidString == "sprBigAsteroidNormal") {
 				sprBigAsteroid = sprBigAsteroidDestruct1
