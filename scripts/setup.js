@@ -153,7 +153,7 @@
 	function randomSatelite(){
 		random = Math.floor(Math.random() * 2)
 		if (random == 1){
-			useShield()
+			useShieldSFX()
 			sprShieldString += 1
 			contadorShield = 30
 			sprShip = sprShipHP
