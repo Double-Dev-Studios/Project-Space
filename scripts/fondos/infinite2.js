@@ -1,7 +1,7 @@
 //fondo
-					
+
 // fondos
-	
+
 	var bgFobos = new Image()
 	bgFobos.src = "../../bg/fobos.png"
 
@@ -38,17 +38,19 @@
 	//fobos = -400
 	var minOffset = -400
 
+	actualChallenge = "infinite"
+
 // variables de fondo
 	var actualBG = bgFobos
 	var actualBGString = "bgFobos"
-	
+
 	var bg = {
 		offset: 550,
 		speed: 0.15,
 		minTemp: -40,
 		tempAdd: -0.01
 	}
-	
+
 // funciones de fondo
 	function dibujarFondo(){
 		if (actualBGString == "bgChallengeComplete"){
@@ -59,7 +61,7 @@
 			ctx.drawImage(actualBG, bg.offset, 0,)
 		}
 	}
-						
+
 	function actualizarFondo(){
 		bg.offset -= (ship.speed / 2 * bg.speed)
 
@@ -194,8 +196,10 @@
 			bg.minTemp = -40
 			bg.tempAdd = -0.03
 		}
-
 	}
+
+	// for progressbar
+	var totalOffset = 13601
 
 	function disableEnemies(){
 		asteroidUse = false

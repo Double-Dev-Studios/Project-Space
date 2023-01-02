@@ -1,7 +1,7 @@
-//fondo
-					
+//fondo fg
+
 // fondos
-	
+
 	var bgTierra = new Image()
 	bgTierra.src = "../../bg/tierra.png"
 
@@ -32,17 +32,19 @@
 	//tierra = -550
 	var minOffset = -550
 
+	actualChallenge = "infinite"
+
 // variables de fondo
 	var actualBG = bgTierra
 	var actualBGString = "bgTierra"
-	
+
 	var bg = {
 		offset: 0,
 		speed: 0.1,
 		minTemp: -30,
 		tempAdd: 0.00
 	}
-	
+
 // funciones de fondo
 	function dibujarFondo(){
 		if (actualBGString == "bgChallengeComplete"){
@@ -53,7 +55,7 @@
 			ctx.drawImage(actualBG, bg.offset, 0,)
 		}
 	}
-						
+
 	function actualizarFondo(){
 		bg.offset -= (ship.speed / 2 * bg.speed)
 
@@ -68,7 +70,7 @@
 
 	function siguienteFondo(){
 
-		if (actualBGString == "bgNeptuno"){ //cambia a saturno
+		if (actualBGString == "bgNeptuno"){ //final
 
 			bg.offset = 0
 			minOffset = -1
@@ -81,7 +83,7 @@
 			ship.show = false
 		}
 
-		if (actualBGString == "bgUrano"){ //cambia a saturno
+		if (actualBGString == "bgUrano"){ //cambia a neptuno
 
 			bg.offset = 950
 			minOffset = -900
@@ -93,7 +95,7 @@
 			bg.tempAdd = -0.09
 		}
 
-		if (actualBGString == "bgSaturno"){ //cambia a saturno
+		if (actualBGString == "bgSaturno"){ //cambia a urano
 
 			bg.offset = 950
 			minOffset = -900
@@ -164,8 +166,11 @@
 			bg.minTemp = -40
 			bg.tempAdd = 0
 		}
-
 	}
+
+	// for progressbar
+	var totalOffset = 12651
+
 
 	function disableEnemies(){
 		asteroidUse = false
