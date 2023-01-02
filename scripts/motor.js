@@ -18,10 +18,11 @@ fullboton.addEventListener("click", fullscreen);
 
 				dibujarGameover()
 
+				dibujarTemp()
 				dibujarShield()
 				dibujarSpeedGui()
-				dibujarTemp()
 				dibujarScore()
+				dibujarProgress()
 			}
 
 			function dibujarEnemigos(){
@@ -32,6 +33,7 @@ fullboton.addEventListener("click", fullscreen);
 				if (waterUse == true) {dibujarWater()}
 				if (sateliteUse == true) {dibujarSatelite()}
 				if (sateliteSpecialUse == true) {dibujarSateliteSpecial()}
+				dibujarShieldBonus()
 				if (asteroidUse == true) {dibujarAsteroid()}
 				if (asteroid2Use == true) {dibujarAsteroid2()}
 				if (fireAsteroidUse == true) {dibujarFireAsteroid()}
@@ -47,6 +49,7 @@ fullboton.addEventListener("click", fullscreen);
 				//todo lo que se mueva
 
 				actualizarFondo()
+				actualizarProgress()
 
 				actualizarShip()
 				actualizarTutorial()
@@ -70,6 +73,7 @@ fullboton.addEventListener("click", fullscreen);
 				if (miniAsteroidUse == true) {actualizarMiniAsteroid()}
 				if (sateliteUse == true) {actualizarSatelite()}
 				if (sateliteSpecialUse == true) {actualizarSateliteSpecial()}
+				actualizarShieldBonus()
 				if (lavaUse == true) {actualizarLava()}
 				if (waterUse == true) {actualizarWater()}
 				if (lavaRUse == true) {actualizarLavaR()}
@@ -107,6 +111,7 @@ fullboton.addEventListener("click", fullscreen);
 				CurrentTimeLoop(musicPluto, 70);
 				CurrentTimeLoop(musicTriton, 92);
 				CurrentTimeLoop(musicSun, 111);
+				CurrentTimeLoop(sfxWind, 22);
 			}
 
 			function musicStartIf(music, bg){ // (musicMusica, "bgNivel")
@@ -170,6 +175,7 @@ fullboton.addEventListener("click", fullscreen);
 				musicPluto.pause()
 				musicTriton.pause()
 				musicSun.pause()
+				sfxWind.pause()
 			}
 
 			function contadores(){
@@ -493,7 +499,7 @@ fullboton.addEventListener("click", fullscreen);
 			function fullscreen(){
 				if (fullscreenVar == false){
 
-					useSelectSFX()
+					useSFX(sfxSelect)
 					fullscreenVar = true
 					canvas.width = 1000
 					canvas.height = 600
@@ -502,7 +508,7 @@ fullboton.addEventListener("click", fullscreen);
 
 				else{
 
-					useSelectSFX()
+					useSFX(sfxSelect)
 					fullscreenVar = false
 					canvas.width = 800
 					canvas.height = 500
@@ -799,13 +805,14 @@ fullboton.addEventListener("click", fullscreen);
 					pausa = false;
 					playstop.src = "../../menu/pause.png"
 					challenge()
-					useSelectSFX()
+					useSFX(sfxSelect)
 					musicStart()
 					bucle = setInterval(frame, 16)
 				} else {
+					drawPauseScreen()
 					pausa = true;
 					playstop.src = "../../menu/play.png"
-					useSelectSFX()
+					useSFX(sfxSelect)
 					musicPause()
 					clearInterval(bucle)
 				}

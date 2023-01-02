@@ -151,6 +151,11 @@ function colisiones(){
 		}
 	};
 
+	// shieldBonus -> borde
+	if (shieldBonus.x <= -10 * gameScale){
+		shieldBonus.show = false;
+	}
+
 	// ship -> borde
 	if (ship.show){
 		if (ship.x <= -36 || ship.y <= -36||
@@ -334,6 +339,14 @@ function colisiones(){
 			}
 		}
 	};
+	if (ship.show){
+		if (shieldBonus.show){
+			if (detectCollision(shipHitbox, shieldBonusHitbox)){
+				touchShieldBonus();
+			}
+		}
+	}
+
 
 	// ----------------------------------------------------------------------- DISPAROS
 

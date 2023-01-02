@@ -99,7 +99,7 @@
 					sprShieldString = 5
 					temp.value = 0
 					bg.speed += 1
-				}  /*PERO SACAME EL DEBUG
-					 QUE PELOTUDO QUE SOS!*/
+				}  //PERO SACAME EL DEBUG
+					 //QUE PELOTUDO QUE SOS!*/
 			}
 		}

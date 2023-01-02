@@ -12,22 +12,9 @@ function useHitSFX() {
 	}
 }
 
-function useSelectSFX() {
-	sfxSelect.currentTime = 0;
-	sfxSelect.play();
-}
+// esta es la buena:
 
-function useShieldSFX() {
-	sfxShield.currentTime = 0;
-	sfxShield.play();
-}
-
-function useShootSFX() {
-	sfxShoot.currentTime = 0;
-	sfxShoot.play();
-}
-
-function useShootSFX2() {
-	sfxShoot2.currentTime = 0;
-	sfxShoot2.play();
+function useSFX(sfx) {
+	sfx.currentTime = 0;
+	sfx.play();
 }

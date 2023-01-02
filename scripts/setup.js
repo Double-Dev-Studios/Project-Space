@@ -1,4 +1,4 @@
-//S E T U P 
+//S E T U P
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
 	var pausa = true;
@@ -8,14 +8,18 @@
 	var playstop = document.getElementById("playstop");
 	var resethtml = document.getElementById("reset")
 	var gobackhtml = document.getElementById("back")
-	
+
+	// SHADERS LOL
+	//ctx.shadowBlur = 20;
+	//ctx.shadowColor = "black";
+
 	//setup del teclado
 	var k = 0
-	
+
 	//movimiento flechas
 	var kRight = 39
 	var kLeft = 37
-	var kUp = 38	
+	var kUp = 38
 	var kDown = 40
 	//disparo y velocidad flechas
 	var kZ = 90
@@ -25,7 +29,7 @@
 
 	//debug
 	var k9 = 57
-	
+
 	//movimiento wasd
 	var kD = 68
 	var kA = 65
@@ -36,21 +40,21 @@
 	var kU = 85
 	var kI = 73
 	var kO = 79
-	
-	
+
+
 	var k1 = 49
 	var k2 = 50
 	var k3 = 51
 	var k4 = 52
-	
+
 	//setup de escala y otros
 	var fullscreenVar = false
 	var gameScale = 4
 	var actualChallenge;
-	
-	
+
+
 	//setup de musica
-	
+
 	var musicEarth = document.createElement('audio');
 	var musicMoon = document.createElement('audio');
 	var musicVenus = document.createElement('audio');
@@ -74,7 +78,7 @@
 	var musicPluto = document.createElement('audio');
 	var musicTriton = document.createElement('audio');
 	var musicSun = document.createElement('audio');
-	
+
 	musicEarth.setAttribute('src', '../../music/earth.mp3');
 	musicMoon.setAttribute('src', '../../music/moon.mp3');
 	musicVenus.setAttribute('src', '../../music/venus.mp3');
@@ -99,22 +103,30 @@
 	musicPluto.setAttribute('src', '../../music/pluto.mp3');
 	musicTriton.setAttribute('src', '../../music/triton.mp3');
 	musicSun.setAttribute('src', '../../music/sun.mp3');
-	
+
 	//setup de sfx
-	
+
 	var sfxExplosion = document.createElement('audio');
 	var sfxHit = document.createElement('audio');
 	var sfxSelect = document.createElement('audio');
 	var sfxShield = document.createElement('audio');
 	var sfxShoot = document.createElement('audio');
 	var sfxShoot2 = document.createElement('audio');
-	
+	var sfxScore = document.createElement('audio');
+	var sfxBad = document.createElement('audio');
+	var sfxSatelite = document.createElement('audio');
+	var sfxWind = document.createElement('audio');
+
 	sfxExplosion.setAttribute('src', '../../sfx/explosion.wav');
 	sfxHit.setAttribute('src', '../../sfx/hit.wav');
 	sfxSelect.setAttribute('src', '../../sfx/select.wav');
 	sfxShield.setAttribute('src', '../../sfx/shield.wav');
 	sfxShoot.setAttribute('src', '../../sfx/shoot.wav');
 	sfxShoot2.setAttribute('src', '../../sfx/shoot2.wav');
+	sfxScore.setAttribute('src', '../../sfx/score.wav');
+	sfxBad.setAttribute('src', '../../sfx/bad.wav');
+	sfxSatelite.setAttribute('src', '../../sfx/satelite.wav');
+	sfxWind.setAttribute('src', '../../sfx/wind.wav');
 
 	//volumen
 	sfxExplosion.volume = 0.5
@@ -123,13 +135,17 @@
 	sfxShield.volume = 0.6
 	sfxShoot.volume = 0.6
 	sfxShoot2.volume = 0.6
-	
+	sfxScore.volume = 0.6
+	sfxBad.volume = 1
+	sfxSatelite.volume = 0.4
+	sfxWind.volume = 0.6
+
 	//misc
 	var contadorReset;
 	var contadorGoBack;
 
 	//setup de objetos
-	
+
 	var asteroidUse = false
 	var asteroid2Use = false
 	var miniAsteroidUse = false
@@ -144,26 +160,36 @@
 	var waterUse = false
 	var twisterUse = false
 	var lavaRUse = false
-	
+
 // getRandomInt, si necesitas un numero entero random entre tal y tal numero usa esta funcion
 	function getRandomInt(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) ) + min;
 	}
-	
-	function randomSatelite(){
-		random = Math.floor(Math.random() * 2)
-		if (random == 1){
-			useShieldSFX()
-			sprShieldString += 1
-			contadorShield = 30
-			sprShip = sprShipHP
-			sprShipString = "sprShipHP"
-			oneActualizarShield()
-			} else {
-			//si el bool es 0
+
+	function randomSatelite(special){
+		if (!shieldBonus.show){
+			random = Math.floor(Math.random() * 2)
+			if (random == 1){
+				/*useSFX(sfxShield)
+				sprShieldString += 1
+				contadorShield = 30
+				sprShip = sprShipHP
+				sprShipString = "sprShipHP"*/
+				if (special == false){
+					shieldBonus.x = satelite.x// + (satelite.width /2)
+					shieldBonus.y = satelite.y// + (satelite.height /2)
+				} else {
+					shieldBonus.x = sateliteSpecial.x// + (sateliteSpecial.width /2)
+					shieldBonus.y = sateliteSpecial.y// + (sateliteSpecial.height /2)
+				}
+
+				shieldBonus.show = true
+				} else {
+				//si el bool es 0
+			}
 		}
 	}
-	
+
 	function randomBigAsteroid(){
 		random = Math.floor(Math.random() * 2)
 		if (random == 1){
@@ -186,7 +212,7 @@
 			}
 		}
 	}
-	
+
 	function randomIceAsteroid(){
 		random = Math.floor(Math.random() * 2)
 		if (random == 1){
