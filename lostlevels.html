@@ -56,7 +56,7 @@
 	<a href="index.html"> <button id="back" class="blackButton"><img src="menu/back.png"></button></a>
 	<center>
 	<!--<p class="header" > PROJECT SPACE </p></h1>-->
-	<img src="gameHolydays2.png" width="600" height="215">
+	<img src="game3.png" width="512" height="256">
 	<h1>
 	</center>
 	<br>
@@ -105,71 +105,16 @@
 
 
 	<br>
-	<button id="musicOnOff" class="blackButton"><img id="musicPNG" src="menu/musicOff.png"></button><br>
-	<text class="header2">Pro tip: press F11</text>
-
-
-
-	<script>
-
-	setInterval(musicLoop, 32)
-
-	var musicMenu = document.createElement('audio');
-	musicMenu.setAttribute('src', 'music/menu.mp3');
-
-	var musicPNG = document.getElementById("musicPNG");
-
-	var musicB = document.getElementById("musicOnOff");
-	musicB.addEventListener("click", music);
-
-	var musicMenuIsPaused = true
-
-	function music(){
-		if (musicMenuIsPaused == true){
-
-			musicMenu.currentTime = 0;
-			musicMenu.play();
-			musicMenuIsPaused = false
-			musicPNG.src = "menu/musicOn.png"
-
-		} else {
-
-			musicMenu.pause()
-			musicMenuIsPaused = true
-			musicPNG.src = "menu/musicOff.png"
-
-		}
-	}
-
-	function changeMusic(){
-		musicMenu.setAttribute('src', 'music/menuOld.mp3')
-	}
-
-	function musicLoop(){
-		if (musicMenuIsPaused == false){
-			if (musicMenu.currentTime > 134){
-
-				musicMenu.currentTime = 0;
-				musicMenu.play();
-			}
-		}
-	}
-
-
-	</script> <br>
+	<br>
+	<text class="header2">Pro tip: press F11</text><br>
 
 	<br><br><br> <hr>
 	<small class="text">
-	By Double Dev<button id="dot" class="mini">.</button> Studios
+	By Manulito1516 & Double Dev. Studios
 	</small>
 	<div align="right">
 		<a href="https://github.com/Double-Dev-Studios/Project-Space"><img width="30" height="30" src="menu/githubButton.png"></a>
 	</div>
-	<script>
-	var dot = document.getElementById("dot");
-	dot.addEventListener("click", changeMusic);
-	</script>
-
 	</center>
 
 	</body>

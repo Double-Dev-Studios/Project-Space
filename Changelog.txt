@@ -66,7 +66,7 @@ prev:
 
 * Special Satellite default speed wasn't defined, causing sun to not have any satellite to recover hp
 
-now:
+prev:
 
 2.0.2 (patch)
 
@@ -76,3 +76,20 @@ now:
 * Title update
 * Easier to identify SFX function names
 * New in-game pseudo tutorial for earth
+
+now:
+
+2.1.0
+
+* Special Satellite now doesn't give you score if you destroy it with yourself (use bullets instead lol)
+* New sounds for score
+* New sounds for satellite
+* New wind sound effect (max speed)
+* Optimized sfx functions (one function for all)
+* Negative score now is marked with red
+* Added Shield Bonus as a item instead of probability (this helps for easier understanding of game mechanics)
+* Better Game Over Screen
+* Added Pause Screen
+* Added level progress bar
+* Added ending to Asteroid Belt and Space
+* New Title
