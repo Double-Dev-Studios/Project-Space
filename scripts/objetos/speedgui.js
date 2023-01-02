@@ -35,6 +35,7 @@ function dibujarSpeedGui(){
 function actualizarSpeedGui(){
   speedGui.x = 8 * gameScale
   speedGui.y = canvas.height - 10 * gameScale
+  sfxWind.pause()
 
   if (ship.speed <= 0.4){
     sprSpeedGui = sprSpeed0;
@@ -46,5 +47,6 @@ function actualizarSpeedGui(){
     sprSpeedGui = sprSpeed3;
   } else if (ship.speed > 3){
     sprSpeedGui = sprSpeed4;
+    useSFX(sfxWind)
   }
 }

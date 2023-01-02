@@ -178,9 +178,50 @@
 		var sprGameover = new Image()
 		sprGameover.src = "../../menu/gameover.png"
 
+		var gameOverText = "no flaco";
+
+		switch (getRandomInt(1, 10)){
+			default:
+				gameOverText = "Nope."
+				break
+			case 1:
+				gameOverText = "Try harder next time."
+				break
+			case 2:
+				gameOverText = "That didn't work."
+				break
+			case 3:
+				gameOverText = "Next time try to stay at 0 ºC."
+				break
+			case 4:
+				gameOverText = "Oh."
+				break
+			case 5:
+				gameOverText = "Ah."
+				break
+			case 6:
+				gameOverText = "Too bad."
+				break
+			case 7:
+				gameOverText = "At least you didn't... nvm."
+				break
+			case 8:
+				gameOverText = "Get owned."
+				break
+			case 9:
+				gameOverText = "Can you don't?"
+				break
+			case 10:
+				gameOverText = "Noooooooooooo"
+				break
+		}
+
 		function dibujarGameover(){
 			if (gameoverShow == true){
 				ctx.drawImage(sprGameover, 0, 0, canvas.width, canvas.height)
+				ctx.font = "50px Arial"
+				ctx.fillStyle = "white";
+				ctx.fillText(gameOverText, canvas.width / 5, canvas.height / 1.25)
 			}
 		}
 
@@ -196,6 +237,16 @@
 
 			contadorExplosion = "NULL"
 		}
+
+// PAUSA
+
+	var sprPauseScreen = new Image()
+	sprPauseScreen.src = "../../menu/pausescreen.png"
+
+	function drawPauseScreen(){
+		ctx.drawImage(sprPauseScreen, 0, 0, canvas.width, canvas.height)
+	}
+
 
 
 

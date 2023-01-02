@@ -49,7 +49,7 @@
 		}
 
 		function disparar(){
-			useShootSFX() // Sonido del disparo
+			useSFX(sfxShoot) // Sonido del disparo
 			disparo.disparado = true
 			contadorDisparo = 50
 		}
@@ -101,7 +101,7 @@
 		}
 
 		function disparar2(){
-			useShootSFX2() // Sonido del disparo
+			useSFX(sfxShoot2) // Sonido del disparo
 			disparo2.disparado = true
 			contadorDisparo2 = 50
 		}
@@ -150,7 +150,7 @@
 		}
 
 		function disparar3(){
-			useShootSFX() // Sonido del disparo
+			useSFX(sfxShoot) // Sonido del disparo
 			disparo3.disparado = true
 			contadorDisparo3 = 50
 		}
@@ -200,7 +200,7 @@
 			}
 
 			function disparar4(){
-				useShootSFX2() // Sonido del disparo
+				useSFX(sfxShoot2) // Sonido del disparo
 				disparo4.disparado = true
 				contadorDisparo4 = 50
 			}

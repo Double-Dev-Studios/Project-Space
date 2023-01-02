@@ -81,27 +81,33 @@
 			if (sprSateliteString == "sprSateliteNormal") {
 				sprSatelite = sprSateliteDestruct1
 				sprSateliteString = "sprSateliteDestruct1"
+				useSFX(sfxSatelite)
 			} else {
 
 				if (sprSateliteString == "sprSateliteDestruct1") {
 					sprSatelite = sprSateliteDestruct2
 					sprSateliteString = "sprSateliteDestruct2"
+					useSFX(sfxSatelite)
 				} else {
 
 					if (sprSateliteString == "sprSateliteDestruct2") {
 						sprSatelite = sprSateliteDestruct3
 						sprSateliteString = "sprSateliteDestruct3"
+						useSFX(sfxSatelite)
 
 					} else {
 
 						if (sprSateliteString == "sprSateliteDestruct3") {
+							useSFX(sfxSatelite)
+							score.color = "red"
 							score.number -= 5
+							useSFX(sfxBad)
 							sprSatelite = sprAsteroidNormal
 							sprSateliteString = "sprSateliteNormal"
 							satelite.show = false
 
 							if (!shipDamaged){ // esto evita recuperarte la vida con el satelite cuando te lo chocas
-								randomSatelite()
+								randomSatelite(false)
 							}
 							oneActualizarShield()
 
@@ -179,12 +185,12 @@
 
 
 		function sateliteSpecialDamage(shipDamaged){
-
-			score.number += 2
+			useSFX(sfxSatelite)
 			sateliteSpecial.show = false
-
 			if (!shipDamaged){  // esto evita recuperarte la vida con el satelite cuando te lo chocas
-				randomSatelite()
+				score.number += 2
+				useSFX(sfxScore)
+				randomSatelite(true)
 			}
 			oneActualizarShield()
 		}

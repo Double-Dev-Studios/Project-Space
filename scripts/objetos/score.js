@@ -1,5 +1,5 @@
 //Score
-			
+
 	//variables de Score
 
 		var score = {
@@ -15,9 +15,22 @@
 			if (score.show == true) {
 				ctx.font = "50px Arial"
 				ctx.fillStyle = "black";
-				ctx.fillText("Score: " + score.number + "0", score.x + 4, score.y + 4)
-				
-				ctx.fillStyle = "white";
-				ctx.fillText("Score: " + score.number + "0", score.x, score.y)
+				if (score.number !== 0){
+					ctx.fillText("Score: " + score.number + "0", score.x + 4, score.y + 4)
+				} else {
+					ctx.fillText("Score: " + score.number, score.x + 4, score.y + 4)
+				}
+
+				if (score.number < 0){
+					ctx.fillStyle = "red";
+				} else {ctx.fillStyle = "white"}
+
+				if (score.number !== 0){
+					ctx.fillText("Score: " + score.number + "0", score.x, score.y)
+				} else {
+					ctx.fillText("Score: " + score.number, score.x, score.y)
+				}
+
+
 			}
 		}
